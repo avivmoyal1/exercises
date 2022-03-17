@@ -1,0 +1,350 @@
+* { 
+    margin: 0;
+    padding: 0;
+}
+
+header, main, footer, nav, aside, section, div{
+    display: block;
+}
+
+body{
+    background-color: #FFFFFF;;
+    font-family:  'Trebuchet MS';
+}
+
+a{
+    text-decoration: none;
+}
+
+.wrapper{
+    margin: 0px 25px;
+    color: #FFFFFF;
+}
+
+header{
+    width: 100%;
+    margin-top: 25px;
+}
+
+.logo{
+    background-image: url("../images/barber.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height:  41px;
+    width: 200px;
+    display: block;
+}
+
+.logo span{
+    padding-left: 50px;
+    color: #233348;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 39px;
+}
+
+
+.menu nav{
+    margin-top: 30px;
+}
+
+.menu nav a{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22.59px;
+    opacity: 0.5;
+    margin-right: 40px;
+    color: #1F1534;;
+}
+
+
+.menu nav a:hover{
+    color: #458FF6;
+}
+
+
+#selected{
+    font-weight: 700 ;
+    color: #1F1534 ;
+    opacity: 1;
+}
+
+
+
+h1{
+    margin-left: 25px;
+    margin-top: 83px;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 53px;
+    letter-spacing: 0em;
+    color: #1F1534;
+}
+
+h2{
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 56px;
+    letter-spacing: 0em;
+    color: 
+    #000000;
+}
+#main-photo {
+    margin-top: 14px;
+}
+
+#summary-section{
+    margin-top: 63px;
+}
+
+.Paragraph{
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 32px;
+    letter-spacing: 0em;
+    color: #7D7987;
+}
+
+#summary-section p{
+    width: 693px;
+    margin-top: 20px;
+}
+
+button{
+    height: 56px;
+    width: 200px;
+    border-radius: 55px;
+    font-size: 18px;
+    font-style: normal;
+    cursor: pointer; 
+    font-weight: 700;
+    line-height: 28px;
+}
+
+#summary-section button{
+    
+    margin-top: 20px;
+    background-color:#458FF6 ;
+    color: #FFFFFF;
+    border: none;
+}
+
+#services-section{
+    margin-top: 100px;
+}
+
+#services-section img{
+    margin-top: 14px;
+    margin-left: 78px;
+}
+
+#services-section p{
+    width: 952px;
+    margin-top: 14px;
+}
+
+
+ 
+footer{
+    width: 100%;
+    background: linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
+    margin-top: 335px;
+    
+}
+
+#footer-div{
+    margin-left: 25px;
+    color: #FFFFFF;
+    
+}
+
+#footer-social-network a{
+    padding-left: 15px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60px;
+    letter-spacing: 0em;
+    color: #FFFFFF;
+}
+
+#footer-social-network a img{
+    padding-top: 10px;
+    height: 35px;
+}
+
+.footer-logo{
+    margin-top: 68px;
+    background-image: url("../images/barberf.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 41px;
+    width: 41px;
+    display: block;
+
+}
+.footer-logo span{
+    margin-left: 50px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 41px;
+    letter-spacing: 0em;
+    color: #FFFFFF;
+}
+
+#all-rights{
+    margin-top: 100px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 28px;
+    padding-bottom: 50px;
+}
+
+
+#survey-section{
+    margin-top: 20px;
+    height: 470px;
+    width: 1120px;
+    border-radius: 24px;
+    background: linear-gradient(208.18deg, #67C3F3 9.05%, #5A98F2 76.74%);
+    padding: 25px 25px;
+}
+#survey-section h2{
+    color: #FFFFFF;
+    
+}
+#img-div{
+    padding: 10px 246px;
+}
+
+#img-person{
+    margin-top: 5px;
+    height: 133px;
+    width: 133px;
+    border-radius: 360px;
+    border: 4px solid #FFFFFF;
+
+}
+
+#survey-section p{
+    height: 120px;
+    width: 420px;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 30px;
+    
+}
+
+h4{
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+h5{
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#h2-testi{
+    margin-top: 70px;
+}
+
+.grid{
+    display: grid;
+    column-gap: 34px;
+    row-gap: 37px;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto ; 
+    background: rgba(255, 255, 255, 1);
+}
+
+.grid article{
+    box-shadow: 10px 40px 50px 0px rgba(229, 233, 246, 0.4);
+    border-radius: 20px;
+}
+
+
+.grid article h3{
+    margin-top: 22.4px;
+    margin-left: 37px;
+    color: #000000;
+    
+}
+
+.grid article p{
+    margin-top: 20px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 28px;
+    color: #7D7987;
+    width: 266px;
+    margin-left: 37px;
+}
+
+.grid button{
+    margin-top: 33px;
+    background-color:#FFFFFF ;
+    color: #458FF6;
+    
+    border: 1.4px solid rgba(69, 143, 246, 1)
+}
+
+#grid-section-main{
+    margin-top: 100px;
+    width: 1120px;
+    height: 745px;
+}
+
+#grid-section-main article{
+    height: 354px;
+    width: 350px;
+    border-radius: 20px;
+}
+
+
+#grid-section-main img{
+    margin-left: 37px;
+    margin-top: 54px;
+    height: 90px;
+    width: 91.97802734375px;
+    border-radius: 0px;
+}
+
+#grid-section-testi{
+    margin-top: 59px;
+    width: 1120px;
+    height: 350px;
+}
+
+#grid-section-testi article{
+    height: 512px;
+    width: 350px;
+    border-radius: 20px;
+}
+
+#grid-section-testi img{
+    border-radius: 20px 20px 0px 0px;
+    height: 246xp;
+    width: 350px;
+}
+
+#grid-section-testi a{
+    margin-top: 25px;
+    margin-left: 37px;
+    font-size: 17px;
+    color: #4089ED;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+#grid-section-testi a img{
+    margin-left: 15px;
+    height: 10px;
+    width: 14px;
+}
