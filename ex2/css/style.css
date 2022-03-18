@@ -9,7 +9,7 @@ header, main, footer, nav, aside, section, div{
 
 body{
     background-color: #FFFFFF;;
-    font-family:  'Trebuchet MS';
+    font-family: 'Mulish', sans-serif;
 }
 
 a{
@@ -150,7 +150,6 @@ footer{
     width: 100%;
     background: linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
     margin-top: 335px;
-    
 }
 
 #footer-div{
