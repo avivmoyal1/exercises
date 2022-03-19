@@ -93,6 +93,11 @@ h2{
     margin-top: 14px;
 }
 
+#main-photo img{
+    height: 475px;
+    width: 550px;
+}
+
 #summary-section{
     margin-top: 63px;
 }
