@@ -1,3 +1,4 @@
+
 *{ margin: 0px; padding: 0px; }
 
 nav, footer, aside, section, div{
@@ -7,25 +8,41 @@ nav, footer, aside, section, div{
 header, main{
     display: flex;
 }
-#header-layout-2{
+
+#layout-2 header{
     height: 192px;
+    background-color: #212121;
+
 }
-#layout-1{
-    width: 1000px;   
+#layout-1 main{
+    width: 1000px;
+    margin: 0 auto; 
+    height: 491px;
+    background-color: #212121;   
 }
 
-#layout-2{
+.wrapper nav a:hover{
+
+    background-color: #B94A48;
+}
+
+
+#layout-2 div{
     width: 1400px;
-}
-
-.wrapper{
-    margin: 0 auto;
+    margin: 0 auto;  
     background-color: #212121;
 }
 
+#layout-2 footer{
+    width: 1400px;
+    margin: 0 auto;  
+}
+
+
+
 .wrapper footer{
     background-color: #D6D6D6;
-    width: 100%;
+    height: 121px;
 }
 
 .logo{
@@ -47,18 +64,20 @@ a{
 }
 
 #menu-layout-1{
-    width: 100%;
+    position: relative;
     height: 388px;
     background-color: #517A8D;
 }
+
 
 #menu-layout-1 nav{
     display: flex;
     width: 727px;
     height: 57px;
     background-color: #FFCDD2;
-    margin-top: 254px;
-    margin-left: 272px;
+    position: absolute;                
+    right: 0;
+    bottom: 0;
 }
 
 #menu-layout-1 nav a{
@@ -72,9 +91,6 @@ a{
     color: white;    
 }
 
-#main-layout-1{
-    height: 491px;
-}
 
 #main-layout-1 article{
     margin-top: 30px;
@@ -104,9 +120,7 @@ a{
     background-color: #517A8D;
 }
 
-#footer-layout{
-    height: 121px;
-}
+
 
 #menu-layout-2{
     width: 243px;
@@ -175,3 +189,100 @@ a{
     display: flex;
     flex-wrap: wrap;
 }
+
+#layout-3{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    background-color: #517A8D;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#layout-3 header{
+    position: relative;
+    background-color: #212121;
+    height: 500px;
+    width: 500px;
+}
+
+#layout-3 header img{
+    position: absolute;
+    top: 41.4%;
+    left: 41.4%;
+    cursor: pointer; 
+}
+
+#layout-3 header nav{
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    height: 62px;
+    width: 500px;
+    background-color: #FFCDD2;
+}
+
+#layout-3 header nav a{
+    height: 100%;
+    width: 33.33%;
+    text-align: center;
+    line-height: 62px;
+    
+}
+.box-layout-3 {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.box-layout-3 article{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    height: 500px;
+    width: 500px;
+}
+
+.box-layout-3 article section{
+    display: flex;
+    height: 250px;
+    width: 250px;
+    background-color: white;
+    font-size: 100px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; 
+}
+
+.box-layout-3 article section:nth-child(1){
+    opacity: 25%;
+}
+
+.box-layout-3 article section:nth-child(2){
+    opacity: 50%;
+}
+
+.box-layout-3 article section:nth-child(3){
+   opacity: 75%;
+}
+
+.box-layout-3 article section:hover{
+    background-color: #e06377;
+}
+
+#layout-3 footer{
+    display: block;
+    width: 1000px;
+}
+
+@media only screen and (max-width:1200px){
+    #layout-3{
+        width: 500px;
+    }
+
+    .logo{
+        position:absolute;
+        left: 36.7%;
+    }
+}
+
