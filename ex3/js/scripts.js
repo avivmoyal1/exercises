@@ -1,5 +1,3 @@
-
-
 function mulitiBox() {
 
     var multiElem = document.getElementById("multi");
@@ -17,20 +15,16 @@ function mulitiBox() {
     multiElem.innerHTML = list;
 };
 
-
 function colorChange(changeThis) {
     if (changeThis.style.backgroundColor == "lightblue")
         changeThis.style.backgroundColor = "";
     
     else
         changeThis.style.backgroundColor = "lightblue"
-
 }
+
 {
     let cont = 4;   
-    let maxSize = 4;
-    
-
     function plusClick() {
         var arry = ["W","E","B","*"];
         var palettea = ["#f9d5e5", "#eeac99", "#e06377", "#c83349"];
@@ -58,14 +52,14 @@ function colorChange(changeThis) {
             return;
         }
 
-        asaidBox.children[0].children[maxSize-cont].innerHTML = arry[maxSize-cont];
-        asaidBox.children[0].children[maxSize-cont].style.backgroundColor = palettea[maxSize-cont];
-        asaidBox.children[0].children[maxSize-cont].style.opacity = 1;
-        
+        asaidBox.children[0].children[4-cont].innerHTML = arry[4-cont];
+        asaidBox.children[0].children[4-cont].style.backgroundColor = palettea[4-cont];
+        asaidBox.children[0].children[4-cont].style.opacity = 1;
+
         for (var i = 0; i < 33; i++) {
-            mainBox.children[i].children[maxSize-cont].innerHTML = arry[maxSize-cont];
-            mainBox.children[i].children[maxSize-cont].style.opacity = 1;
-            mainBox.children[i].children[maxSize-cont].style.backgroundColor = palettea[maxSize-cont];
+            mainBox.children[i].children[4-cont].innerHTML = arry[4-cont];
+            mainBox.children[i].children[4-cont].style.opacity = 1;
+            mainBox.children[i].children[4-cont].style.backgroundColor = palettea[4-cont];
         }
 
         if (cont == 1) {
