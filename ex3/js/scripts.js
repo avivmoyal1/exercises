@@ -27,103 +27,51 @@ function colorChange(changeThis) {
 
 }
 {
-    let cont = 4;
+    let cont = 4;   
+    let maxSize = 4;
+    
 
     function plusClick() {
+        var arry = ["W","E","B","*"];
         var palettea = ["#f9d5e5", "#eeac99", "#e06377", "#c83349"];
+        var opac = ["0.25","0.5","0.75","1"];
         var asaidBox = document.getElementsByClassName("box-layout-3")[0];
         var mainBox = document.getElementsByClassName("box-layout-3")[1];
 
-        if (cont == 4) {
-            asaidBox.children[0].children[0].innerHTML = "W";
-            asaidBox.children[0].children[0].style.opacity = 1;
-            asaidBox.children[0].children[0].style.backgroundColor = palettea[0];
-
-            for (var i = 0; i < 33; i++) {
-                mainBox.children[i].children[0].innerHTML = "W";
-                mainBox.children[i].children[0].style.opacity = 1;
-                mainBox.children[i].children[0].style.backgroundColor = palettea[0];
-            }
-            cont--;
-            return;
-        }
-        if (cont == 3) {
-            asaidBox.children[0].children[1].innerHTML = "E";
-            asaidBox.children[0].children[1].style.opacity = 1;
-            asaidBox.children[0].children[1].style.backgroundColor = palettea[1];
-            for (var i = 0; i < 33; i++) {
-                mainBox.children[i].children[1].innerHTML = "E";
-                mainBox.children[i].children[1].style.opacity = 1;
-                mainBox.children[i].children[1].style.backgroundColor = palettea[1];
-            }
-            cont--;
-            return;
-        }
-        if (cont == 2) {
-            asaidBox.children[0].children[2].innerHTML = "B";
-            asaidBox.children[0].children[2].style.opacity = 1;
-            asaidBox.children[0].children[2].style.backgroundColor = palettea[2];
-            for (var i = 0; i < 33; i++) {
-                mainBox.children[i].children[2].innerHTML = "B";
-                mainBox.children[i].children[2].style.opacity = 1;
-                mainBox.children[i].children[2].style.backgroundColor = palettea[2];
-            }
-            cont--;
-            return;
-
-        }
-        if (cont == 1) {
-            asaidBox.children[0].children[3].innerHTML = "*";
-            asaidBox.children[0].children[3].style.opacity = 1;
-            asaidBox.children[0].children[3].style.backgroundColor = palettea[3];
-
-            for (var i = 0; i < 33; i++) {
-                mainBox.children[i].children[3].innerHTML = "*";
-                mainBox.children[i].children[3].style.opacity = 1;
-                mainBox.children[i].children[3].style.backgroundColor = palettea[3];
-            }
-            cont--;
-            document.getElementById("plus").src = "images/startover.png";
-            return;
-        }
         if (cont == 0) {
-            asaidBox.children[0].children[0].innerHTML = "";
-            asaidBox.children[0].children[1].innerHTML = "";
-            asaidBox.children[0].children[2].innerHTML = "";
-            asaidBox.children[0].children[3].innerHTML = "";
-            asaidBox.children[0].children[0].style.opacity = 0.25;
-            asaidBox.children[0].children[0].style.backgroundColor = "";
-            asaidBox.children[0].children[1].style.opacity = 0.5;
-            asaidBox.children[0].children[1].style.backgroundColor = "";
-            asaidBox.children[0].children[2].style.opacity = 0.75;
-            asaidBox.children[0].children[2].style.backgroundColor = "";
-            asaidBox.children[0].children[3].style.backgroundColor = "";
-
+            for(var i =0; i< 4; i++){
+                asaidBox.children[0].children[i].innerHTML = "";
+                asaidBox.children[0].children[i].style.opacity =opac[i];
+                asaidBox.children[0].children[i].style.backgroundColor = "";
+            }
+            
             for (var i = 0; i < 33; i++) {
                 for (var j = 0; j < 4; j++) {
                     mainBox.children[i].children[j].innerHTML = "";
-                    if (j == 0) {
-                        mainBox.children[i].children[j].style.opacity = 0.25;
-                        mainBox.children[i].children[j].style.backgroundColor = "";
-                    }
-                    if (j == 1) {
-                        mainBox.children[i].children[j].style.opacity = 0.5;
-                        mainBox.children[i].children[j].style.backgroundColor = "";
-                    }
-                    if (j == 2) {
-                        mainBox.children[i].children[j].style.opacity = 0.75;
-                        mainBox.children[i].children[j].style.backgroundColor = "";
-                    }
-                    if (j == 3)
-                        mainBox.children[i].children[j].style.backgroundColor = "";
-
+                    mainBox.children[i].children[j].style.opacity = opac[j];
+                    mainBox.children[i].children[j].style.backgroundColor = "";
                 }
             }
             document.getElementById("plus").src = "images/plus.png";
-
+            
             cont = 4;
             return;
         }
 
+        asaidBox.children[0].children[maxSize-cont].innerHTML = arry[maxSize-cont];
+        asaidBox.children[0].children[maxSize-cont].style.backgroundColor = palettea[maxSize-cont];
+        asaidBox.children[0].children[maxSize-cont].style.opacity = 1;
+        
+        for (var i = 0; i < 33; i++) {
+            mainBox.children[i].children[maxSize-cont].innerHTML = arry[maxSize-cont];
+            mainBox.children[i].children[maxSize-cont].style.opacity = 1;
+            mainBox.children[i].children[maxSize-cont].style.backgroundColor = palettea[maxSize-cont];
+        }
+
+        if (cont == 1) {
+            document.getElementById("plus").src = "images/startover.png";
+        }
+        
+        cont--;
     }
 }

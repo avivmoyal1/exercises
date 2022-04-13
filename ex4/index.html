@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FORMS</title>
+</head>
+
+<body>
+    <form action="http://se.shenkar.ac.il/teach/web1/get_form3.php" method="GET">
+        <label>Full name:
+            <input type="text" name="fullName" placeholder="Full Name">
+        </label>
+        <br>
+        <label>Password:
+            <input type="password" name="pass">
+        </label>
+        <br>
+        <label>Email:
+            <input type="email" name="mail">
+        </label>
+        <br>
+        <label>Website:
+            <input type="url" name="website">
+        </label>
+        <br>
+        <label>Phone:
+            <input type="tel" name="phone">
+        </label>
+        <br>
+        <label>Coffe:
+            <input type="number" name="coffee">
+        </label>
+        <br>
+        <label>Temperature:
+            <input type="range" name="temper">
+        </label>
+        <br>
+        <label> Address:
+            <textarea name="address" rows="3" cols="20"></textarea>
+        </label>
+        <br>
+        <span>Interests:</span><br>
+        <label>blah blah1<input type="checkbox" name="interests[]" value="blah blah1"></label>
+        <label>blah2<input type="checkbox" name="interests[]" value="blah blah2"></label>
+        <label>blah3<input type="checkbox" name="interests[]" value="blah blah3"></label>
+        <label>blah4<input type="checkbox" name="interests[]" value="blah blah4"></label>
+        <br>
+
+        <span>Gender:</span>
+            <label><input type="radio" name="gender" value="Male" checked>Male</label>
+            <label><input type="radio" name="gender" value="Female">Female</label>
+        <br>
+
+        <label>Age:
+            <select name="age">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+        </select>
+        </label>
+        <br>
+        <input id="submit-button" type="submit" value="Send">
+    </form>
+
+    <body>
+
+</html>
