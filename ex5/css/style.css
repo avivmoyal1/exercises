@@ -158,7 +158,8 @@ h1 {
     font-size: 18px;
 }
 
-input,select {
+input,
+select {
     margin: 10px 0;
     width: 265px;
     height: 22px;
@@ -206,7 +207,7 @@ ul div {
 
 }
 
-ul div > i {
+ul div>i {
     /* position: absolute; */
     top: 5px;
     margin-right: 7px;
@@ -222,25 +223,27 @@ ul div a {
     color: #000;
 }
 
-ul div > span {
+ul div>span {
     /* position: absolute; */
     font-size: 17px;
     color: #BD362F;
 
 }
 
-ul div > section {
+ul div>section {
     margin-left: 50px;
     font-size: 17px;
 }
-ul li div:last-child{
+
+ul li div:last-child {
     position: absolute;
     display: flex;
     /* flex-wrap: wrap; */
     left: 450px;
 
 }
-ul div article{
+
+ul div article {
     height: 100px;
     width: 60px;
     margin-right: 20px;
@@ -248,40 +251,48 @@ ul div article{
     flex-wrap: wrap;
 }
 
-ul div article span{
+ul div article span {
     background-color: #90D7FF;
     width: 40px;
     height: 40px;
     border-radius: 360px;
     margin: 0 auto;
-    
+    cursor: pointer;
+
+
 
     /* margin: 6px auto; */
 
 }
 
-ul div article:nth-child(1) span i{
+ul div article:nth-child(1) span i {
     margin: 19px 0 0px 8px;
 }
-ul div article:nth-child(2) span i{
+
+ul div article:nth-child(2) span i {
     margin: 19px 0 0px 7px;
 }
-ul div article:nth-child(3) span i{
+
+ul div article:nth-child(3) span i {
     margin: 19px 0 0px 8px;
 }
-ul div article:nth-child(4) span i{
+
+ul div article:nth-child(4) span i {
     margin: 19px 0 0px 6px;
 }
 
-ul div article section{
+ul div article section {
     text-align: center;
     font-weight: bold;
     font-size: 14px;
-    
+    cursor: pointer;
+
+
 }
+
 .dot-red,
 .dot-green,
-.dot-yellow{
+.dot-yellow {
     height: 15px;
     width: 15px;
     border-radius: 50%;
@@ -291,18 +302,20 @@ ul div article section{
     /* margin-right: 6px; */
 }
 
-.dot-red{
+.dot-red {
     background-color: #FF3823;
 }
-.dot-green{
+
+.dot-green {
     background-color: #62C462;
     margin-left: 7px;
 }
-.dot-yellow{
+
+.dot-yellow {
     background-color: yellow;
 }
 
-#main-list > article{
+#main-list>article {
     position: absolute;
     right: 18px;
     bottom: 19px;
@@ -313,7 +326,7 @@ ul div article section{
 
 }
 
-#main-list{
+#main-list {
     position: relative;
     width: 1233px;
     height: 844px;
@@ -326,16 +339,17 @@ ul div article section{
     overflow-x:auto;
 } */
 
-#main-list select{
+#main-list select {
     position: absolute;
     left: 470px;
-    font-size:16px;
+    font-size: 16px;
     font-weight: 500;
 
 }
-#sort{
+
+#sort {
     position: absolute;
     left: 410px;
-    top:110px;
+    top: 110px;
     font-weight: 500;
 }
