@@ -6,7 +6,6 @@
 }
 
 body {
-    /* background: linear-gradient(to right, #000000, #00d0ff,#2600ff); */
     background-color: rgb(231, 217, 217);
 }
 a{
@@ -101,8 +100,7 @@ section input[type=range]{
 
 
 section input[type=checkbox]{
-    /* background-color: #DDD; */
-    /* border-radius: none; */
+
     margin-left: 5px;
     width: 14px;
     height: 14px;
@@ -145,12 +143,7 @@ select option[value=""] {
 .btn-box {
     width: 100%;
     position:absolute;
-    /* margin:  auto; */
-    /* padding-top: 50px; */
     bottom: 20px;
-    /* width: 50%; */
-
-    /* top: 110px; */
     text-align: center;
 }
 
