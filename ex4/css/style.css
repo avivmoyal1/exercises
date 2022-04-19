@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+
+}
+
+body {
+    /* background: linear-gradient(to right, #000000, #00d0ff,#2600ff); */
+    background-color: rgb(231, 217, 217);
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.container{
+    width: 360px;
+    height: 400px;
+    margin: 8% auto;
+    background: #fff;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInDown;
+    animation-duration: 2s;
+}
+
+
+h3 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #777;
+}
+
+.container section {
+    width: 280px;
+    height: 300px;
+    position: absolute;
+    top: 100px;
+    left: 40px;
+    transition: 0.5s;
+}
+h2{
+    text-align: center;
+    margin: auto;
+    color: #333;
+}
+h1{
+    font-size: 30px;
+    text-align: center;
+    margin: auto;
+    color: #333;
+}
+article{
+    position: absolute;
+    top: 50px;
+    left: 40px;
+    text-align: center;
+    border-radius: 5px;
+    width: 280px;
+    padding: 10px 0;
+    background-color: #ea4f44;
+    color: #fff;
+}
+
+
+
+
+section select,input:not([type=radio]){
+
+    width: 100%;
+    padding: 10px 5px;
+    margin: 5px 0;
+    border: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+section select{
+    width: 290px;
+}
+
+
+section input[type=radio]{
+    vertical-align: -2px;
+    padding: 10px 5px;
+    margin-top: 20px; 
+    margin-bottom: 15px;
+}
+
+section input[type=number]{
+    margin-bottom: 10px;
+}
+
+section input[type=range]{
+    vertical-align: middle;
+    margin-left: 5px;
+    width: 160px;
+}
+
+
+section input[type=checkbox]{
+    /* background-color: #DDD; */
+    /* border-radius: none; */
+    margin-left: 5px;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+    right: 3px;
+
+}
+
+
+section label{  
+    color: black;
+    padding: 10px 5px;
+    font-size: 14px;
+}
+
+section input:focus-within {
+    transform: scale(1.1, 1.1);
+    transition-duration: 0.5s;
+}
+
+section input:invalid:focus {
+    border-bottom: 1.25px solid red;
+}
+
+section input:valid:focus {
+    border-bottom: 1.25px solid green;
+}
+
+::placeholder {
+    color: #777;
+}
+
+select:invalid,
+select option[value=""] {
+  color: #777;
+}
+
+.btn-box {
+    width: 100%;
+    position:absolute;
+    /* margin:  auto; */
+    /* padding-top: 50px; */
+    bottom: 20px;
+    /* width: 50%; */
+
+    /* top: 110px; */
+    text-align: center;
+}
+
+section button {
+    width: 110px;
+    height: 35px;
+    margin: 0 10px;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border-radius: 30px;
+    border: 0;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+#Form2 {
+    left: 450px;
+}
+
+#Form3 {
+    left: 450px;
+}
+
+#Form4 {
+    left: 450px;
+}
+
+.step-row {
+    width: 360px;
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 -1px 5px -1px #000;
+    position: relative;
+}
+
+.step-col {
+    width: 90px;
+    text-align: center;
+    color: #333;
+    position: relative;
+    font-weight: bold;
+}
+
+.step-col-login {
+    width: 100%;
+    text-align: center;
+    color: #333;
+    position: relative;
+    font-weight: bold;
+}
+
+#progress {
+    position: absolute;
+    height: 100%;
+    width: 90px;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    transition: 1s;
+}
+#progress-login {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+
+}
+
+#progress::after {
+    content: '';
+    height: 0;
+    width: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    position: absolute;
+    right: -20px;
+    top: 0;
+    border-left: 20px solid #ffad06;
+}
+
+
+#background{
+    position:absolute;
+    font-family:'Helvetica';
+    bottom: 0;
+    right: 0;
+    transform:translate(-50%, -50%);
+    color:rgba(255, 255, 255, .1);
+    background: linear-gradient(to right,     rgb(76, 217, 105), rgb(52, 170, 220),     rgb(88, 86, 217), rgb(255, 45, 83),       rgb(255, 45, 83), rgb(88, 86, 217),       rgb(52, 170, 220), rgb(76, 217, 105));
+    background-size: 400%;
+    -webkit-background-clip:text;
+    font-weight:900;
+    font-size:10em;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align:left;
+    animation:sTransition 10s linear infinite;
+  }
+  
+  @keyframes sTransition{
+    0%{
+      background-position:0%;
+    }
+    
+    100%{
+      background-position:400%;
+    }
+  }
