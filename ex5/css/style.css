@@ -370,7 +370,8 @@ ul div article section {
 
     .container {
         width: 100%;
-        height: 100%;
+        height: 100vh;
+        
     }
     #logo {
         background-image: url("../images/minlogo.png");
@@ -402,8 +403,9 @@ ul div article section {
         width: 50px;
         top: 10px;
         left: 90%;
+    }
 
-    /* }
+    /*
     .container footer{
         visibility: hidden;
     } */
