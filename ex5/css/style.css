@@ -353,3 +353,34 @@ ul div article section {
     top: 110px;
     font-weight: 500;
 }
+
+
+
+
+
+
+
+
+@media only screen and (max-width:1200px){
+    #logo{
+        background-image: url("../images/minlogo.png");
+
+    }
+
+}
+
+
+@media only screen and (max-width:500px){
+    .container{
+        width: 100%;
+    }
+    #logo{
+        background-image: url("../images/minlogo.png");
+        left: 50%;
+    }
+
+    aside{
+        visibility: hidden;
+    }
+
+}
