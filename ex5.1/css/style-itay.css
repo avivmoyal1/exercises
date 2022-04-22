@@ -441,11 +441,29 @@ h3{
     position: relative;
 }
 
+.profile-aside{
+    margin-left: 10px;
+}
 
+.profile-aside h3{
+    margin-left: 0;
+    margin-top: 40px;
+    margin-bottom: 33px;
+}
 
+h4{
+    font-size: 18px;
+    font-weight: 700;
+}
 
+h5{
+    font-size: 14px;
+    font-weight: 700;  
+}
 
-
+.profile-aside article p{
+    font-size: 18px;
+}
 
 
 
