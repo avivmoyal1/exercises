@@ -316,6 +316,12 @@ ul div article section {
     background-color: yellow;
 }
 
+
+#main-list {
+    position: relative;
+    width: 1233px;
+    height: 844px;
+}
 #main-list>article {
     position: absolute;
     right: 18px;
@@ -325,12 +331,6 @@ ul div article section {
     background-color: #EEEEEE;
     border-radius: 20px;
 
-}
-
-#main-list {
-    position: relative;
-    width: 1233px;
-    height: 844px;
 }
 
 /* #myUL{
@@ -375,9 +375,9 @@ ul div article section {
     }
     #logo {
         background-image: url("../images/minlogo.png");
-        width: 63px;
-        height: 55px;
-        left: 50%;
+        width: 80px;
+        height: 80px;
+        left: 45%;
         top: 7px;
     }
 
@@ -385,24 +385,27 @@ ul div article section {
         visibility: hidden;
     }
     .container header{
-        height: 70px;
+        height: 80px;
     }
 
     .container header span {
         font-size: 18px;
-        left: 73%;
-        top: 15px;
+        left: 65%;
+        top: 20px;
+        visibility: hidden;
     }
     
     #assigned{
         font-size: 14px;
-        top: 35px;
+        top: 40px;
+        /* visibility: hidden; */
     }
     .container header img {
         height: 50px;
         width: 50px;
         top: 10px;
-        left: 90%;
+        /* left: 90%; */
+        right: 20px;
     }
 
     /*
