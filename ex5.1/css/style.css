@@ -109,7 +109,7 @@ ul {
     padding-top: 16px;
 }
 
-.container main{
+.container main {
     position: absolute;
     display: flex;
     left: 210px;
@@ -299,6 +299,7 @@ input:focus {
     width: 1233px;
     height: 844px;
 }
+
 #main-list>article {
     position: absolute;
     right: 18px;
@@ -309,6 +310,7 @@ input:focus {
     border-radius: 20px;
 
 }
+
 #main-list select {
     position: absolute;
     left: 495px;
@@ -316,6 +318,7 @@ input:focus {
     font-weight: 500;
 
 }
+
 #sort {
     position: absolute;
     left: 435px;
@@ -343,17 +346,128 @@ input:focus {
 
 }
 
+/* Itay */
+h3 {
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 30px;
+}
 
+.profile-general {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #B3B3B3;
+    padding-bottom: 21px;
+}
 
+.profile-general img {
+    margin-left: 10px;
+    margin-top: 30px;
+    width: 200px;
+    height: 200px;
+    border-radius: 360px;
+}
 
+.profile-general section {
+    margin-top: 22px;
+    margin-left: 8px;
+    width: 557px;
+    height: 216px;
+    font-size: 18px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+}
 
+.profile-general section span {
+    font-weight: 700;
+}
 
+.profile-status {
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 10px;
+    /* display: flex;
+    flex-wrap: wrap; */
+    width: 324px;
+    height: 254px;
+    display: grid;
+    grid-template-columns: auto auto;
+    font-size: 18px;
 
+}
 
+.profile-status span {
+    font-weight: 700;
+    margin-left: 10px;
+}
 
+.profile-history {
+    position: absolute;
+    right: 0;
+    margin-top: 30px;
+    margin-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 351px;
+    height: 254px;
+    font-size: 18px;
 
+}
 
+.profile-history section {
+    /* font-size: 18px; */
+    display: grid;
+    grid-template-columns: 87px 264px;
 
+}
+
+.profile-history span {
+    font-weight: 700;
+    margin-left: 10px;
+
+}
+
+.profile-history ul {
+    list-style-type: disc;
+    display: block;
+}
+
+.profile-history ul li {
+    margin-left: 30px;
+    /* font-size: 18px; */
+}
+
+.profile-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.profile-aside {
+    margin-left: 10px;
+}
+
+.profile-aside h3 {
+    margin-left: 0;
+    margin-top: 40px;
+    margin-bottom: 33px;
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+h5 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.profile-aside article p {
+    font-size: 18px;
+}
 
 
 
@@ -366,7 +480,7 @@ input:focus {
         overflow-y: scroll;
         overflow-x: hidden;
     }
- 
+
 
     .container header {
         height: 80px;
@@ -490,24 +604,32 @@ input:focus {
     .navbar-container input[type="checkbox"]:checked~.hamburger-lines .line3 {
         transform: rotate(-35deg);
     }
-    .container main  div > span,select{
+
+    .container main div>span,
+    select {
         visibility: hidden;
     }
-    .container main,#main-list,#main-list article{
+
+    .container main,
+    #main-list,
+    #main-list article {
         width: 100%;
     }
 
 
-    #main-list,#main-list article,#myUL{
+    #main-list,
+    #main-list article,
+    #myUL {
         width: 100%;
     }
-    .container main{
+
+    .container main {
         left: 5px;
         top: 80px;
         width: 100%;
     }
 
- 
+
     #myUL li {
         /* justify-content: center; */
         /* align-items: center; */
@@ -515,14 +637,16 @@ input:focus {
         /* width: 100%; */
     }
 
-    #myUL li img{
+    #myUL li img {
         width: 40px;
         height: 40px;
     }
-    .desktop{
+
+    .desktop {
         visibility: hidden;
     }
-    #myInput{
+
+    #myInput {
         width: 300px;
         height: 40px;
         font-size: 20px;
@@ -530,4 +654,80 @@ input:focus {
         top: 70px; */
     }
 
+    /* Itay */
+
+    .profile-general section {
+        margin-top: 30px;
+        margin-left: 10px;
+        width: 90%;
+        font-size: 14px;
+    }
+
+    .profile-status {
+        margin-top: 0px;
+        margin-left: 0;
+        width: 100%;
+        font-size: 14px;
+        border-bottom: 1px solid #B3B3B3;
+        position:relative;
+
+
+    }
+
+    .profile-history {
+        margin-top: 0;
+        margin-left: 0;
+        width: 100%;
+        font-size: 14px;
+        border-bottom: 1px solid #B3B3B3;
+        position:relative;
+
+    }
+
+
+    .profile-general img {
+        position: absolute;
+        margin-left: 10px;
+        margin-top: 15px;
+        width: 100px;
+        height: 100px;
+        border-radius: 360px;
+        right: 10px;
+        top: 2px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .profile-aside {
+        margin-left: 10px;
+        width: 100%;
+        border-bottom: 1px solid #B3B3B3;
+        position:relative;
+    }
+
+    .profile-aside article h4{
+        font-size: 16px;
+        
+    }
+    .profile-aside article h5{
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    .profile-aside article p{
+        font-size: 14px;
+
+    }
+
+
+    #main-profile {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
