@@ -368,7 +368,7 @@ h3 {
     border-radius: 360px;
 }
 
-.profile-general section {
+.profile-info {
     margin-top: 22px;
     margin-left: 8px;
     width: 557px;
@@ -380,7 +380,7 @@ h3 {
     /* flex-wrap: wrap; */
 }
 
-.profile-general section span {
+.profile-info span {
     font-weight: 700;
 }
 
@@ -469,9 +469,85 @@ h5 {
     font-size: 18px;
 }
 
+/* FORM */ 
+
+#form-info{
+    position: relative;
+    width: 1230px;
+}
+
+#form-info img{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 360px;
+    top: 14%;
+    right: 36%;
+}
+
+.form-fan-info{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    height: 150px;
+    width: 557px;
+    border-bottom: 1px solid #B3B3B3;
+    margin-top: 22px;
+    margin-left: 10px;
+    font-size: 18px;
+}
+.form-fan-info section{
+
+    font-weight: 700;
+    font-size: 18px;
+}
+.form-fan-info section span{
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.form-details{
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 420px;
+    height: 350px;
+    margin-top: 22px;
+    margin-left: 10px;
+}
+
+.form-details section{
+    font-weight: 700;
+    font-size: 18px;
+}
+.form-details select{
+    margin-top: 2px;
+    font-size: 16px;
+}
+
+.form-checkboxes{
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+input[type=checkbox]{
+    accent-color:#addfee;
+}
 
 
-
+#button{
+    margin-top: 20px;
+    font-weight: 700;
+    background-color: #addfee;
+    width: 120px;
+    height: 30px;
+    font-size: 18px;
+    border-radius: 13px;
+    border: none;
+    cursor: pointer;
+}
 
 @media only screen and (max-width:1000px) {
     .container {
@@ -670,8 +746,6 @@ h5 {
         font-size: 14px;
         border-bottom: 1px solid #B3B3B3;
         position:relative;
-
-
     }
 
     .profile-history {
@@ -681,7 +755,6 @@ h5 {
         font-size: 14px;
         border-bottom: 1px solid #B3B3B3;
         position:relative;
-
     }
 
 
@@ -712,8 +785,7 @@ h5 {
     }
 
     .profile-aside article h4{
-        font-size: 16px;
-        
+        font-size: 16px;   
     }
     .profile-aside article h5{
         font-size: 12px;
@@ -722,12 +794,70 @@ h5 {
 
     .profile-aside article p{
         font-size: 14px;
-
     }
-
 
     #main-profile {
         display: flex;
         flex-wrap: wrap;
     }
+
+    #form-info{
+        width: 100%;
+
+    }
+
+    #form-info img{
+        width: 100px;
+        height: 100px;
+        top: 40px;
+        right: 20px;
+    }
+
+    .form-fan-info{
+        width: 90%;
+        margin-top: 50px;
+    }
+
+    .form-fan-info,.form-fan-info section{
+        font-size: 14px;
+        
+    }
+
+    .form-details,.form-details section{
+
+        width: 90%;
+        font-size: 14px;
+    }
+    
+    .form-details select{
+        visibility: visible;
+        font-size: 13px;
+        width: 90%;
+        margin-top: 0;
+    }
+
+    .form-checkboxes label{
+        font-size: 14px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    
+    .form-checkboxes label:nth-child(2){
+        margin-bottom: 20px;  
+    }
+    .form-checkboxes{
+        margin-left: 0;
+        width: 100%; 
+    }
+    
+    .form-checkboxes button{
+        margin-top: 70px;
+        margin-left: 0;
+        align-self: center;
+        font-size: 16px;
+        width: 100%;
+        margin-right: 25px;
+        
+    }
+
 }
