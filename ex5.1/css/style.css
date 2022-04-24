@@ -111,7 +111,7 @@ ul {
 
 .container main {
     position: absolute;
-    display: flex;
+    /* display: flex; */
     left: 210px;
     top: 120px;
 }
@@ -334,7 +334,9 @@ input:focus {
     bottom: 0;
     justify-content: center;
     background-color: #333333;
-
+    right: 0;
+    left: 0;
+}
 }
 
 .container footer span {
@@ -470,6 +472,154 @@ h5 {
 }
 
 
+#main-homepage{
+    width: 1230px;
+    height: 833px;
+    margin-top: 10px;
+    
+}
+
+
+#main-homepage article::-webkit-scrollbar {
+    display: none;
+  }
+
+#main-homepage article {
+    /* display: flex;
+    flex-direction: column; */
+    float: left;
+    width: 33.33%;
+    height: 100%;
+    padding: 10px;
+    /* border: 1px solid blue; delete */
+    font-size:  22px;
+}
+#main-homepage article:not(:last-child){
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#main-homepage article section  img{
+    width: 74px;
+    height: 74px;
+    border-radius: 360px;
+    float: left;
+    margin-right: 10px;
+
+}
+
+#main-homepage article > span,#main-homepage article > div >span{
+    display: block;
+    position: absolute;
+    top: 0;
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    background-color: #F9FBFB;
+    width: 400px;
+    padding: 10px;
+
+    
+}
+#main-homepage article section:nth-child(2){
+    margin-top: 50px;
+}
+
+#main-homepage article section{
+    /* position: relative; */
+    padding: 15px 0;
+    border-bottom: 1px solid gray;
+}
+#main-homepage article section > span{
+    font-weight: bold;    
+        
+}
+#main-homepage article section span span{
+    font-weight: normal;
+    font-size: 18px;
+}
+#main-homepage article section p{
+    height: 53px;
+    overflow: hidden;
+}
+
+ #main-homepage article > div:first-child{
+    height: 550px; 
+     overflow-y: scroll; 
+} 
+
+#main-homepage article > div::-webkit-scrollbar {
+    display: none;
+  }
+
+  #main-homepage article article{
+      padding-top: 50px;
+      width: 100%;
+
+  }
+  #main-homepage article article h3:first-child{
+      margin-left: 60px;
+     margin-bottom: 10px;
+  }
+
+  #main-homepage article article img{
+    width: 80px;
+    height: 80px;
+    margin: 0 50px;
+}
+#main-homepage article > article section:nth-child(4){
+    margin-top: 10px;
+    border: none;
+    padding: 0 10px;
+}
+
+#main-homepage article > article span{
+    font-size: 24px;
+    font-weight: normal;
+    background-color: none;
+    display: block;
+    position: relative;
+    padding: 0 55px;
+}
+#main-homepage article div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+#main-homepage article div:nth-child(2) h3{
+    margin-top: 10px;
+}
+
+#main-homepage article div:nth-child(2) section{
+     align-items: center;
+     position: relative;
+     font-size: 22px;
+     font-weight: normal;
+     padding: 5px 20px;
+     border: none;
+     margin-top: 5px;
+ }
+
+ #main-homepage article article section:nth-child(6){
+     border: none;  
+     margin-top: 20px;
+ }
+
+ #main-homepage article article section:nth-child(6) h3{
+     margin: 10px 0;
+ }
+
+ #main-homepage article article section h4{
+     font-size: 24px;
+     margin: 10px 0 ;
+ }
+
+ #main-homepage article article section p{
+     height: 100%;
+ }
+
 
 
 
@@ -480,6 +630,8 @@ h5 {
         overflow-y: scroll;
         overflow-x: hidden;
     }
+
+
 
 
     .container header {
@@ -730,4 +882,62 @@ h5 {
         display: flex;
         flex-wrap: wrap;
     }
+    #main-homepage{
+        width: 100%;
+        /* height: 100%; */
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #main-homepage article:first-child{
+        /* align-self: center; */
+        margin: 0 auto;
+        height: 400px;
+        
+        
+    }
+    #main-homepage article > span{
+        position: relative;
+        width: 100%;
+        margin: 0;
+        
+    
+    }
+    
+    #main-homepage article article h3{
+        width: 100%;
+        
+    }
+    #main-homepage article{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-around;
+        float: none;
+        overflow: hidden;
+        font-size: 18px;
+    }
+
+    #main-homepage article article{
+        padding-top: 0px;
+    }
+    #main-homepage article article img{
+        align-items: center;
+        margin: 0;
+       
+    }
+    #main-homepage article > div:first-child,#main-homepage article > div:nth-child(2){
+        overflow: hidden;
+    }
+
+
+    
+
+    #main-homepage article > span,#main-homepage article > div >span{
+        position: relative;
+        
+    }
+
+
 }
