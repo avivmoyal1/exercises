@@ -4,7 +4,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-
+    
 }
 
 .container {
@@ -18,10 +18,9 @@
     /* padding: 0 10px; */
 }
 
-.mobile {
+.mobile{
     display: none;
 }
-
 .container header {
     position: relative;
     display: block;
@@ -91,7 +90,7 @@ ul {
     border-right: 1px solid #f3eeee;
 }
 
-.menu-items i {
+.menu-items i{
     position: absolute;
     right: 20px;
     line-height: 30px;
@@ -171,17 +170,9 @@ input:focus {
 #myUL {
     list-style-type: none;
     width: 750px;
-    height: 700px;
     margin-left: 20px;
     margin-top: 10px;
-    overflow-y: scroll;
-    overflow-x: hidden;
 }
-
-#myUL::-webkit-scrollbar {
-    display: none;
-}
-
 
 #myUL li {
     position: relative;
@@ -192,8 +183,7 @@ input:focus {
     border-bottom: 1px solid #c8c2c2;
     padding: 10px;
 }
-
-#myUL li:hover {
+#myUL li:hover{
     background-color: #c2e7f2;
 }
 
@@ -226,19 +216,19 @@ input:focus {
     color: #000;
 }
 
-#myUL div:not(:last-child)>span {
+#myUL div>span {
     /* position: absolute; */
     font-size: 17px;
     color: #BD362F;
+
 }
 
 #myUL div>section {
     margin-left: 50px;
-    padding-top: 5px;
     font-size: 17px;
 }
 
-#myUL li div:nth-child(3) {
+#myUL li div:last-child {
     position: absolute;
     display: flex;
     /* flex-wrap: wrap; */
@@ -322,10 +312,7 @@ input:focus {
     position: relative;
     width: 1233px;
     height: 844px;
-
 }
-
-
 
 #main-list>article {
     position: absolute;
@@ -335,15 +322,10 @@ input:focus {
     width: 439px;
     background-color: #EEEEEE;
     border-radius: 20px;
+
 }
 
-
-#main-list>article::-webkit-scrollbar {
-    display: none;
-}
-
-
-#main-list>select {
+#main-list select {
     position: absolute;
     left: 495px;
     font-size: 16px;
@@ -503,14 +485,14 @@ h5 {
     font-size: 18px;
 }
 
-/* FORM */
+/* FORM */ 
 
-#form-info {
+#form-info{
     position: relative;
     width: 1230px;
 }
 
-#form-info img {
+#form-info img{
     position: absolute;
     width: 150px;
     height: 150px;
@@ -519,7 +501,7 @@ h5 {
     right: 36%;
 }
 
-.form-fan-info {
+.form-fan-info{
     display: grid;
     grid-template-columns: auto auto auto auto;
     height: 150px;
@@ -529,19 +511,17 @@ h5 {
     margin-left: 10px;
     font-size: 18px;
 }
-
-.form-fan-info section {
+.form-fan-info section{
 
     font-weight: 700;
     font-size: 18px;
 }
-
-.form-fan-info section span {
+.form-fan-info section span{
     font-weight: 700;
     font-size: 18px;
 }
 
-.form-details {
+.form-details{
     display: grid;
     grid-template-columns: auto auto;
     width: 420px;
@@ -550,17 +530,16 @@ h5 {
     margin-left: 10px;
 }
 
-.form-details section {
+.form-details section{
     font-weight: 700;
     font-size: 18px;
 }
-
-.form-details select {
+.form-details select{
     margin-top: 2px;
     font-size: 16px;
 }
 
-.form-checkboxes {
+.form-checkboxes{
     flex-direction: column;
     display: flex;
     flex-wrap: wrap;
@@ -569,12 +548,12 @@ h5 {
     margin-top: 20px;
 }
 
-input[type=checkbox] {
-    accent-color: #addfee;
+input[type=checkbox]{
+    accent-color:#addfee;
 }
 
 
-#button {
+#button{
     margin-top: 20px;
     font-weight: 700;
     background-color: #addfee;
@@ -585,16 +564,15 @@ input[type=checkbox] {
     border: none;
     cursor: pointer;
 }
-
 /*homepage 2*/
 
-.main-home-page {
+.main-home-page{
     width: 1230px;
     height: 833px;
     margin-top: 10px;
 }
 
-.main-home-page>article {
+.main-home-page > article{
     float: left;
     width: 33.33%;
     height: 100%;
@@ -602,69 +580,63 @@ input[type=checkbox] {
     font-size: 22px;
 }
 
-#homepage-atr-1>h3:nth-child(2) {
+#homepage-atr-1 > h3:nth-child(2){
     align-self: center;
     margin: 0;
     text-align: center;
 }
-
-#homepage-atr-1 div:nth-child(3) {
+#homepage-atr-1 div:nth-child(3){
     margin: 10px 0;
     display: flex;
     justify-content: space-around;
 }
 
-#homepage-atr-1 div img {
+#homepage-atr-1 div img{
     width: 80px;
-    height: 80px;
+    height: 80px;  
 }
 
-#homepage-atr-1>section {
+#homepage-atr-1  > section{
     padding: 5px 0;
     text-align: center;
 }
 
-#homepage-atr-1 h3:nth-child(6) {
+#homepage-atr-1 h3:nth-child(6){
     margin: 40px 0 10px 0;
 }
 
-#homepage-atr-1 h4 {
+#homepage-atr-1 h4{
     margin-left: 10px;
     margin: 10px 0 5px 10px;
 }
-
-#homepage-atr-1 p {
+#homepage-atr-1 p{
     margin-left: 10px;
 }
 
 
-#homepage-atr-1 div:nth-child(11) section {
+#homepage-atr-1 div:nth-child(11) section{
     margin: 0;
     padding: 0;
 
 }
-
-#homepage-atr-1 div:nth-child(11) section i {
-    margin: 0 10px;
+#homepage-atr-1 div:nth-child(11) section i{
+    margin:0 10px;
 }
 
-#homepage-mid-1 {
+#homepage-mid-1{
     height: 550px;
     overflow-y: scroll;
     border-bottom: 1px solid rgb(69, 168, 234);
 }
-
-#homepage-mid-1::-webkit-scrollbar {
+#homepage-mid-1::-webkit-scrollbar{
     display: none;
 }
-
-#homepage-mid-1 p {
+#homepage-mid-1 p{
     height: 53px;
     overflow: hidden;
 }
 
-#homepage-mid-1>span,
-#homepage-art-2>span {
+#homepage-mid-1  > span, #homepage-art-2 > span{
     display: block;
     position: absolute;
     top: 0;
@@ -677,7 +649,7 @@ input[type=checkbox] {
     text-align: center;
 }
 
-#homepage-mid-1 img {
+#homepage-mid-1 img{
     width: 74px;
     height: 74px;
     border-radius: 360px;
@@ -685,170 +657,48 @@ input[type=checkbox] {
     margin-right: 10px;
 }
 
-#homepage-mid-1 section:nth-child(2),
-#homepage-art-2 section:nth-child(2) {
+#homepage-mid-1 section:nth-child(2), #homepage-art-2 section:nth-child(2){
     margin-top: 50px;
 }
 
-#homepage-mid-1 section,
-#homepage-art-2 section {
+#homepage-mid-1 section, #homepage-art-2 section{
     padding: 15px 0;
     border-bottom: 1px solid gray;
 }
 
-#homepage-mid-1 section span,
-#homepage-art-2 section>span {
+#homepage-mid-1 section span, #homepage-art-2 section > span{
     font-weight: bold;
 }
 
-#homepage-mid-1 section span span,
-#homepage-art-2 section>span span {
+#homepage-mid-1 section span span, #homepage-art-2 section > span span{
     font-weight: normal;
 }
-
 #homepage-mid-2 {
     margin-top: 20px;
-
+  
 }
 
-#homepage-mid-2 section {
+#homepage-mid-2 section{
     margin: 10px;
 }
 
-#homepage-art-2 {
+#homepage-art-2{
     overflow-y: scroll;
 }
 
-#homepage-art-2::-webkit-scrollbar {
+#homepage-art-2::-webkit-scrollbar{
     display: none;
 }
 
-#homepage-art-2 p {
+#homepage-art-2 p{
     margin: 5px 0 0 15px;
 }
 
 
-/*AVIV FORM START*/
-#form {
-    /* width: 100%; */
-    display: none;
-    position: relative;
-
-}
-
-#form h4 {
-    margin: 10px;
-    font-size: 20px;
-}
 
 
-#form img {
-    position: absolute;
-    top: 65px;
-    right: 30px;
-    width: 100px;
-    height: 100px;
-    border-radius: 360px;
-}
-
-#form article {
-    display: grid;
-    grid-template-columns: 130px 150px;
-    grid-row-gap: 5px;
-    /* grid-column-gap: -20px; */
-    width: 90%;
-    margin: 15px 0 15px 25px;
-    /* font-size: 18px; */
-}
-
-#form select {
-    margin: 0;
-}
-
-#form textarea {
-    width: 265px;
-    margin-top: 3px;
-}
-
-#form article section {
-    font-weight: bold;
-}
-
-#form form>section {
-    display: flex;
-    flex-direction: column;
-}
-
-#form form>section label {
-    margin-left: 20px;
-    padding-bottom: 5px;
-}
 
 
-#form form>section button {
-    align-self: center;
-}
-
-
-/*AVIV FORM END*/
-
-
-/* AVIV DROPDOWN MENU*/
-#dropbtn {
-    color: black;
-    /* padding: 16px; */
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-
-.dropdown {
-    position: absolute;
-    top: 12px;
-    left: 310px;
-    display: none;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    left: -180px;
-    background-color: #f1f1f1;
-    min-width: 180px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown-content span {
-    color: black;
-    padding: 14px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content span i {
-    margin-right: 10px;
-    /* font-size: 10px; */
-    /* color: blue; */
-}
-
-.dropdown span:hover {
-    background-color: #ddd;
-}
-
-.show {
-    display: block;
-}
-
-
-/* AVIV DROPDOWN MENU*/
-
-.fa-ellipsis-vertical {
-    color: black;
-    font-size: 50px;
-}
 
 
 @media only screen and (max-width:1000px) {
@@ -859,7 +709,7 @@ input[type=checkbox] {
         overflow-x: hidden;
     }
 
-    .container main {
+    .container main{ 
         left: 5px;
         top: 80px;
         width: 100%;
@@ -991,11 +841,23 @@ input[type=checkbox] {
         transform: rotate(-35deg);
     }
 
-    .container main>div>span,
+    .container main div>span,
     select {
         visibility: hidden;
     }
 
+    .container main,
+    #main-list,
+    #main-list article {
+        width: 100%;
+    }
+
+
+    #main-list,
+    #main-list article,
+    #myUL {
+        width: 100%;
+    }
 
     .container main {
         left: 5px;
@@ -1003,17 +865,19 @@ input[type=checkbox] {
         width: 100%;
     }
 
+
     #myUL li {
-        height: 90px;
-        font-size: 16px;
+        height: 70px;
     }
 
     #myUL li img {
-        width: 60px;
-        height: 60px;
+        width: 40px;
+        height: 40px;
     }
 
-
+    .desktop {
+        display: none;
+    }
 
     #myInput {
         width: 300px;
@@ -1035,7 +899,7 @@ input[type=checkbox] {
         width: 100%;
         font-size: 14px;
         border-bottom: 1px solid #B3B3B3;
-        position: relative;
+        position:relative;
     }
 
     .profile-history {
@@ -1044,7 +908,7 @@ input[type=checkbox] {
         width: 100%;
         font-size: 14px;
         border-bottom: 1px solid #B3B3B3;
-        position: relative;
+        position:relative;
     }
 
 
@@ -1071,19 +935,18 @@ input[type=checkbox] {
         margin-left: 10px;
         width: 100%;
         border-bottom: 1px solid #B3B3B3;
-        position: relative;
+        position:relative;
     }
 
-    .profile-aside article h4 {
-        font-size: 16px;
+    .profile-aside article h4{
+        font-size: 16px;   
     }
-
-    .profile-aside article h5 {
+    .profile-aside article h5{
         font-size: 12px;
         margin-top: 5px;
     }
 
-    .profile-aside article p {
+    .profile-aside article p{
         font-size: 14px;
     }
 
@@ -1092,153 +955,114 @@ input[type=checkbox] {
         flex-wrap: wrap;
     }
 
-    #form-info {
+    #form-info{
         width: 100%;
 
     }
 
-    #form-info img {
+    #form-info img{
         width: 100px;
         height: 100px;
         top: 40px;
         right: 20px;
     }
 
-    .form-fan-info {
+    .form-fan-info{
         width: 90%;
         margin-top: 50px;
     }
 
-    .form-fan-info,
-    .form-fan-info section {
+    .form-fan-info,.form-fan-info section{
         font-size: 14px;
-
+        
     }
 
-    .form-details,
-    .form-details section {
+    .form-details,.form-details section{
 
         width: 90%;
         font-size: 14px;
     }
-
-    .form-details select {
+    
+    .form-details select{
         visibility: visible;
         font-size: 13px;
         width: 90%;
         margin-top: 0;
     }
 
-    .form-checkboxes label {
+    .form-checkboxes label{
         font-size: 14px;
         margin-left: 10px;
         margin-top: 10px;
     }
-
-    .form-checkboxes label:nth-child(2) {
-        margin-bottom: 20px;
+    
+    .form-checkboxes label:nth-child(2){
+        margin-bottom: 20px;  
     }
-
-    .form-checkboxes {
+    .form-checkboxes{
         margin-left: 0;
-        width: 100%;
+        width: 100%; 
     }
-
-    .form-checkboxes button {
+    
+    .form-checkboxes button{
         margin-top: 70px;
         margin-left: 0;
         align-self: center;
         font-size: 16px;
         width: 100%;
         margin-right: 25px;
-
+        
     }
-
-    .main-home-page {
+    
+    .main-home-page{
         width: 100%;
         height: 100%;
     }
 
-    .main-home-page article {
+    .main-home-page article{
         float: none;
         width: 100%;
         height: 100%;
         font-size: 20px;
     }
 
-    .mobile {
+    .mobile{
         display: block;
     }
-
-    #homepage-atr-1 div:first-child {
+    
+    #homepage-atr-1 div:first-child{
         width: 100%;
         display: flex;
         justify-content: space-around;
     }
-
-    .main-home-page button {
+    .main-home-page button{
         width: 90px;
         height: 90px;
         border-radius: 5px;
         border: 1px solid #addfee;
         background-color: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-weight: bold;
-        /* text-align: center; */
     }
 
-    .main-home-page button i{
-        padding-top: 10px;
-        padding-bottom: 5px;
-        font-size: 55px;
-    }
-    #homepage-atr-1 h3:nth-child(2),
-    #homepage-atr-1 h3:nth-child(6) {
+    #homepage-atr-1 h3:nth-child(2),#homepage-atr-1 h3:nth-child(6){
         margin-top: 30px;
     }
-
-    #homepage-atr-1 div:nth-child(11) {
-        margin: 10px 0 0 20px;
+  
+    #homepage-atr-1 div:nth-child(11){
+        margin:10px 0 0 20px;
     }
 
-    #homepage-atr-1 div:nth-child(14) {
+    #homepage-atr-1 div:nth-child(14){
         margin-top: 40px;
         margin-bottom: 30px;
         display: flex;
         flex-direction: column;
     }
-
-    #homepage-atr-1 div:nth-child(14) label {
+ 
+    #homepage-atr-1 div:nth-child(14) label{
         margin: 10px 0 0 10px;
     }
-
-    .menu-items i {
+    .menu-items i{
         right: 70px;
     }
-
-    .desktop {
-        display: none;
-    }
-
-    .invisible {
-        visibility: hidden;
-    }
-
-    /* #myUL li div > span:nth-child(3){
-        display: none;
-    } */
-
-    .dropdown {
-        display: inline-block;
-        color: black;
-    }
-
-    #myUL li:hover {
-        background-color: transparent;
-    }
-
-
 
 }

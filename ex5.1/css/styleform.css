@@ -1182,18 +1182,8 @@ input[type=checkbox] {
         border-radius: 5px;
         border: 1px solid #addfee;
         background-color: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-weight: bold;
-        /* text-align: center; */
     }
 
-    .main-home-page button i{
-        padding-top: 10px;
-        padding-bottom: 5px;
-        font-size: 55px;
-    }
     #homepage-atr-1 h3:nth-child(2),
     #homepage-atr-1 h3:nth-child(6) {
         margin-top: 30px;
@@ -1239,6 +1229,8 @@ input[type=checkbox] {
         background-color: transparent;
     }
 
-
+    .dropdown-content span i {
+        font-size: 10px;
+    }
 
 }
