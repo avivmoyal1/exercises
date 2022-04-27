@@ -12,9 +12,13 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Mulish:wght@300;400;700&display=swap"
         rel="stylesheet">
+
+    <!-- JQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/b3eb067be7.js" crossorigin="anonymous"></script>
-        <!-- my-css -->
+    <!-- my-css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- my-js -->
     <script src="js/scripts.js"></script>
@@ -29,16 +33,10 @@
             <img src="images/yael.png" alt="Profile-photo" title="Profile-photo">
             <nav class="navbar">
                 <div class="navbar-container">
-                    <input type="checkbox" name="" id="">
-                    <div class="hamburger-lines">
-                        <span class="line line1"></span>
-                        <span class="line line2"></span>
-                        <span class="line line3"></span>
-                    </div>
                     <ul class="menu-items">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="#">Map</a></li>
-                        <li><a href="#">Massages</a></li>
+                        <li><a href="#">Messages</a></li>
                         <li><a href="#">Cameras</a></li>
                         <li><a href="#">Drones</a></li>
                         <li><a href="#">Alerts</a></li>
@@ -52,6 +50,33 @@
 
                 </div>
             </nav>
+            <div class="mobile">
+                <div class="humburger" id="hambuger_menu">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+
+                <section class="menu_body" id="menubody">
+                    <div class="menu_body__item_wrapper">
+                        <!-- menu list-->
+                        <ul class="menu_list">
+                            <li><a href="#">Home</a></li>
+                            <!-- have submenu-->
+                            <li><a href="#">Map</a></li>
+                            <li><a href="#">Messages</a></li>
+                            <li><a href="#">Cameras</a></li>
+                            <li><a href="#">Drones</a></li>
+                            <li><a href="#">Alerts</a></li>
+                            <li><a href="#">Fans</a></li>
+                            <li><a href="#">Guards</a></li>
+                            <li><a href="#">Settings</a></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </div>
+
+                </section>
+            </div>
         </header>
 
         <main id="main-profile">
@@ -102,22 +127,25 @@
 
             </div>
             <div class="profile-aside">
-                <h3>Recent Warnings</h3>
+                <h3>Recent Warnings<i class="fa-regular fa-square-plus"></i></h3>
+                
                 <article>
                     <h4>Vandalism</h4>
-                    <i class="fa-solid fa-pen-to-square"></i>
+                    <section><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash-can"></i></section>
                     <h5>Warned by Noah - 26/12/21</h5> <br>
                     <p>blah blah blah</p>
                 </article>
                 <br>
                 <article>
                     <h4>Physical violence against rival team's fan</h4>
+                    <section><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash-can"></i></section>
                     <h5>Warned by Noah - 30/9/21</h5><br>
                     <p>blah blah blah</p>
                 </article>
                 <br>
                 <article>
                     <h4>Breakout to the pitch</h4>
+                    <section><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash-can"></i></section>
                     <h5>Warned by Ave - 15/01/21</h5><br>
                     <p>blah blah blah</p>
                 </article>

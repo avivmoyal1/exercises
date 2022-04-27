@@ -12,13 +12,17 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Mulish:wght@300;400;700&display=swap"
         rel="stylesheet">
-    <!--Font Awesome-->
-    <script src="https://kit.fontawesome.com/842cff8459.js" crossorigin="anonymous"></script>
+    <!-- JQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <!--Font Awesome-->
+        <script src="https://kit.fontawesome.com/842cff8459.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="all.css">
-        <!-- my-css -->
+    <!-- my-css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- my-js -->
     <script src="js/scripts.js"></script>
+
 
 </head>
 
@@ -30,20 +34,14 @@
             <img src="images/yael.png" alt="Profile-photo" title="Profile-photo">
             <nav class="navbar">
                 <div class="navbar-container">
-                    <input type="checkbox" name="" id="">
-                    <div class="hamburger-lines">
-                        <span class="line line1"></span>
-                        <span class="line line2"></span>
-                        <span class="line line3"></span>
-                    </div>
                     <ul class="menu-items">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="#">Map</a></li>
-                        <li><a href="#">Massages</a></li>
+                        <li><a href="#">Messages</a></li>
                         <li><a href="#">Cameras</a></li>
                         <li><a href="#">Drones</a></li>
                         <li><a href="#">Alerts</a></li>
-                        <li><a href="list.html">Fans</a></li>
+                        <li><a href="#">Fans</a></li>
                         <li><a href="#">Guards</a></li>
                         <div>
                             <li><a href="#">Settings<i class="fa-solid fa-sliders"></i> </a></li>
@@ -53,6 +51,33 @@
 
                 </div>
             </nav>
+            <div class="mobile">
+                <div class="humburger" id="hambuger_menu">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+
+                <section class="menu_body" id="menubody">
+                    <div class="menu_body__item_wrapper">
+                        <!-- menu list-->
+                        <ul class="menu_list">
+                            <li><a href="#">Home</a></li>
+                            <!-- have submenu-->
+                            <li><a href="#">Map</a></li>
+                            <li><a href="#">Messages</a></li>
+                            <li><a href="#">Cameras</a></li>
+                            <li><a href="#">Drones</a></li>
+                            <li><a href="#">Alerts</a></li>
+                            <li><a href="#">Fans</a></li>
+                            <li><a href="#">Guards</a></li>
+                            <li><a href="#">Settings</a></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </div>
+
+                </section>
+            </div>
         </header>
 
         <main class="main-home-page">
@@ -99,7 +124,7 @@
 
             </article>
 
-            <article class="desktop" >
+            <article class="desktop">
 
                 <div id="homepage-mid-1">
                     <span>Massages</span>
@@ -149,44 +174,44 @@
 
                 </div>
                 <i class="fa-brands fa-42-group"></i>
-                        </article>
+            </article>
 
 
             <article class="desktop" id="homepage-art-2">
-                    <span>Alerts</span>
-                    <section>
-                        <span><i class="fa-solid fa-triangle-exclamation"></i>Warning message <span>10:59</span></span>
-                        <p> Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.</p>
-                    </section>
-                    <section>
-                        <span><i class="fa-solid fa-triangle-exclamation"></i>Warning message <span>10:59</span></span>
-                        <p> Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.</p>
-                    </section>
-                    <section>
-                        <span><i class="fa-solid fa-triangle-exclamation"></i>Info message <span>10:59</span></span>
-                        <p> Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.</p>
-                    </section>
-                    <section>
-                        <span><i class="fa-solid fa-triangle-exclamation"></i>Info message <span>10:59</span></span>
-                        <p> Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.</p>
-                    </section>
-                    <section>
-                        <span><i class="fa-solid fa-triangle-exclamation"></i>Warning message <span>10:59</span></span>
-                        <p> Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.</p>
-                    </section>
-                    <section>
-                        <span><i class="fa-solid fa-triangle-exclamation"></i>Warning message <span>10:59</span></span>
-                        <p> Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.</p>
-                    </section>
-                    <section>
-                        <span><i class="fa-solid fa-triangle-exclamation"></i>Info message <span>10:59</span></span>
-                        <p> Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.</p>
-                    </section>
-                    <section>
-                        <span><i class="fa-solid fa-triangle-exclamation"></i>Info message <span>10:59</span></span>
-                        <p> Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.</p>
-                    </section>
-                </article>
+                <span>Alerts</span>
+                <section>
+                    <span><i class="fa-solid fa-triangle-exclamation"></i>Warning message <span>10:59</span></span>
+                    <p> Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.</p>
+                </section>
+                <section>
+                    <span><i class="fa-solid fa-triangle-exclamation"></i>Warning message <span>10:59</span></span>
+                    <p> Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.</p>
+                </section>
+                <section>
+                    <span><i class="fa-solid fa-triangle-exclamation"></i>Info message <span>10:59</span></span>
+                    <p> Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.</p>
+                </section>
+                <section>
+                    <span><i class="fa-solid fa-triangle-exclamation"></i>Info message <span>10:59</span></span>
+                    <p> Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.</p>
+                </section>
+                <section>
+                    <span><i class="fa-solid fa-triangle-exclamation"></i>Warning message <span>10:59</span></span>
+                    <p> Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.</p>
+                </section>
+                <section>
+                    <span><i class="fa-solid fa-triangle-exclamation"></i>Warning message <span>10:59</span></span>
+                    <p> Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.</p>
+                </section>
+                <section>
+                    <span><i class="fa-solid fa-triangle-exclamation"></i>Info message <span>10:59</span></span>
+                    <p> Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.</p>
+                </section>
+                <section>
+                    <span><i class="fa-solid fa-triangle-exclamation"></i>Info message <span>10:59</span></span>
+                    <p> Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.</p>
+                </section>
+            </article>
 
         </main>
         <footer>

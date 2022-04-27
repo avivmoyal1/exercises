@@ -12,7 +12,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Mulish:wght@300;400;700&display=swap"
         rel="stylesheet">
-    <!--Font Awesome-->
+    <!-- JQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>    <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/842cff8459.js" crossorigin="anonymous"></script>
     <!-- my-css -->
     <link rel="stylesheet" href="css/style.css">
@@ -29,29 +31,50 @@
             <img src="images/yael.png" alt="Profile-photo" title="Profile-photo">
             <nav class="navbar">
                 <div class="navbar-container">
-                    <input type="checkbox" name="" id="">
-                    <div class="hamburger-lines">
-                        <span class="line line1"></span>
-                        <span class="line line2"></span>
-                        <span class="line line3"></span>
-                    </div>
                     <ul class="menu-items">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="#">Map</a></li>
-                        <li><a href="#">Massages</a></li>
+                        <li><a href="#">Messages</a></li>
                         <li><a href="#">Cameras</a></li>
                         <li><a href="#">Drones</a></li>
                         <li><a href="#">Alerts</a></li>
-                        <li><a href="list.html">Fans</a></li>
+                        <li><a href="#">Fans</a></li>
                         <li><a href="#">Guards</a></li>
                         <div>
-                            <li><a href="#">Settings </a></li>
-                            <li><a href="#">Logout</a></li>
-                            <div>
+                            <li><a href="#">Settings<i class="fa-solid fa-sliders"></i> </a></li>
+                            <li><a href="#">Logout<i class="fa-solid fa-right-from-bracket"></i></a></li>
+                        </div>
                     </ul>
 
                 </div>
             </nav>
+            <div class="mobile">
+                <div class="humburger" id="hambuger_menu">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+
+                <section class="menu_body" id="menubody">
+                    <div class="menu_body__item_wrapper">
+                        <!-- menu list-->
+                        <ul class="menu_list">
+                            <li><a href="#">Home</a></li>
+                            <!-- have submenu-->
+                            <li><a href="#">Map</a></li>
+                            <li><a href="#">Messages</a></li>
+                            <li><a href="#">Cameras</a></li>
+                            <li><a href="#">Drones</a></li>
+                            <li><a href="#">Alerts</a></li>
+                            <li><a href="#">Fans</a></li>
+                            <li><a href="#">Guards</a></li>
+                            <li><a href="#">Settings</a></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </div>
+
+                </section>
+            </div>
         </header>
 
         <main>
@@ -95,12 +118,13 @@
 
                     </article>
                     <section class="form-checkboxes">
-                        <label><input type="checkbox" name="send-info" value="Send a summary to security manager"> Send a
+                        <label><input type="checkbox" name="send-info" value="Send a summary to security manager"> Send
+                            a
                             summary to security manager</label>
                         <label><input type="checkbox" name="send-info"
                                 value="Send a summary and location to near by security guard"> Send a summary and
                             location to near by security guard</label>
-                            <button id="button" type="submit" value="Submit">Submit</button>
+                        <button id="button" type="submit" value="Submit">Submit</button>
                     </section>
                 </form>
             </div>
