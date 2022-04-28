@@ -43,7 +43,7 @@ function myFunction() {
             }
         }
 
-        var timestamp = Date.now()
+        var timestamp = Date.now() + 10800000;
         var dateNtime = new Date(timestamp);
 
         var date = dateNtime.toISOString().substring(0, 10);
