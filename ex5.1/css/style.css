@@ -489,6 +489,7 @@ h3 {
 }
 .profile-aside article{
     position: relative;
+    margin-bottom: 15px;
     
 }
 
@@ -525,6 +526,7 @@ h5 {
 
 .profile-aside article p {
     font-size: 18px;
+    margin-top: 10px;
 }
 
 /* FORM */
