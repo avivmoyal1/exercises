@@ -1,4 +1,3 @@
-
 function myFunction() {
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("myInput");
@@ -17,16 +16,6 @@ function myFunction() {
 }
 
 
-// $('a[data-toggle="dropdown"]').click(function () {
-//     dropDownFixPosition($(this), $('.dropdown-menu'));
-// });
-
-// function dropDownFixPosition(a, dropdown) {
-//     var dropDownTop = a.offset().top + a.outerHeight();
-//     dropdown.css('top', dropDownTop + "px");
-//     //Delete - dropdown.width() if you want menu to be bottom right of link
-//     dropdown.css('left', a.offset().left - dropdown.width() + "px");
-// }
 
 {
     let check = "";
@@ -62,29 +51,11 @@ function myFunction() {
     }
 }
 
-function addWarningMobile(){
 
-
-    var timestamp = Date.now() + 10800000;
-    var dateNtime = new Date(timestamp);
-
-    var date = dateNtime.toISOString().substring(0, 10);
-    var time = dateNtime.toISOString().substring(11, 16);
-    document.get
-    // location.href = "form.html";
-    document.getElementById('toDayTimeMobile').value = time;
-    document.getElementById('toDayDateMobile').value = date;
-    location.href = "form.html";
-}
-
-
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
 function dropMenu(e) {
     document.getElementById(e).classList.toggle("show");
   }
 
-// Close the dropdown if the user clicks outside of it
 window.onclick = function (event) {
     if (!event.target.matches('.fa-ellipsis-vertical')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -97,16 +68,6 @@ window.onclick = function (event) {
         }
     }
 }
-
-
-
-// $(document).ready(function () {
-//     $('#dropbtn').click('click touchstart', function myFunction() {
-//         document.getElementById("myDropdown").classList.toggle("show");
-
-//     });
-// });
-
 
 
 $(document).ready(function () {
