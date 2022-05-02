@@ -51,15 +51,30 @@ function myFunction() {
 
         document.getElementById("toDayTime").value = time;
         document.getElementById("toDayDate").value = date;
-        document.getElementById("fanFirstName").innerHTML = name;
-        document.getElementById("fanLastName").innerHTML = lname;
-        document.getElementById("fanId").innerHTML = id;
-        document.getElementById("fanOf").innerHTML = fan;
+        document.getElementById("fanFirstName").value = name;
+        document.getElementById("fanLastName").value = lname;
+        document.getElementById("fanId").value = id;
+        document.getElementById("fanOf").value = fan;
         document.getElementById("warningFanPhoto").src = photo;
 
         check = id;
 
     }
+}
+
+function addWarningMobile(){
+
+
+    var timestamp = Date.now() + 10800000;
+    var dateNtime = new Date(timestamp);
+
+    var date = dateNtime.toISOString().substring(0, 10);
+    var time = dateNtime.toISOString().substring(11, 16);
+    document.get
+    // location.href = "form.html";
+    document.getElementById('toDayTimeMobile').value = time;
+    document.getElementById('toDayDateMobile').value = date;
+    location.href = "form.html";
 }
 
 
@@ -71,7 +86,7 @@ function dropMenu(e) {
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = function (event) {
-    if (!event.target.matches('#dropbtn') ) {
+    if (!event.target.matches('.fa-ellipsis-vertical')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
         var i;
         for (i = 0; i < dropdowns.length; i++) {

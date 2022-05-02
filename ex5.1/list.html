@@ -32,7 +32,7 @@
 <body>
     <div class="container">
         <header>
-            <a href="index.html" id="logo" title="logo"></a>
+            <a href="index.html" id="logo"></a>
             <span>Good evening Yael</span>
             <img src="images/yael.png" alt="Profile-photo" title="Profile-photo">
             <nav class="navbar">
@@ -44,7 +44,7 @@
                         <li><a href="#">Cameras</a></li>
                         <li><a href="#">Drones</a></li>
                         <li><a href="#">Alerts</a></li>
-                        <li><a href="#">Fans</a></li>
+                        <li><a href="list.html">Fans</a></li>
                         <li><a href="#">Guards</a></li>
                         <div>
                             <li><a href="#">Settings<i class="fa-solid fa-sliders"></i> </a></li>
@@ -63,10 +63,8 @@
 
                 <section class="menu_body" id="menubody">
                     <div class="menu_body__item_wrapper">
-                        <!-- menu list-->
                         <ul class="menu_list">
                             <li><a href="index.html">Home</a></li>
-                            <!-- have submenu-->
                             <li><a href="#">Map</a></li>
                             <li><a href="#">Messages</a></li>
                             <li><a href="#">Cameras</a></li>
@@ -89,7 +87,7 @@
                 <span><a href="index.html" class="breadcrumbs"> Home page </a>>> Fans </span>
                 <h1>Fans</h1>
                 <span id="sub-h">Currently 16,029 fans in the stadium</span>
-                <br>
+                
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="search" id="myInput" onkeyup="myFunction()" placeholder="Search...">
                 <span id="sort">Sort by:</span>
@@ -132,11 +130,11 @@
                             </article>
                         </div>
                         <section class="dropdown">
-                            <span class="fa-solid fa-ellipsis-vertical" onclick="dropMenu('drop1')" id="dropbtn"  ></span>
+                            <span class="fa-solid fa-ellipsis-vertical" onclick="dropMenu('drop1')"  ></span>
                             <div id="drop1"  class="dropdown-content" >
                                 <span><i class="fa-solid fa-location-crosshairs fa-xl"></i> Find Location</span>
                                 <span><i class="fa-solid fa-video fa-xl"></i> Find On Camera</span>
-                                <span><i class="fa-solid fa-file-circle-plus fa-xl"></i>Add Warning</span>
+                                <span onclick="addWarningMobile()"><i class="fa-solid fa-file-circle-plus fa-xl"></i>Add Warning</span>
                                 <span><i class="fa-solid fa-plane-circle-check fa-xl"></i>Find On Drone</span>
                             </div>
                         </section>
@@ -147,7 +145,7 @@
                             <i class="dot-red"></i>
                             <a href="#">Eldad Rot</a>
                             <span class="desktop">recently warned - 5 min ago</span>
-                            <br>
+                           
                             <section>GPS activated<i class="dot-green"></i></section>
                             <section>Fan of Hapoel Tel Aviv</section>
                         </div>
@@ -170,7 +168,7 @@
                             </article>
                         </div>
                         <section class="dropdown">
-                            <span class="fa-solid fa-ellipsis-vertical" onclick="dropMenu('drop2')" id="dropbtn"></span>
+                            <span class="fa-solid fa-ellipsis-vertical" onclick="dropMenu('drop2')" ></span>
                             <div id="drop2"  class="dropdown-content" >
                                 <span><i class="fa-solid fa-location-crosshairs fa-xl"></i> Find Location</span>
                                 <span><i class="fa-solid fa-video fa-xl"></i> Find On Camera</span>
@@ -185,7 +183,7 @@
                             <i class="dot-red"></i>
                             <a href="#">Mishel Elkayam</a>
                             <span class="desktop">recently warned - 7 min ago</span>
-                            <br>
+                         
                             <section>GPS activated<i class="dot-green"></i></section>
                             <section>Fan of Beitar Jerusalem</section>
                         </div>
@@ -209,11 +207,11 @@
                             </article>
                         </div>
                         <section class="dropdown">
-                            <span class="fa-solid fa-ellipsis-vertical" onclick="dropMenu('drop3')" id="dropbtn"></span>
+                            <span class="fa-solid fa-ellipsis-vertical" onclick="dropMenu('drop3')" ></span>
                             <div id="drop3"  class="dropdown-content">
                                 <span><i class="fa-solid fa-location-crosshairs fa-xl"></i> Find Location</span>
                                 <span><i class="fa-solid fa-video fa-xl"></i> Find On Camera</span>
-                                <span><i class="fa-solid fa-file-circle-plus fa-xl"></i>Add Warning</span>
+                                <span><i class="fa-solid fa-file-circle-plus fa-xl"></i><a href="form.html">Add Warning</a></span>
                                 <span><i class="fa-solid fa-plane-circle-check fa-xl"></i>Find On Drone</span>
                             </div>
                         </section>
@@ -224,7 +222,7 @@
                             <i class="dot-red"></i>
                             <a href="#">Shimon Dan</a>
                             <span class="desktop">recently warned - 7 min ago</span>
-                            <br>
+                           
                             <section>GPS activated<i class="dot-green"></i></section>
                             <section>Fan of Hapoel Tel Aviv</section>
                         </div>
@@ -248,7 +246,7 @@
                             </article>
                         </div>
                         <section class="dropdown">
-                            <span class="fa-solid fa-ellipsis-vertical" onclick="dropMenu('drop4')" id="dropbtn"></span>
+                            <span class="fa-solid fa-ellipsis-vertical" onclick="dropMenu('drop4')" ></span>
                             <div id="drop4"  class="dropdown-content">
                                 <span><i class="fa-solid fa-location-crosshairs fa-xl"></i> Find Location</span>
                                 <span><i class="fa-solid fa-video fa-xl"></i> Find On Camera</span>
@@ -263,7 +261,7 @@
                             <i class="dot-red"></i>
                             <a href="#">Avi Abutbul</a>
                             <span class="desktop">recently warned - 7 min ago</span>
-                            <br>
+                           
                             <section>GPS activated<i class="dot-green"></i></section>
                             <section>Fan of Hapoel Tel Aviv</section>
                         </div>
@@ -287,7 +285,7 @@
                             </article>
                         </div>
                         <section class="dropdown">
-                            <span class="fa-solid fa-ellipsis-vertical" onclick="dropMenu('drop5')" id="dropbtn"></span>
+                            <span class="fa-solid fa-ellipsis-vertical" onclick="dropMenu('drop5')" ></span>
                             <div id="drop5"  class="dropdown-content">
                                 <span><i class="fa-solid fa-location-crosshairs fa-xl"></i> Find Location</span>
                                 <span><i class="fa-solid fa-video fa-xl"></i> Find On Camera</span>
@@ -302,7 +300,7 @@
                             <i class="dot-red"></i>
                             <a href="#">Yarin Buskila</a>
                             <span class="desktop">recently warned - 8 min ago</span>
-                            <br>
+                         
                             <section>GPS activated<i class="dot-green"></i></section>
                             <section>Fan of Beitar Jerusalem</section>
                         </div>
@@ -326,7 +324,7 @@
                             </article>
                         </div>
                         <section class="dropdown">
-                            <span class="fa-solid fa-ellipsis-vertical" onclick="dropMenu('drop6')" id="dropbtn"></span>
+                            <span class="fa-solid fa-ellipsis-vertical" onclick="dropMenu('drop6')" ></span>
                             <div id="drop6" class="dropdown-content">
                                 <span><i class="fa-solid fa-location-crosshairs fa-xl"></i> Find Location</span>
                                 <span><i class="fa-solid fa-video fa-xl"></i> Find On Camera</span>
@@ -341,7 +339,7 @@
                             <i class="dot-red"></i>
                             <a href="#">Eli Mizrachi </a>
                             <span class="desktop">recently warned - 9 min ago</span>
-                            <br>
+                            
                             <section>GPS activated<i class="dot-green"></i></section>
                             <section>Fan of Beitar Jerusalem</section>
                         </div>
@@ -365,7 +363,7 @@
                             </article>
                         </div>
                         <section class="dropdown">
-                            <span class="fa-solid fa-ellipsis-vertical" onclick="dropMenu('drop7')" id="dropbtn"></span>
+                            <span class="fa-solid fa-ellipsis-vertical" onclick="dropMenu('drop7')" ></span>
                             <div id="drop7" class="dropdown-content">
                                 <span><i class="fa-solid fa-location-crosshairs fa-xl"></i> Find Location</span>
                                 <span><i class="fa-solid fa-video fa-xl"></i> Find On Camera</span>
@@ -383,20 +381,20 @@
                         <h4>Fan's information</h4>
                         <img id="warningFanPhoto" src="">
                         <article>
-                            <section>First Name</section><span id="fanFirstName"></span>
-                            <section>Last Name</section><span id="fanLastName"></span>
-                            <section>ID</section><span id="fanId"></span>
-                            <section>Fan Of</section><span id="fanOf"></span>
+                            <section>First Name</section><input type="text" value="" id="fanFirstName" name="firstName" >
+                            <section>Last Name</section><input type="text" value="" id="fanLastName" name="lastName"  readonly>
+                            <section>ID</section><input type="number" value="" id="fanId" name="fanId"  readonly>
+                            <section>Fan Of</section><input type="text" value="" id="fanOf" name="fanOf"  readonly>
 
                         </article>
                         <form action="add_warning.php" method="GET">
                             <h4>Warning's Details</h4>
                             <article>
-                                <section>Created By</section><span>Yael</span>
+                                <section>Created By</section><input type="text" value="Yael" name="user" readonly>
                                  <section>Time</section><input name="time" id="toDayTime" type="time"  value="" readonly>
                                 <section>Date</section><input name="date" id="toDayDate" type="date" value="" readonly>
                                 <section>Topic</section>
-                                <select name="topic">
+                                <select name="topic" required>
                                     <option value=""selected hidden>Select topic</option>
                                     <option value="Verbal assault towards fan">Verbal assault towards fan</option>
                                     <option value="Verbal assault towards security guard">Verbal assault towards security guard</option>

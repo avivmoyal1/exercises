@@ -2,57 +2,91 @@
 <html>
 
 <head>
-    <title>SafeGame Home-Page</title>
+    <title>SafeGame - List</title>
     <meta charset="UTF-8">
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Mulish:wght@300;400;700&display=swap"
         rel="stylesheet">
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/842cff8459.js" crossorigin="anonymous"></script>
-
-    <!-- CSS bootstrap
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
     <!-- my-css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- my-js -->
     <script src="js/scripts.js"></script>
+
+
 
 </head>
 
 <body>
     <div class="container">
         <header>
-            <a href="#" id="logo" title="logo" alt="logo"></a>
+            <a href="index.html" id="logo"></a>
             <span>Good evening Yael</span>
-            <img src="images/yael.png" alt="yael-photo">
-        </header>
-        <aside>
-            <nav>
-                <a href="index.html">Home page</a>
-                <a href="#">Map</a>
-                <a href="#">Massages<span>2</span></a>
-                <a href="#">Cameras</a>
-                <a href="#">Drones</a>
-                <a href="#">Alerts</a>
-                <a href="#" id="selected">Fans</a>
-                <a href="#">Security guards</a>
-            </nav>
-            <nav>
-                <a href="#">Settings <i class="fa-solid fa-sliders"></i></a>
-                <a href="#">Logout <i class="fa-solid fa-right-from-bracket"></i></a>
+            <img src="images/yael.png" alt="Profile-photo" title="Profile-photo">
+            <nav class="navbar">
+                <div class="navbar-container">
+                    <ul class="menu-items">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Map</a></li>
+                        <li><a href="#">Messages</a></li>
+                        <li><a href="#">Cameras</a></li>
+                        <li><a href="#">Drones</a></li>
+                        <li><a href="#">Alerts</a></li>
+                        <li><a href="list.html">Fans</a></li>
+                        <li><a href="#">Guards</a></li>
+                        <div>
+                            <li><a href="#">Settings<i class="fa-solid fa-sliders"></i> </a></li>
+                            <li><a href="#">Logout<i class="fa-solid fa-right-from-bracket"></i></a></li>
+                        </div>
+                    </ul>
 
+                </div>
             </nav>
-        </aside>
+            <div class="mobile">
+                <div class="humburger" id="hambuger_menu">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+
+                <section class="menu_body" id="menubody">
+                    <div class="menu_body__item_wrapper">
+                        <ul class="menu_list">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#">Map</a></li>
+                            <li><a href="#">Messages</a></li>
+                            <li><a href="#">Cameras</a></li>
+                            <li><a href="#">Drones</a></li>
+                            <li><a href="#">Alerts</a></li>
+                            <li><a href="list.html">Fans</a></li>
+                            <li><a href="#">Guards</a></li>
+                            <li><a href="#">Settings</a></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </div>
+
+                </section>
+            </div>
+        </header>
+
         <main>
+
             <div id="main-list">
                 <span><a href="index.html" class="breadcrumbs"> Home page </a>>> Fans </span>
                 <h1>Fans</h1>
                 <span id="sub-h">Currently 16,029 fans in the stadium</span>
-                <br>
+
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="search" id="myInput" onkeyup="myFunction()" placeholder="Search...">
                 <span id="sort">Sort by:</span>
@@ -65,16 +99,17 @@
 
                 <ul id="myUL">
                     <li>
-                        <img src="images/fan1.jpg">
+                        <a href="object.html"><img src="images/fan1.jpg" alt="fan-photo" title="fan-photo"></a>
                         <div>
                             <i class="dot-red"></i>
-                            <a href="#">Yosi Levi</a>
-                            <span>recently warned - 5 min ago</span>
+                            <a href="object.html">Yosi Levi</a>
+                            <span class="desktop">recently warned - 5 min ago</span>
+
                             <br>
                             <section>GPS activated<i class="dot-green"></i></section>
                             <section>Fan of Beitar Jerusalem</section>
                         </div>
-                        <div>
+                        <div class="invisible">
                             <article>
                                 <span><i class="fa-solid fa-location-crosshairs fa-xl"></i></span>
                                 <section>Find Location</section>
@@ -83,7 +118,8 @@
                                 <span><i class="fa-solid fa-video fa-xl"></i></span>
                                 <section>Find On Camera</section>
                             </article>
-                            <article>
+                            <article
+                                onclick="addWarning('Yosi','Levi','311437107','Beitar Jerusalem','images/fan1.jpg')">
                                 <span><i class="fa-solid fa-file-circle-plus fa-xl"></i></span>
                                 <section>Add Warning</section>
                             </article>
@@ -92,18 +128,28 @@
                                 <section>Find On Drone</section>
                             </article>
                         </div>
+                        <section class="dropdown">
+                            <span class="fa-solid fa-ellipsis-vertical" onclick="dropMenu('drop1')"></span>
+                            <div id="drop1" class="dropdown-content">
+                                <span><i class="fa-solid fa-location-crosshairs fa-xl"></i> Find Location</span>
+                                <span><i class="fa-solid fa-video fa-xl"></i> Find On Camera</span>
+                                <span onclick="addWarningMobile()"><i class="fa-solid fa-file-circle-plus fa-xl"></i><a href="form.html">Add
+                                    Warning</a></span>
+                                <span><i class="fa-solid fa-plane-circle-check fa-xl"></i>Find On Drone</span>
+                            </div>
+                        </section>
                     </li>
                     <li>
-                        <img src="images/fan2.jpg">
+                        <img src="images/fan2.jpg" alt="fan-photo" title="fan-photo">
                         <div>
                             <i class="dot-red"></i>
                             <a href="#">Eldad Rot</a>
-                            <span>recently warned - 5 min ago</span>
-                            <br>
+                            <span class="desktop">recently warned - 5 min ago</span>
+
                             <section>GPS activated<i class="dot-green"></i></section>
                             <section>Fan of Hapoel Tel Aviv</section>
                         </div>
-                        <div>
+                        <div class="invisible">
                             <article>
                                 <span><i class="fa-solid fa-location-crosshairs fa-xl"></i></span>
                                 <section>Find Location</section>
@@ -112,7 +158,7 @@
                                 <span><i class="fa-solid fa-video fa-xl"></i></span>
                                 <section>Find On Camera</section>
                             </article>
-                            <article>
+                            <article onclick="addWarning('Eldad','Rot','25123623','Hapoel Tel Aviv','images/fan2.jpg')">
                                 <span><i class="fa-solid fa-file-circle-plus fa-xl"></i></span>
                                 <section>Add Warning</section>
                             </article>
@@ -121,18 +167,27 @@
                                 <section>Find On Drone</section>
                             </article>
                         </div>
+                        <section class="dropdown">
+                            <span class="fa-solid fa-ellipsis-vertical" onclick="dropMenu('drop2')"></span>
+                            <div id="drop2" class="dropdown-content">
+                                <span><i class="fa-solid fa-location-crosshairs fa-xl"></i> Find Location</span>
+                                <span><i class="fa-solid fa-video fa-xl"></i> Find On Camera</span>
+                                <span><i class="fa-solid fa-file-circle-plus fa-xl"></i><a href="form.html">Add Warning</a></span>
+                                <span><i class="fa-solid fa-plane-circle-check fa-xl"></i>Find On Drone</span>
+                            </div>
+                        </section>
                     </li>
                     <li>
-                        <img src="images/fan3.jpg">
+                        <img src="images/fan3.jpg" alt="fan-photo" title="fan-photo">
                         <div>
                             <i class="dot-red"></i>
                             <a href="#">Mishel Elkayam</a>
-                            <span>recently warned - 7 min ago</span>
-                            <br>
+                            <span class="desktop">recently warned - 7 min ago</span>
+
                             <section>GPS activated<i class="dot-green"></i></section>
                             <section>Fan of Beitar Jerusalem</section>
                         </div>
-                        <div>
+                        <div class="invisible">
                             <article>
                                 <span><i class="fa-solid fa-location-crosshairs fa-xl"></i></span>
                                 <section>Find Location</section>
@@ -141,7 +196,8 @@
                                 <span><i class="fa-solid fa-video fa-xl"></i></span>
                                 <section>Find On Camera</section>
                             </article>
-                            <article>
+                            <article
+                                onclick="addWarning('Mishel','Elkayam','29948502','Beitar Jerusalem','images/fan3.jpg')">
                                 <span><i class="fa-solid fa-file-circle-plus fa-xl"></i></span>
                                 <section>Add Warning</section>
                             </article>
@@ -150,18 +206,28 @@
                                 <section>Find On Drone</section>
                             </article>
                         </div>
+                        <section class="dropdown">
+                            <span class="fa-solid fa-ellipsis-vertical" onclick="dropMenu('drop3')"></span>
+                            <div id="drop3" class="dropdown-content">
+                                <span><i class="fa-solid fa-location-crosshairs fa-xl"></i> Find Location</span>
+                                <span><i class="fa-solid fa-video fa-xl"></i> Find On Camera</span>
+                                <span><i class="fa-solid fa-file-circle-plus fa-xl"></i><a href="form.html">Add
+                                        Warning</a></span>
+                                <span><i class="fa-solid fa-plane-circle-check fa-xl"></i>Find On Drone</span>
+                            </div>
+                        </section>
                     </li>
                     <li>
-                        <img src="images/fan4.jpg">
+                        <img src="images/fan4.jpg" alt="fan-photo" title="fan-photo">
                         <div>
                             <i class="dot-red"></i>
                             <a href="#">Shimon Dan</a>
-                            <span>recently warned - 7 min ago</span>
-                            <br>
+                            <span class="desktop">recently warned - 7 min ago</span>
+
                             <section>GPS activated<i class="dot-green"></i></section>
                             <section>Fan of Hapoel Tel Aviv</section>
                         </div>
-                        <div>
+                        <div class="invisible">
                             <article>
                                 <span><i class="fa-solid fa-location-crosshairs fa-xl"></i></span>
                                 <section>Find Location</section>
@@ -170,7 +236,8 @@
                                 <span><i class="fa-solid fa-video fa-xl"></i></span>
                                 <section>Find On Camera</section>
                             </article>
-                            <article>
+                            <article
+                                onclick="addWarning('Shimon','Dan','299485934','Hapoel Tel Aviv','images/fan4.jpg')">
                                 <span><i class="fa-solid fa-file-circle-plus fa-xl"></i></span>
                                 <section>Add Warning</section>
                             </article>
@@ -179,18 +246,27 @@
                                 <section>Find On Drone</section>
                             </article>
                         </div>
+                        <section class="dropdown">
+                            <span class="fa-solid fa-ellipsis-vertical" onclick="dropMenu('drop4')"></span>
+                            <div id="drop4" class="dropdown-content">
+                                <span><i class="fa-solid fa-location-crosshairs fa-xl"></i> Find Location</span>
+                                <span><i class="fa-solid fa-video fa-xl"></i> Find On Camera</span>
+                                <span><i class="fa-solid fa-file-circle-plus fa-xl"></i><a href="form.html">Add Warning</a></span>
+                                <span><i class="fa-solid fa-plane-circle-check fa-xl"></i>Find On Drone</span>
+                            </div>
+                        </section>
                     </li>
                     <li>
-                        <img src="images/fan5.jpg">
+                        <img src="images/fan5.jpg" alt="fan-photo" title="fan-photo">
                         <div>
                             <i class="dot-red"></i>
                             <a href="#">Avi Abutbul</a>
-                            <span>recently warned - 7 min ago</span>
-                            <br>
+                            <span class="desktop">recently warned - 7 min ago</span>
+
                             <section>GPS activated<i class="dot-green"></i></section>
                             <section>Fan of Hapoel Tel Aviv</section>
                         </div>
-                        <div>
+                        <div class="invisible">
                             <article>
                                 <span><i class="fa-solid fa-location-crosshairs fa-xl"></i></span>
                                 <section>Find Location</section>
@@ -199,7 +275,8 @@
                                 <span><i class="fa-solid fa-video fa-xl"></i></span>
                                 <section>Find On Camera</section>
                             </article>
-                            <article>
+                            <article
+                                onclick="addWarning('Avi','Abutbul','526637497','Hapoel Tel Aviv','images/fan5.jpg')">
                                 <span><i class="fa-solid fa-file-circle-plus fa-xl"></i></span>
                                 <section>Add Warning</section>
                             </article>
@@ -208,18 +285,27 @@
                                 <section>Find On Drone</section>
                             </article>
                         </div>
+                        <section class="dropdown">
+                            <span class="fa-solid fa-ellipsis-vertical" onclick="dropMenu('drop5')"></span>
+                            <div id="drop5" class="dropdown-content">
+                                <span><i class="fa-solid fa-location-crosshairs fa-xl"></i> Find Location</span>
+                                <span><i class="fa-solid fa-video fa-xl"></i> Find On Camera</span>
+                                <span><i class="fa-solid fa-file-circle-plus fa-xl"></i><a href="form.html">Add Warning</a></span>
+                                <span><i class="fa-solid fa-plane-circle-check fa-xl"></i>Find On Drone</span>
+                            </div>
+                        </section>
                     </li>
                     <li>
-                        <img src="images/fan6.jpg">
+                        <img src="images/fan6.jpg" alt="fan-photo" title="fan-photo">
                         <div>
                             <i class="dot-red"></i>
                             <a href="#">Yarin Buskila</a>
-                            <span>recently warned - 8 min ago</span>
-                            <br>
+                            <span class="desktop">recently warned - 8 min ago</span>
+
                             <section>GPS activated<i class="dot-green"></i></section>
                             <section>Fan of Beitar Jerusalem</section>
                         </div>
-                        <div>
+                        <div class="invisible">
                             <article>
                                 <span><i class="fa-solid fa-location-crosshairs fa-xl"></i></span>
                                 <section>Find Location</section>
@@ -228,7 +314,8 @@
                                 <span><i class="fa-solid fa-video fa-xl"></i></span>
                                 <section>Find On Camera</section>
                             </article>
-                            <article>
+                            <article
+                                onclick="addWarning('Yarin','Buskila','822945209','Beitar Jerusalem','images/fan6.jpg')">
                                 <span><i class="fa-solid fa-file-circle-plus fa-xl"></i></span>
                                 <section>Add Warning</section>
                             </article>
@@ -237,18 +324,27 @@
                                 <section>Find On Drone</section>
                             </article>
                         </div>
+                        <section class="dropdown">
+                            <span class="fa-solid fa-ellipsis-vertical" onclick="dropMenu('drop6')"></span>
+                            <div id="drop6" class="dropdown-content">
+                                <span><i class="fa-solid fa-location-crosshairs fa-xl"></i> Find Location</span>
+                                <span><i class="fa-solid fa-video fa-xl"></i> Find On Camera</span>
+                                <span><i class="fa-solid fa-file-circle-plus fa-xl"></i><a href="form.html">Add Warning</a></span>
+                                <span><i class="fa-solid fa-plane-circle-check fa-xl"></i>Find On Drone</span>
+                            </div>
+                        </section>
                     </li>
                     <li>
-                        <img src="images/fan7.jpg">
+                        <img src="images/fan7.jpg" alt="fan-photo" title="fan-photo">
                         <div>
                             <i class="dot-red"></i>
                             <a href="#">Eli Mizrachi </a>
-                            <span>recently warned - 9 min ago</span>
-                            <br>
+                            <span class="desktop">recently warned - 9 min ago</span>
+
                             <section>GPS activated<i class="dot-green"></i></section>
                             <section>Fan of Beitar Jerusalem</section>
                         </div>
-                        <div>
+                        <div class="invisible">
                             <article>
                                 <span><i class="fa-solid fa-location-crosshairs fa-xl"></i></span>
                                 <section>Find Location</section>
@@ -257,7 +353,8 @@
                                 <span><i class="fa-solid fa-video fa-xl"></i></span>
                                 <section>Find On Camera</section>
                             </article>
-                            <article>
+                            <article
+                                onclick="addWarning('Eli','Mizrachi','233627584','Beitar Jerusalem','images/fan7.jpg')">
                                 <span><i class="fa-solid fa-file-circle-plus fa-xl"></i></span>
                                 <section>Add Warning</section>
                             </article>
@@ -266,20 +363,84 @@
                                 <section>Find On Drone</section>
                             </article>
                         </div>
+                        <section class="dropdown">
+                            <span class="fa-solid fa-ellipsis-vertical" onclick="dropMenu('drop7')"></span>
+                            <div id="drop7" class="dropdown-content">
+                                <span><i class="fa-solid fa-location-crosshairs fa-xl"></i> Find Location</span>
+                                <span><i class="fa-solid fa-video fa-xl"></i> Find On Camera</span>
+                                <span><i class="fa-solid fa-file-circle-plus fa-xl"></i><a href="form.html">Add Warning</a></span>
+                                <span><i class="fa-solid fa-plane-circle-check fa-xl"></i>Find On Drone</span>
+                            </div>
+                        </section>
                     </li>
 
                 </ul>
 
-                <article>
+                <article class="desktop">
+                    <div id="form">
+                        <h3>New Warning</h3>
+                        <h4>Fan's information</h4>
+                        <img id="warningFanPhoto" src="#" alt="fan-photo" title="fan-photo">
+                        <form action="add_warning.php" method="GET">
+                            <article>
+                                <section>First Name</section><input type="text" id="fanFirstName" name="firstName"
+                                    readonly>
+                                <section>Last Name</section><input type="text" value="" id="fanLastName" name="lastName"
+                                    readonly>
+                                <section>ID</section><input type="number" value="" id="fanId" name="fanId" readonly>
+                                <section>Fan Of</section><input type="text" value="" id="fanOf" name="fanOf" readonly>
 
+                            </article>
+                            <h4>Warning's Details</h4>
+                            <article>
+                                <section>Created By</section><input type="text" value="Yael" name="user" readonly>
+                                <section>Time</section><input name="time" id="toDayTime" type="time" value="" readonly>
+                                <section>Date</section><input name="date" id="toDayDate" type="date" value="" readonly>
+                                <section>Topic</section>
+                                <select name="topic" required>
+                                    <option value="" selected hidden>Select topic</option>
+                                    <option value="Verbal assault towards fan">Verbal assault towards fan</option>
+                                    <option value="Verbal assault towards security guard">Verbal assault towards
+                                        security guard</option>
+                                    <option value="Physical violence towards fan">Physical violence towards fan</option>
+                                    <option value="Physical violence towards security guard">Physical violence towards
+                                        security guard</option>
+                                    <option value="Physical violence towards player">Physical violence towards player
+                                    </option>
+                                    <option value="Breakout to the pitch">Breakout to the pitch</option>
+                                    <option value="Throwing trash on the pitch">Throwing trash on the pitch</option>
+                                    <option value="Throwing a smoke greande">Throwing a smoke greande</option>
+                                    <option value="Vandalism">Vandalism</option>
+                                </select>
+                                <section>Add Details</section>
+                                <textarea name="details" rows="8" cols="25" placeholder="Text here"></textarea>
+                            </article>
+                            <section>
+
+                                <label><input type="checkbox" name="send-info"
+                                        value="Send a summary to security manager">
+                                    Send a
+                                    summary to security manager</label>
+                                <label><input type="checkbox" name="send-info"
+                                        value="Send a summary and location to near by security guard"> Send a summary
+                                    and
+                                    location to near by security guard</label>
+                                <button id="button" type="submit" value="Submit">Submit</button>
+                            </section>
+                        </form>
+
+                    </div>
                 </article>
+
             </div>
+
         </main>
         <footer>
             <span>&copy; All rights reserved to SafeGame</span>
         </footer>
     </div>
     <script>
+
 
     </script>
 </body>
