@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SafeGame Home-Page</title>
+    <meta charset="UTF-8">
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Mulish:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <!-- JQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/842cff8459.js" crossorigin="anonymous"></script>
+    <!-- my-css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- my-js -->
+    <script src="js/scripts.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html" id="logo"></a>
+            <span>Good evening Yael</span>
+            <img src="images/yael.png" alt="Profile-photo" title="Profile-photo">
+            <nav class="navbar">
+                <div class="navbar-container">
+                    <ul class="menu-items">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Map</a></li>
+                        <li><a href="#">Messages</a></li>
+                        <li><a href="#">Cameras</a></li>
+                        <li><a href="#">Drones</a></li>
+                        <li><a href="#">Alerts</a></li>
+                        <li><a href="list.html">Fans</a></li>
+                        <li><a href="#">Guards</a></li>
+                        <div>
+                            <li><a href="#">Settings<i class="fa-solid fa-sliders"></i> </a></li>
+                            <li><a href="#">Logout<i class="fa-solid fa-right-from-bracket"></i></a></li>
+                        </div>
+                    </ul>
+
+                </div>
+            </nav>
+            <div class="mobile">
+                <div class="humburger" id="hambuger_menu">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+
+                <section class="menu_body" id="menubody">
+                    <div class="menu_body__item_wrapper">
+                        <ul class="menu_list">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#">Map</a></li>
+                            <li><a href="#">Messages</a></li>
+                            <li><a href="#">Cameras</a></li>
+                            <li><a href="#">Drones</a></li>
+                            <li><a href="#">Alerts</a></li>
+                            <li><a href="list.html">Fans</a></li>
+                            <li><a href="#">Guards</a></li>
+                            <li><a href="#">Settings</a></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </div>
+
+                </section>
+            </div>
+        </header>
+
+        <main>
+            <div id="form-info">
+                <span><a href="index.html" class="breadcrumbs"> Home page </a> >> <a href="list.html"
+                        class="breadcrumbs"> Fans </a>>> <a href="object.html" class="breadcrumbs">Profile</a>>> Warning
+                    Form </span>
+                <h1>New Warning</h1>
+                <h3>Fan's information</h3>
+                <img src="images/fan1.jpg">
+                <article class="form-fan-info">
+                    <section>First Name</section><span>Yosi</span>
+                    <section>Last Name</section><span>Levi</span>
+                    <section>Age</section><span>32</span>
+                    <section>ID</section><span>320564725</span>
+                    <section>Phone</section><span>056-7244539</span>
+                    <section>Fan Of</section><span>Beitar Jerusalem</span>
+
+                </article>
+                <form >
+                    <h3>Warning's Details</h3>
+                    <article class="form-details">
+                        <section>Created By</section><span>Yael</span>
+                        <section>Time</section><input name="time" id="toDayTimeMobile" type="time"  value="10:50" readonly>
+
+                        <section>Date</section><input name="date" id="toDayDateMobile" type="date" value="" readonly>
+
+
+                        <section>Topic</section>
+                        <select>
+                            <option selected hidden>Select topic</option>
+                            <option>Verbal assault towards fan</option>
+                            <option>Verbal assault towards security guard</option>
+                            <option>Physical violence towards fan</option>
+                            <option>Physical violence towards security guard</option>
+                            <option>Physical violence towards player</option>
+                            <option>Breakout to the pitch</option>
+                            <option>Throwing trash on the pitch</option>
+                            <option>Throwing a smoke greande</option>
+                            <option>Vandalism</option>
+                        </select>
+                        <section>Add Details</section>
+                        <textarea name="msg" rows="8" cols="25" placeholder="Text here"></textarea>
+
+                    </article>
+                    <section class="form-checkboxes">
+                        <label><input type="checkbox" name="send-info" value="Send a summary to security manager"> Send
+                            a
+                            summary to security manager</label>
+                        <label><input type="checkbox" name="send-info"
+                                value="Send a summary and location to near by security guard"> Send a summary and
+                            location to near by security guard</label>
+                        <button id="button" type="submit" value="Submit">Submit</button>
+                    </section>
+                </form>
+            </div>
+        </main>
+        <footer>
+            <span>&copy; All rights reserved to SafeGame</span>
+        </footer>
+    </div>
+    <script>
+
+
+    </script>
+</body>
+
+</html>
