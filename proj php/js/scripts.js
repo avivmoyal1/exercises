@@ -142,3 +142,16 @@ $(document).ready(function () {
 //         }
 
 //   }
+
+function showData(data){
+  for(const key in data.games){
+  document.getElementByTagName("img")[0].src='${data.games.team_one_img}';
+  document.getElementByTagName("img")[1].src='${data.team_two_img}';
+  }
+}
+
+
+
+fetch("data.json")
+  .then(response =>response.json())
+  .then(data => showData(data));

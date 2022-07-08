@@ -1,0 +1,152 @@
+{
+    "Games": [
+        {
+            "game_id": "4196",
+            "team_one": "Maccabi Tel Aviv",
+            "team_one_img": "images/mctlv.png",
+            "team_two": "Hapoel Beer Sheva",
+            "team_two_img": "images/hapbs.png",
+            "date": [
+                {
+                    "day": "19",
+                    "month": "12",
+                    "year": "2021"
+                }
+            ],
+            "time": [
+                {
+                    "hour": "19",
+                    "minute": "00"
+                }
+            ],
+            "stadium": "Bloomfield"
+        },
+        {
+            "game_id": "4197",
+            "team_one": "Maccabi Netanya",
+            "team_one_img": "images/macnet.png",
+            "team_two": "Hapoel Tel Aviv",
+            "team_two_img": "images/hap.png",
+
+            "date": [
+                {
+                    "day": "19",
+                    "month": "12",
+                    "year": "2021"
+                }
+            ],
+            "time": [
+                {
+                    "hour": "22",
+                    "minute": "00"
+                }
+            ],
+            "stadium": "Diamond"
+        },
+        {
+            "game_id": "4198",
+            "team_one": "Hapoel Haifa",
+            "team_one_img": "images/haphif.png",
+            "team_two": "Maccabi Haifa",
+            "team_two_img": "images/mchif.png",
+            "date": [
+                {
+                    "day": "20",
+                    "month": "12",
+                    "year": "2021"
+                }
+            ],
+            "time": [
+                {
+                    "hour": "20",
+                    "minute": "30"
+                }
+            ],
+            "stadium": "Sammy Ofer"
+        },
+        {
+            "game_id": "4199",
+            "team_one": "Hapoel Tel Aviv",
+            "team_one_img": "images/hap.png",
+            "team_two": "Beitar Jerusalem",
+            "team_two_img": "images/btr.png",
+            "date": [
+                {
+                    "day": "20",
+                    "month": "12",
+                    "year": "2021"
+                }
+            ],
+            "time": [
+                {
+                    "hour": "20",
+                    "minute": "30"
+                }
+            ],
+            "stadium": "Teddy"
+        },
+        {
+            "game_id": "4200",
+            "team_one": "Hapoel Beer Sheva",
+            "team_one_img": "images/hapbs.png",
+            "team_two": "Maccabi Petah Tikva",
+            "team_two_img": "images/macpt.png",
+            "date": [
+                {
+                    "day": "27",
+                    "month": "12",
+                    "year": "2021"
+                }
+            ],
+            "time": [
+                {
+                    "hour": "20",
+                    "minute": "05"
+                }
+            ],
+            "stadium": "Teddy"
+        },
+        {
+            "game_id": "4201",
+            "team_one": "Hapoel Bnei Sakhnin",
+            "team_one_img": "images/hapbni.png",
+            "team_two": "Maccabi Tel Aviv",
+            "team_two_img": "images/mactlv.png",
+            "date": [
+                {
+                    "day": "01",
+                    "month": "01",
+                    "year": "2022"
+                }
+            ],
+            "time": [
+                {
+                    "hour": "19",
+                    "minute": "45"
+                }
+            ],
+            "stadium": "Doha"
+        },
+        {
+            "game_id": "4202",
+            "team_one": "Maccabi Haifa",
+            "team_one_img": "images/mchif.png",
+            "team_two": "Maccabi Netanya",
+            "team_two_img": "images/macnet.png",
+            "date": [
+                {
+                    "day": "02",
+                    "month": "01",
+                    "year": "2022"
+                }
+            ],
+            "time": [
+                {
+                    "hour": "20",
+                    "minute": "30"
+                }
+            ],
+            "stadium": "Sammy Ofer"
+        }
+    ]
+}
