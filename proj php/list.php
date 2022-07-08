@@ -73,7 +73,7 @@
     <div class="container">
         <header>
             <a href="index.php" id="logo"></a>
-            <span>Good evening <?php echo $_SESSION["name"] ?> </span>
+            <span id="hello"> <?php echo $_SESSION["name"] ?> </span>
             <img <?php echo "src='" .$_SESSION["img"] . "'  alt='" . $_SESSION["name"] . "' title='" . $_SESSION["name"] ."'"; ?> >
 
             <nav class="navbar">
@@ -252,7 +252,7 @@
                         <h3>New Warning</h3>
                         <h4>Fan's information</h4>
                         <img id="warningFanPhoto" src="">
-                        <form id="form_data"  action="saveWarning.php" method="GET">
+                        <form id="form_data"  action="" method="GET">
                             <article>
                                 <section>Last Name</section><input type="text" value="" id="fanLastName" name="lastName" readonly >
                                 <section>First Name</section><input type="text" value="" id="fanFirstName" name="firstName"  readonly>
@@ -295,8 +295,12 @@
                                     
                                 </section>
                         </form>
-
-                        <section id="message"></section>
+                        <?php
+                            if(!empty($_GET['ss'])){
+                                echo "<section> Data saved</section>";
+                            }
+                        ?>
+                        
 
                     </div>
                     

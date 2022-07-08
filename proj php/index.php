@@ -38,7 +38,7 @@
 
 </head>
 
-<body onload="set_message()">
+<body >
 
     
     <div class="container">

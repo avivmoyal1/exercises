@@ -123,30 +123,33 @@ $(document).ready(function () {
 {
   
 
-function set_message(){
+window.onload = function set_message(){
 
-  // alert("im in");
   var day = new Date();
  
   var hr = day.getHours();
-  // alert(hr);
-  
+
   var mesg = document.getElementById('hello');
+  var name = mesg.textContent;
   
   if( hr >= 1 || hr <= 5){
-    mesg.innerHTML += "Good night";
+    mesg.innerHTML = "Good night";
+
   }
   else if( hr >= 6 || hr <=11){
-    mesg.innerHTML += "Good morning";
+    mesg.innerHTML = "Good morning";
   }
   else if( hr >= 12 || hr <=16){
-    mesg.innerHTML += "Good afternoon";
+    mesg.innerHTML = "Good afternoon";
   }
   else if( hr >= 17 || hr <= 00){
     
-    mesg.innerHTML += "Good evening";
+    mesg.innerHTML = "Good evening";
   }
+  mesg.innerHTML += name;
 }
+
+
 }
   // function save_data(){
 
@@ -211,7 +214,7 @@ function set_message(){
 const submit = document.getElementById("button");
 const form = document.querySelector('#form');
 const messageEl = document.querySelector('#msg');
-const posts = document.querySelector('#posts');
+// const posts = document.querySelector('#posts');
 submit.addEventListener('click', (e) => {
   e.preventDefault();
   messageEl.innerHTML = "Loading..";
@@ -220,13 +223,13 @@ submit.addEventListener('click', (e) => {
 
 const savePost = async() => {
   try{
-    let reponse = await fetch('save_warning.php', {
-      method: 'POST',
+    let reponse = await fetch('saveWarning.php', {
+      method: 'GET',
       body: new FormData(form),
     });
-    const result = await Response.json();
+    const result = await Response.php();
     console.log(result);
-    posts.innerHTML = result.retVal;
+    // posts.innerHTML = result.retVal;
     messageEl.style.display = "none";
   } catch(error) {
     console.log(error);
