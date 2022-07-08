@@ -208,4 +208,27 @@ function set_message(){
 //   .then(data => showData(data));
 
 
+const submit = document.getElementById("button");
+const form = document.querySelector('#form');
+const messageEl = document.querySelector('#msg');
+const posts = document.querySelector('#posts');
+submit.addEventListener('click', (e) => {
+  e.preventDefault();
+  messageEl.innerHTML = "Loading..";
+  savePost();
+})
 
+const savePost = async() => {
+  try{
+    let reponse = await fetch('save_warning.php', {
+      method: 'POST',
+      body: new FormData(form),
+    });
+    const result = await Response.json();
+    console.log(result);
+    posts.innerHTML = result.retVal;
+    messageEl.style.display = "none";
+  } catch(error) {
+    console.log(error);
+  }
+};
