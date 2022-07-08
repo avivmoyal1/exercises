@@ -2,7 +2,7 @@
 <?php
 
 include "config.php";
-define("URL" , "http://localhost:8080/proj%20php/");
+define("URL" , "http://localhost/proj-php/");
 $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
 if(mysqli_connect_errno()) {

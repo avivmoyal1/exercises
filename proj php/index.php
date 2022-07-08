@@ -1,6 +1,6 @@
 <?php
     include "config.php";
-    define("URL" , "http://localhost:8080/proj%20php/");
+    define("URL" , "http://localhost/proj-php/");
 
     session_start();
     if(empty($_SESSION['user_id']))

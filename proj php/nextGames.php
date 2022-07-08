@@ -1,6 +1,6 @@
 <?php
     include "config.php";
-    define("URL" , "http://localhost:8080/proj%20php/");
+    define("URL" , "http://localhost/proj-php/");
 
     session_start();
     if(empty($_SESSION['user_id']))
@@ -95,18 +95,36 @@
                 <span><a href="index.php" class="breadcrumbs"> Home page </a> >> Next games </span>
                 <h1>Future Games</h1>
                 <article>
-                    <img id="test" src="">
-                    <img src="images/hapbs.png">
+                    <img id="games_img1" src="">
+                    <img id="games_img2" src="">
                     <section>
-                        <span>19/12/21 - 19:00</span>
+                        <span id="games_date"></span>
                         <div>
-                            <section>Maccabi Tel Aviv</section>
-                            <section>Hapoel Beer Sheva</section>
+                            <section id="games_team1"></section>
+                            <section id="games_team2"></section>
                         </div>
                         <span>Stadium status:</span>
                         <section>Security level is<span class="red"> High</span></section>
                     </section>
                 </article>
+
+                <!-- <article>
+                    <img id="games_img1" src="">
+                    <img id="games_img2" src="images/hapbs.png">
+                    <section>
+                        <span id="games_date">19/12/21 - 19:00</span>
+                        <div>
+                            <section id="games_team1">Maccabi Tel Aviv</section>
+                            <section id="games_team2">Hapoel Beer Sheva</section>
+                        </div>
+                        <span>Stadium status:</span>
+                        <section>Security level is<span class="red"> High</span></section>
+                    </section>
+                </article>
+
+
+
+
                 <article>
                     <img src="images/macnet.png">
                     <img src="images/hap.png">
@@ -184,7 +202,7 @@
                         <span>Stadium status:</span>
                         <section>Security level is<span class="gray"> undefined</span></section>
                     </section>
-                </article>
+                </article> -->
             </div>
 
         </main>

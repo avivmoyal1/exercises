@@ -197,18 +197,18 @@ window.onload = function set_message(){
 
   // }
 
-// function showData(data){
-  
-//   document.getElementByid("test").src = '${data.Games[0].team_one_img}';
-//   // document.getElementByTagName("img")[1].src='${data.Games[0].team_two_img}';
-  
-// }
+function showData(data){
+  for (const key in data)
+  document.getElementById("games_img1").src = '${data.Games[key].team_one_img}';
+  document.getElementById("games_img2").src = '${data.Games[key].team_two_img}';
+  document.getElementById("games_team1").innerHTML = '${data.Games[key].team_one';
+  document.getElementById("games_team1").innerHTML = '${data.Games[key].team_two';
+  document.getElementById("games_date").innerHTML = data.Games[key].date[0] + '/' + data.Games[key].date[1] + '/' + data.Games[key].date[2] + ' - ' + data.Games[key].time[0] + ' : ' + data.Games[key].time[1];
 
-
-
-// fetch("data.json")
-//   .then(response =>response.json())
-//   .then(data => showData(data));
+}
+fetch("data.json")
+  .then(response =>response.json())
+  .then(data => showData(data));
 
 
 const submit = document.getElementById("button");
