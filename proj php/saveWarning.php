@@ -1,7 +1,8 @@
 <?php 
 
 	include "config.php";
-
+    define("URL" , "http://localhost:8080/proj%20php/");
+    session_start();
     $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
     if(mysqli_connect_errno()) {
@@ -15,78 +16,58 @@
 ?> 
 
 
+<?php
+                    if(!empty($_GET['fanId'])){
 
-<!DOCTYPE html>
+                        $fanId = $_GET['fanId'];
 
-<html>
+                        $time =  $_GET['time'];
+                
+                        $date =  $_GET['date'];
+                
+                        $user =   $_GET['user'];
+                
+                        $topic = $_GET['topic'];
+                
+                        $note =   $_GET['details'];
+                
+                        $query_in = "insert into tbl_warning_201(fan_id,topic,details,updated_by,w_date,w_time) values ('$fanId', '$topic', '$note', '$user', '$date', '$time')";
+                        $query_up = "update tbl_fans_201 set w_number = w_number + 1 where id = $fanId";
+                
+                        $resul_in = mysqli_query($connection, $query_in);
+                        
+                        if(!$resul_in) {
+                        
+                        die("DB query failed.");
+                        
+                        }
+                        $result_up = mysqli_query($connection, $query_up);
+                        if(!$result_up) {
+                        
+                            die("DB query failed.");
+                        
+                        }
+                        $u_id = $_SESSION['user_id'];
 
-	<head>
+                        if(!empty($_GET["send-info-sg"])){
+                            $query_task = "INSERT INTO tbl_tasks_201(topic,fan_id,sent_from,sent_to,game_id) values ('$topic', '$fanId', '$u_id', '351', '4196')";
+                            $result_task = mysqli_query($connection,$query_task);
+                            if(!$result_task) {
+                        
+                                die("DB query failed.");
+                                
+                            }
 
-		<meta charset="utf-8">  
-
-		<title>msg to user</title>
-
-
-		<!-- <link href="includes/style.css" rel="stylesheet"> -->
-
-	</head>
-
-	<body>
-
-    <?php
-
-        $fanId = $_GET['fanId'];
-
-        $time =  $_GET['time'];
-
-        $date =  $_GET['date'];
-
-        $user =   $_GET['user'];
-
-        $topic = $_GET['topic'];
-
-        $note =   $_GET['details'];
-
-        $query = "insert into tbl_warning_201(fan_id,topic,details,updated_by,w_date,w_time) values ('$fanId', '$topic', '$note', '$user', '$date', '$time')";
-        $query2 = "update tbl_fans_201 set w_number = w_number + 1 where id = $fanId";
-
-        $result = mysqli_query($connection, $query);
-        
-        if(!$result) {
-        
-           die("DB query failed.");
-        
-        }
-        $result2 = mysqli_query($connection, $query2);
-        if(!$result2) {
-        
-            die("DB query failed.");
-         
-         }
-
-
+                        }
+                        header('Location:' . URL . 'list.php');
+                       
+                      
+                    }
     ?>
-	    <div class="container">
 
-			<h1>Save Product Details</h1>
-
-			<h2>product was saved</h2>
 
 			
 
-			<?php 
-
-				//release returned data
-
-			
-
-			?>
-
-	    </div>
-
-	</body>
-
-</html>
 
 <?php
 

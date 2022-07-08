@@ -1,6 +1,6 @@
 <?php
     include "config.php";
-    define("URL" , "http://localhost:8080/ex5%20to%20php/");
+    define("URL" , "http://localhost:8080/proj%20php/");
 
     session_start();
     if(empty($_SESSION['user_id']))
@@ -38,13 +38,13 @@
 
 </head>
 
-<body>
+<body onload="set_message()">
 
     
     <div class="container">
         <header>
             <a href="index.php" id="logo"></a>
-            <span>Good evening <?php echo $_SESSION["name"] ?> </span>
+            <span id="hello" > <?php echo $_SESSION["name"] ?> </span>
             <img <?php echo "src='" .$_SESSION["img"] . "'  alt='" . $_SESSION["name"] . "' title='" . $_SESSION["name"] ."'"; ?> >
 
             <nav class="navbar">
@@ -125,6 +125,8 @@
                 <a href="nextGames.php" class="desktop"><button>Next Games <i class="fa-solid fa-angles-right"></i></button></a>
                 <div class="mobile">
                     <h3>Tasks</h3>
+
+                    <?php ?>
                     <label><input type="checkbox"> Vandalism occures in gate A2.</label>
                     <label><input type="checkbox"> Throwing a smoke grenade in gate A2.</label>
                     <label><input type="checkbox"> You are required to warn Yosi Levi and prevent his violence.</label>

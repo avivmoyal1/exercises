@@ -2,7 +2,7 @@
 <?php
 
 include "config.php";
-define("URL" , "http://localhost:8080/ex5%20to%20php/");
+define("URL" , "http://localhost:8080/proj%20php/");
 $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
 if(mysqli_connect_errno()) {
@@ -44,8 +44,6 @@ if(mysqli_connect_errno()) {
                     $errormsg = "Invalid id or password";
             }
 
-
-           
 
         ?>
 

@@ -21,7 +21,7 @@
     <!-- my-css -->
     <link rel="stylesheet" href="css/style2.css">
     <!-- my-js -->
-    <script src="js/scripts.js"></script>
+    
 
 </head>
 
@@ -82,7 +82,7 @@
                 <span><a href="index.html" class="breadcrumbs"> Home page </a> >> Next games </span>
                 <h1>Future Games</h1>
                 <article>
-                    <img src="images/mctlv.png">
+                    <img id="test" src="">
                     <img src="images/hapbs.png">
                     <section>
                         <span>19/12/21 - 19:00</span>
@@ -179,10 +179,10 @@
             <span>&copy; All rights reserved to SafeGame</span>
         </footer>
     </div>
-    <script>
+    
 
-
-    </script>
+        <script src="js/scripts.js"></script>
+ 
 </body>
 
 </html>

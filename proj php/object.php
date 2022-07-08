@@ -1,6 +1,6 @@
 <?php
     include "config.php";
-    define("URL" , "http://localhost:8080/ex5%20to%20php/");
+    define("URL" , "http://localhost:8080/proj%20php/");
 
     session_start();
     if(empty($_SESSION['user_id']))
@@ -152,20 +152,20 @@
                             <span>Risk Level</span>
                             <?php
                                 
-                                $query = "SELECT * FROM tbl_fans_201 where id=" .$Fan_id;
-                                $result = mysqli_query($connection,$query);
-                                if(!$result){
-                                    die("DB query faild.");
-                                }
-                                else{
-                                    $row = mysqli_fetch_array($result);
-                                    if($row['w_number'] < 3)
-                                    echo "Low";
-                                    elseif($row['w_number'] >= 3 && $row[9] <= 5)
-                                    echo "Medium";
-                                    elseif($row['w_number'] >= 6)   
-                                    echo "High";
-                                    }
+                                // $query = "SELECT * FROM tbl_fans_201 where id=" .$Fan_id;
+                                // $result = mysqli_query($connection,$query);
+                                // if(!$result){
+                                //     die("DB query faild.");
+                                // }
+                                // else{
+                                //     $row = mysqli_fetch_array($result);
+                                if($row['w_number'] < 3)
+                                echo "Low";
+                                elseif($row['w_number'] >= 3 && $row[9] <= 5)
+                                echo "Medium";
+                                elseif($row['w_number'] >= 6)   
+                                echo "High";
+                                    // }
 
                             
                             
@@ -175,14 +175,30 @@
                     <article class="profile-history">
                         <h3> History</h3>
                         <section>
-                            <span>Games</span>250
-                            <span>Warnings</span>50 (one warning per 5 games)
+                            <span>Games</span>39
+                            <span>Warnings</span> <?php echo $row["w_number"];  ?>
                         </section>
                         <span>Top repeated topics of warnings:</span>
                         <ul>
-                            <li>Physical violence against rival team's fan</li>
+                            <?php
+                                $query2 = "SELECT topic FROM tbl_warning_201 WHERE fan_id =" .$Fan_id. " GROUP BY topic ORDER BY count(*) DESC LIMIT 3";
+                                $result2 = mysqli_query($connection,$query2);
+                                if(!$result2){
+                                    die("DB query faild.");
+                                }
+                                else{
+                                   while($row2 = mysqli_fetch_array($result2))
+                                   {
+                                        echo "<li>" . $row2["topic"] . "</li>";
+                                   }  
+                                }
+                                   
+                            
+                            
+                            ?>
+                            <!-- <li>Physical violence against rival team's fan</li>
                             <li>Vandalism</li>
-                            <li>Throwing a smoke grenade</li>
+                            <li>Throwing a smoke grenade</li> -->
                         </ul>
                     </article>
                 </div>

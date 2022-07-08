@@ -2,7 +2,7 @@
 <?php
 
     include "config.php";
-    define("URL" , "http://localhost:8080/ex5%20to%20php/");
+    define("URL" , "http://localhost:8080/proj%20php/");
     session_start();
 
     if(empty($_SESSION['user_id']))
@@ -196,39 +196,90 @@
 
                 </ul> 
 
+                <?php
+   
+                    if(!empty($_GET['fanId'])){
+       
+                        $fanId = $_GET['fanId'];
+
+                        $time =  $_GET['time'];
+                
+                        $date =  $_GET['date'];
+                
+                        $user =   $_GET['user'];
+                
+                        $topic = $_GET['topic'];
+                
+                        $note =   $_GET['details'];
+                
+                        $query_in = "insert into tbl_warning_201(fan_id,topic,details,updated_by,w_date,w_time) values ('$fanId', '$topic', '$note', '$user', '$date', '$time')";
+                        $query_up = "update tbl_fans_201 set w_number = w_number + 1 where id = $fanId";
+                
+                        $resul_in = mysqli_query($connection, $query_in);
+                        
+                        if(!$resul_in) {
+                        
+                        die("DB query failed.");
+                        
+                        }
+                        $result_up = mysqli_query($connection, $query_up);
+                        if(!$result_up) {
+                        
+                            die("DB query failed.");
+                        
+                        }
+                        $u_id = $_SESSION['user_id'];
+
+                        if(!empty($_GET["send-info-sg"])){
+                            $query_task = "INSERT INTO tbl_tasks_201(topic,fan_id,sent_from,sent_to,game_id) values ('$topic', '$fanId', '$u_id', '351', '4196')";
+                            $result_task = mysqli_query($connection,$query_task);
+                            if(!$result_task) {
+                        
+                                die("DB query failed.");
+                                
+                            }
+
+                        }
+                       
+                      
+                    }
+
+                
+                ?>
+
                 <article class="desktop">
                     <div id="form">
                         <h3>New Warning</h3>
                         <h4>Fan's information</h4>
                         <img id="warningFanPhoto" src="">
-                        <form id="form_data" action="#" method="GET">
+                        <form id="form_data"  action="saveWarning.php" method="GET">
                             <article>
-                                <section>Last Name</section><input type="text" value="" id="fanLastName" name="lastName"  >
-                                <section>First Name</section><input type="text" value="" id="fanFirstName" name="firstName" >
-                                <section>ID</section><input type="number" value="" id="fanId" name="fanId"  >
-                                <section>Fan Of</section><input type="text" value="" id="fanOf" name="fanOf"  >
+                                <section>Last Name</section><input type="text" value="" id="fanLastName" name="lastName" readonly >
+                                <section>First Name</section><input type="text" value="" id="fanFirstName" name="firstName"  readonly>
+                                <section>ID</section><input type="number" value="" id="fanId" name="fanId"  readonly>
+                                <section>Fan Of</section><input type="text" value="" id="fanOf" name="fanOf"  readonly>
 
                             </article>
                                 <h4>Warning's Details</h4>
                                 <article>
                                     <section>Created By</section><input type="text" value="Yael" name="user" readonly>
-                                     <section>Time</section><input name="time" id="toDayTime" type="time"  value="" readonly>
-                                    <section>Date</section><input name="date" id="toDayDate" type="date" value="" readonly>
+                                     <section>Time</section><input name="time" id="toDayTime" type="time"  value="" readonly >
+                                    <section>Date</section><input name="date" id="toDayDate" type="date" value="" readonly >
                                     <section>Topic</section>
                                     <select name="topic" required>
-                                        <option value=""selected hidden>Select topic</option>
-                                        <option value="Verbal assault towards fan">Verbal assault towards fan</option>
+                                        <option value=""selected hidden >Select topic</option>
+                                        <option value="Verbal assault towards fan" >Verbal assault towards fan</option>
                                         <option value="Verbal assault towards security guard">Verbal assault towards security guard</option>
-                                        <option value="Physical violence towards fan">Physical violence towards fan</option>
-                                        <option value="Physical violence towards security guard">Physical violence towards security guard</option>
-                                        <option value="Physical violence towards player">Physical violence towards player</option>
-                                        <option value="Breakout to the pitch">Breakout to the pitch</option>
-                                        <option value="Throwing trash on the pitch">Throwing trash on the pitch</option>
-                                        <option value="Throwing a smoke greande">Throwing a smoke greande</option>
-                                        <option value="Vandalism">Vandalism</option>
+                                        <option value="Physical violence towards fan" >Physical violence towards fan</option>
+                                        <option value="Physical violence towards security guard" >Physical violence towards security guard</option>
+                                        <option value="Physical violence towards player" >Physical violence towards player</option>
+                                        <option value="Breakout to the pitch" >Breakout to the pitch</option>
+                                        <option value="Throwing trash on the pitch" >Throwing trash on the pitch</option>
+                                        <option value="Throwing a smoke greande" >Throwing a smoke greande</option>
+                                        <option value="Vandalism" >Vandalism</option>
                                     </select>
                                     <section>Add Details</section>
-                                    <textarea name="details" rows="8" cols="25" placeholder="Text here"></textarea>
+                                    <textarea name="details" rows="8" cols="25" placeholder="Text here" ></textarea>
                                 </article>
                                 <section>
                          
@@ -236,14 +287,16 @@
                                             value="Send a summary to security manager">
                                         Send a
                                         summary to security manager</label>
-                                    <label><input type="checkbox" name="send-info"
-                                            value="Send a summary and location to near by security guard"> Send a summary
+                                    <label><input type="checkbox" name="send-info-sg"
+                                            value="Send a summary and location to near by security guard" > Send a summary
                                         and
                                         location to near by security guard</label>
                                     <button id="button" type="submit" value="Submit">Submit</button>
                                     
                                 </section>
                         </form>
+
+                        <section id="message"></section>
 
                     </div>
                     
