@@ -206,7 +206,7 @@
             </div>
    
             <div class="profile-aside">
-                <h3>Recent Warnings<a href=<?php echo "form.php?f_id=".$Fan_id;?>><i class="fa-regular fa-square-plus"></i></a></h3>
+                <h3>Warnings<a href=<?php echo "form.php?f_id=".$Fan_id;?>><i class="fa-regular fa-square-plus"></i></a></h3>
 
             <?php
 
@@ -216,12 +216,17 @@
                     die("DB query faild.");
                 }
 
+             
+                
                 while($row = mysqli_fetch_array($result)){
 
+                    $del = "location.href='ed_del.php?type=delete&w_num=".$row['num']."&fanId=".$Fan_id."'";
+                    $ed =  "location.href='form.php?type=edit&num=".$row['num']."&f_id=".$Fan_id."'";
+                   
                     echo "<article>";
                     echo "<h4>" .$row["topic"] . "</h4>";
                     if($_SESSION["role"] == "Security Manager"){
-                        echo "<section><i class='fa-solid fa-pen-to-square'></i><i class='fa-solid fa-trash-can'></i></section>";
+                        echo "<section><i class='fa-solid fa-pen-to-square' onclick=".$ed.";></i><i class='fa-solid fa-trash-can' onclick=".$del.";></i></section>";
                     }
                     echo "<h5>Warned by " .$row["updated_by"]. " - " .$row["w_date"] . "</h5>";
                     echo "<p>" .$row["details"]. "</p>";

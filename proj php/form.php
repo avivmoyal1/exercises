@@ -1,4 +1,3 @@
-
 <?php
     include "config.php";
     define("URL" , "http://localhost:8080/proj%20php/");
@@ -20,6 +19,18 @@
 
     }
     $Fan_id = $_GET["f_id"];
+    if(isset($_GET['type']))
+    {
+        $num = $_GET['num'];
+        $query_up = "SELECT * FROM tbl_warning_201 where num=" .$num;
+        $result_up = mysqli_query($connection,$query_up);
+        if(!$result_up){
+            die("DB query faild.");
+        }
+        else{
+            $row_up = mysqli_fetch_array($result_up);
+        }
+    }
     $query = "SELECT * FROM tbl_fans_201 where id=" .$Fan_id;
     $result = mysqli_query($connection,$query);
 
@@ -110,6 +121,14 @@
         </header>
 
         <main>
+            <?php
+                if(isset($_GET['type'])){
+                    echo "<form action='ed_del.php' metod='GET'>";
+                }
+                else{
+                    echo "<form action='saveWarning.php' metod='POST'>";
+                }
+                ?>
             <div id="form-info">
                 <span><a href="index.php" class="breadcrumbs"> Home page </a> >> <a href="list.php"
                         class="breadcrumbs"> Fans </a>>> <a href="object.php" class="breadcrumbs">Profile</a>>> Warning
@@ -122,46 +141,61 @@
                     <section>Last Name</section><input type="text" value=<?php echo $row["l_name"]; ?> id="fanLastName" name="lastName" readonly >
                     <section>Age</section><input type="text" value=<?php echo $row["age"]; ?> readonly>
                     <section>ID</section><input type="number" value=<?php echo $row["id"]; ?> id="fanId" name="fanId"  readonly> 
-                    <section>Phone</section><input type="number" value=<?php echo $row["phone"]; ?> readonly>
+                    <section>Phone</section><input type="text" value=<?php echo $row["phone"]; ?> readonly>
                     <section>Fan Of</section><input type="text" value=<?php echo $row["fan_of"]; ?> id="fanOf" name="fanOf"  readonly>
 
                 </article>
-                <form >
+            
+                
                     <h3>Warning's Details</h3>
                     <article class="form-details">
                         <section>Created By</section><input type="text" value=<?php echo $_SESSION['name'];?> name="user" readonly>
                         <section>Time</section><input name="time" id="toDayTimeMobile" type="time"  value=<?php echo date("H:i",strtotime('1 hour')); ?> readonly>
 
                         <section>Date</section><input name="date" id="toDayDateMobile" type="date" value=<?php echo date("Y-m-d");?> readonly>
-
-
                         <section>Topic</section>
-                        <select name="topic" required>
-                                        <option value="" selected hidden >Select topic</option>
-                                        <option value="Verbal assault towards fan" >Verbal assault towards fan</option>
-                                        <option value="Verbal assault towards security guard">Verbal assault towards security guard</option>
-                                        <option value="Physical violence towards fan" >Physical violence towards fan</option>
-                                        <option value="Physical violence towards security guard" >Physical violence towards security guard</option>
-                                        <option value="Physical violence towards player" >Physical violence towards player</option>
-                                        <option value="Breakout to the pitch" >Breakout to the pitch</option>
-                                        <option value="Throwing trash on the pitch" >Throwing trash on the pitch</option>
-                                        <option value="Throwing a smoke greande" >Throwing a smoke greande</option>
-                                        <option value="Vandalism" >Vandalism</option>
-                                    </select>
-                        <section>Add Details</section>
-                        <textarea name="details" rows="8" cols="25" placeholder="Text here" ></textarea>
+                            <select name="topic" required>
+                            <?php
+                                if(isset($_GET['type']))
+                                { 
 
+                                    echo "<option value='".$row_up['topic']."' selected hidden >".$row_up['topic']."</option>";
+                                }
+                                else{
+                                    
+                                    echo "<option value='' selected hidden >Select topic</option>";
+                                }
+                            ?>
+                                <option value="Verbal assault towards fan" >Verbal assault towards fan</option>
+                                <option value="Verbal assault towards security guard">Verbal assault towards security guard</option>
+                                <option value="Physical violence towards fan" >Physical violence towards fan</option>
+                                <option value="Physical violence towards security guard" >Physical violence towards security guard</option>
+                                <option value="Physical violence towards player" >Physical violence towards player</option>
+                                <option value="Breakout to the pitch" >Breakout to the pitch</option>
+                                <option value="Throwing trash on the pitch" >Throwing trash on the pitch</option>
+                                <option value="Throwing a smoke greande" >Throwing a smoke greande</option>
+                                <option value="Vandalism" >Vandalism</option>
+                            </select>
+                        <section>Add Details</section>
+                        <?php
+
+                            if(isset($_GET['type']))
+                            { 
+                               
+                                echo "<input name='type' value='edit' style='display:none'>";
+                                echo "<input name='w_num' value=".$num." style='display:none'>";
+                                echo "<textarea name='details' rows='8' cols='25' placeholder='' >".$row_up['details']."</textarea>";
+                            }
+                            else{
+                                
+                                echo "<textarea name='details' rows='8' cols='25' placeholder='Text here' ></textarea>";
+                            }
+                        ?>                        
                     </article>
                     <section class="form-checkboxes">
-                        <label><input type="checkbox" name="send-info"
-                                            value="Send a summary to security manager">
-                                        Send a
-                                        summary to security manager</label>
-                                    <label><input type="checkbox" name="send-info-sg"
-                                            value="Send a summary and location to near by security guard" > Send a summary
-                                        and
-                                        location to near by security guard</label>
-                                    <button id="button" type="submit" value="Submit" onclick="$_SESSION['url']='object.php'">Submit</button>
+                        <label><input type="checkbox" name="send-info" value="Send a summary to security manager">Send a summary to security manager</label>
+                        <label><input type="checkbox" name="send-info-sg" value="Send a summary and location to near by security guard" > Send a summary and location to near by security guard</label>
+                        <button id="button" type="submit" value="Submit">Submit</button>
                                     
                     </section>
                 </form>

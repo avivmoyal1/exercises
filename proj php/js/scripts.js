@@ -5,7 +5,7 @@ function myFunction() {
   ul = document.getElementById("myUL");
   li = ul.getElementsByTagName("li");
   for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("a")[0];
+    a = li[i].getElementsByTagName("label")[0];
     txtValue = a.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
       li[i].style.display = "";
@@ -218,6 +218,7 @@ fetch("data.json")
 //   e.preventDefault();
 //   messageEl.innerHTML = "Loading..";
 //   savePost();
+//   return false;
 // })
 
 // const savePost = async() => {
@@ -250,3 +251,54 @@ fetch("data.json")
 
 //   e.preventDefault();
 // });
+
+
+
+class Lightbox {
+  static activate() {
+      document.body.insertAdjacentHTML("beforeend", `
+          <div class="lightbox" id="lightbox" style="display: none;">
+              <div class="lightbox__inner">
+                  <button type="button" class="lightbox__close">
+                      &times;
+                  </button>
+                  <div class="lightbox__content"></div>
+              </div>
+          </div>
+      `);
+
+      const lightBox = document.querySelector("#lightbox");
+      const btnClose = lightBox.querySelector(".lightbox__close");
+      const content = lightBox.querySelector(".lightbox__content");
+      const closeLightbox = () => {
+          lightBox.style.display = "none";
+          content.innerHTML = "";
+      };
+
+      lightBox.addEventListener("mousedown", e => {
+          if (e.target.matches("#lightbox")) {
+              closeLightbox();
+          }
+      });
+
+      btnClose.addEventListener("click", () => {
+          closeLightbox();
+      });
+  }
+
+  static show(htmlOrElement) {
+      const content = document.querySelector("#lightbox .lightbox__content");
+
+      document.querySelector("#lightbox").style.display = null;
+
+      if (typeof htmlOrElement === "string") {
+          content.innerHTML = htmlOrElement;
+      } else {
+          content.innerHTML = "";
+          content.appendChild(htmlOrElement);
+      }
+  }
+}
+
+Lightbox.activate();
+Lightbox.show("<h2>edite text</h2><form action='ed_del.php?type=edit><textarea class=' name='details' rows='8' cols='25' placeholder='Text here' ></textarea><button type=submit>Submit</buttom></form>");

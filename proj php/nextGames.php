@@ -42,7 +42,7 @@
     <div class="container">
         <header>
             <a href="index.php" id="logo"></a>
-            <span id="hello"><?php echo $_SESSION["name"] ?> </span>
+            <span id="hello"> <?php echo $_SESSION["name"] ?> </span>
             <img <?php echo "src='" .$_SESSION["img"] . "'  alt='" . $_SESSION["name"] . "' title='" . $_SESSION["name"] ."'"; ?> >
             <nav class="navbar">
                 <div class="navbar-container">

@@ -17,6 +17,7 @@
 
 
 <?php
+    
         if(!empty($_POST['fanId'])){
             $fname = $_POST['firstName'];
 
@@ -60,7 +61,7 @@
                 }
 
             }
-            header('Location:' . URL ,$_SESSION['url'] .'?ss=1&name=' . $fname );
+            header('Location:' . URL . $_SESSION['ttt'] .'?ss=1&name=' . $fname );
            
           
         }

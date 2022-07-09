@@ -69,7 +69,7 @@
                     <span><input type="text" name="id"></span>
                     <label>password</label>
                     <span><input type="password" name="pass"></span>
-                    <button type="submit">Submint</button>
+                    <button type="submit">Submit</button>
                     <section><?php if(isset($errormsg)){echo $errormsg;} ?></section>
                 </div>
             </form>

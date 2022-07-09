@@ -133,7 +133,7 @@
                     <section><i class="dot-yellow"></i>Yellow Medium level 35%</section>
                     <section><i class="dot-red"></i>Red High level 55%</section>
                 </div>
-                <a href="nextGames.php" class="desktop"><button>Next Games <i class="fa-solid fa-angles-right"></i></button></a>
+                <button><a href="nextGames.php" class="desktop">Next Games <i class="fa-solid fa-angles-right"></i></a></button>
                 <div class="mobile">
                     <h3>Tasks</h3>
                     <form id="cbox" action=del_task.php metod=GET>

@@ -173,7 +173,7 @@
                                 echo "<i class='dot-yellow'></i>";
                             elseif($row[9] >= 6)   
                                 echo "<i class='dot-red'></i>";
-                            echo "<a href='object.php?id=" . $row[0] . "'>" . $row[1] . " " . $row[2] . "</a>";
+                            echo "<a href='object.php?id=" . $row[0] . "'><label>" . $row[1] . " " . $row[2] . "</label></a>";
                             //need inner join here to set time
 
                             echo "<span class='desktop'>Last warned : ".$date."</span>"; 
@@ -260,8 +260,6 @@
                             }
 
                         }
-                       
-                      
                     }
 
                 
@@ -272,7 +270,7 @@
                         <h3>New Warning</h3>
                         <h4>Fan's information</h4>
                         <img id="warningFanPhoto" src="">
-                        <form id="form_data"  action="saveWarning.php" method="POST">
+                        <form id="form_data"  action="saveWarning.php" method="POST" >
                             <article>
                                 <section>First Name</section><input type="text" value="" id="fanFirstName" name="firstName"  readonly>
                                 <section>Last Name</section><input type="text" value="" id="fanLastName" name="lastName" readonly >
@@ -311,7 +309,7 @@
                                             value="Send a summary and location to near by security guard" > Send a summary
                                         and
                                         location to near by security guard</label>
-                                    <button id="button" type="submit" value="Submit">Submit</button>
+                                    <button id="button" type="submit" value="Submit" onclick="$_SESSION['ttt'] = 'list.php'">Submit</button>
                                     
                                 </section>
                         </form>

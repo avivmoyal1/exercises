@@ -488,7 +488,12 @@ h3 {
 .profile-aside {
     margin-left: 50px;
     width: 350px;
+    overflow-y: scroll;
 
+}
+
+.profile-aside::-webkit-scrollbar {
+    display: none;
 }
 
 .profile-aside h3 i{
@@ -642,7 +647,7 @@ input[type=checkbox] {
     margin: 0;
     text-align: center;
 }
-#homepage-atr-1 a button{
+#homepage-atr-1 button{
     border: #36bfe9;
     background-color: #36bfe9;
     margin: 50px 0 0 50px;
@@ -651,6 +656,7 @@ input[type=checkbox] {
     border-radius: 20px;
     font-weight: bold;
     font-size: 20px;
+    cursor: pointer;
 }
 #homepage-atr-1 div:nth-child(3) {
     margin: 10px 0;
@@ -1271,13 +1277,69 @@ border-radius: 10px;
     font-size: 700;
 }
 
-.form-fan-info input {
+.form-fan-info input,.form-details input {
     height: 30px;
     width: 140px;
     padding-left: 5px;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    outline: none;
 
 }
 
+#form_data input {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+
+/*lightbox*/
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 15px;
+    
+  }
+  
+  .lightbox__inner {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    min-height: 250px;
+    background: white;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    display: flex;
+  /*   align-items: center; */
+    justify-content: center;
+  }
+  
+  .lightbox__close {
+    background: none;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 10px;
+    font-size: 40px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .lightbox__close:hover {
+    color: rgba(0, 0, 0, 0.8);
+  }
+  
 
 @media only screen and (max-width:1000px) {
     .container {
