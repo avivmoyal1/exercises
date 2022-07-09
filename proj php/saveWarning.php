@@ -17,20 +17,20 @@
 
 
 <?php
-        if(!empty($_GET['fanId'])){
-            $fname = $_GET['firstName'];
+        if(!empty($_POST['fanId'])){
+            $fname = $_POST['firstName'];
 
-            $fanId = $_GET['fanId'];
+            $fanId = $_POST['fanId'];
 
-            $time =  $_GET['time'];
+            $time =  $_POST['time'];
         
-            $date =  $_GET['date'];
+            $date =  $_POST['date'];
         
-            $user =   $_GET['user'];
+            $user =   $_POST['user'];
         
-            $topic = $_GET['topic'];
+            $topic = $_POST['topic'];
         
-            $note =   $_GET['details'];
+            $note =   $_POST['details'];
         
             $query_in = "insert into tbl_warning_201(fan_id,topic,details,updated_by,w_date,w_time) values ('$fanId', '$topic', '$note', '$user', '$date', '$time')";
             $query_up = "update tbl_fans_201 set w_number = w_number + 1 where id = $fanId";
@@ -50,7 +50,7 @@
             }
             $u_id = $_SESSION['user_id'];
 
-            if(!empty($_GET["send-info-sg"])){
+            if(!empty($_POST["send-info-sg"])){
                 $query_task = "INSERT INTO tbl_tasks_201(topic,fan_id,sent_from,sent_to,game_id) values ('$topic', '$fanId', '$u_id', '351', '4196')";
                 $result_task = mysqli_query($connection,$query_task);
                 if(!$result_task) {
@@ -60,7 +60,7 @@
                 }
 
             }
-            header('Location:' . URL . 'list.php?ss=1&name=' . $fname );
+            header('Location:' . URL ,$_SESSION['url'] .'?ss=1&name=' . $fname );
            
           
         }

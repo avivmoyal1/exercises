@@ -2,6 +2,7 @@
 <?php
 
     session_start(); 
+    define("URL" , "http://localhost:8080/proj%20php/");
     if(isset($_SESSION["user_id"]))
     {
         header('Location:' . URL . 'index.php');
@@ -9,7 +10,6 @@
 
     include "config.php";
 
-    define("URL" , "http://localhost:8080/proj%20php/");
 
     $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
     if(mysqli_connect_errno()) {
@@ -17,6 +17,7 @@
         die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
 
         );
+    }
 
     if(!empty($_POST["id"])){
         $log = "SELECT * FROM tbl_users_201 WHERE id ='" . $_POST["id"] . "'and password ='". $_POST["pass"]."'";
@@ -35,7 +36,7 @@
             $errormsg = "Invalid ID or Password";
     }
 
-    }
+    
 ?>
 
 <!DOCTYPE html>

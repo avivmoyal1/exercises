@@ -1,7 +1,7 @@
 <?php
     include "config.php";
     define("URL" , "http://localhost:8080/proj%20php/");
-
+    $q = "'";
     session_start();
     if(empty($_SESSION['user_id']))
     {
@@ -204,9 +204,9 @@
                 </div>
 
             </div>
-
+   
             <div class="profile-aside">
-                <h3>Recent Warnings<a href="form.php"><i class="fa-regular fa-square-plus"></i></a></h3>
+                <h3>Recent Warnings<a href=<?php echo "form.php?f_id=".$Fan_id;?>><i class="fa-regular fa-square-plus"></i></a></h3>
 
             <?php
 

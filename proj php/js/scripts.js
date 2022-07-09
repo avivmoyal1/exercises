@@ -210,29 +210,43 @@ fetch("data.json")
   .then(data => showData(data.Games));
 
 
-const submit = document.getElementById("button");
-const form = document.querySelector('#form');
-const messageEl = document.querySelector('#msg');
-// const posts = document.querySelector('#posts');
-submit.addEventListener('click', (e) => {
-  e.preventDefault();
-  messageEl.innerHTML = "Loading..";
-  savePost();
-})
+// const submit = document.getElementById("button");
+// const form = document.querySelector('#form');
+// const messageEl = document.querySelector('#msg');
+// // const posts = document.querySelector('#posts');
+// submit.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   messageEl.innerHTML = "Loading..";
+//   savePost();
+// })
 
-const savePost = async() => {
-  try{
-    let reponse = await fetch('saveWarning.php', {
-      method: 'GET',
-      body: new FormData(form),
-    });
-    const result = await Response.php();
-    console.log(result);
-    // posts.innerHTML = result.retVal;
-    messageEl.style.display = "none";
-  } catch(error) {
-    console.log(error);
-  }
-};
+// const savePost = async() => {
+//   try{
+//     let reponse = await fetch('saveWarning.php', {
+//       method: 'POST',
+//       body: new FormData(form),
+//     });
+//     const result = await Response.php();
+//     console.log(result);
+//     // posts.innerHTML = result.retVal;
+//     messageEl.style.display = "none";
+//   } catch(error) {
+//     console.log(error);
+//   }
+// };
 
 
+// $("form").on("submit", function (e) {
+//   var dataString = $(this).serialize();
+   
+//   $.ajax({
+//     type: "POST",
+//     url: "saveWarning.php",
+//     data: dataString,
+//     success: function () {
+//       alert("Display message back to the user here");
+//     }
+//   });
+
+//   e.preventDefault();
+// });

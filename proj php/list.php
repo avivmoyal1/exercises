@@ -272,7 +272,7 @@
                         <h3>New Warning</h3>
                         <h4>Fan's information</h4>
                         <img id="warningFanPhoto" src="">
-                        <form id="form_data"  action="saveWarning.php" method="GET">
+                        <form id="form_data"  action="saveWarning.php" method="POST">
                             <article>
                                 <section>First Name</section><input type="text" value="" id="fanFirstName" name="firstName"  readonly>
                                 <section>Last Name</section><input type="text" value="" id="fanLastName" name="lastName" readonly >
@@ -282,7 +282,7 @@
                             </article>
                                 <h4>Warning's Details</h4>
                                 <article>
-                                    <section>Created By</section><input type="text" value="Yael" name="user" readonly>
+                                    <section>Created By</section><input type="text" value=<?php echo $_SESSION['name'];?> name="user" readonly>
                                      <section>Time</section><input name="time" id="toDayTime" type="time"  value="" readonly >
                                     <section>Date</section><input name="date" id="toDayDate" type="date" value="" readonly >
                                     <section>Topic</section>

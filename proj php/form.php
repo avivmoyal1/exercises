@@ -10,13 +10,33 @@
         exit;
     }
 
+    $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
+    if(mysqli_connect_errno()) {
+
+        die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
+
+        );
+
+    }
+    $Fan_id = $_GET["f_id"];
+    $query = "SELECT * FROM tbl_fans_201 where id=" .$Fan_id;
+    $result = mysqli_query($connection,$query);
+
+    if(!$result){
+        die("DB query faild.");
+    }
+    else{
+        $row = mysqli_fetch_array($result);
+    }
+
 ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>SafeGame Home-Page</title>
+    <title>SafeGame form</title>
     <meta charset="UTF-8">
     <!-- responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,50 +116,53 @@
                     Form </span>
                 <h1>New Warning</h1>
                 <h3>Fan's information</h3>
-                <img src="images/fan1.jpg">
+                <img <?php echo "src='".$row["img"]."' alt='" . $row["f_name"] . " " . $row["l_name"] . "' title='" . $row["f_name"] . " " . $row["l_name"] . "'";?>>
                 <article class="form-fan-info">
-                    <section>First Name</section><span>Yosi</span>
-                    <section>Last Name</section><span>Levi</span>
-                    <section>Age</section><span>32</span>
-                    <section>ID</section><span>320564725</span>
-                    <section>Phone</section><span>056-7244539</span>
-                    <section>Fan Of</section><span>Beitar Jerusalem</span>
+                    <section>First Name</section><input type="text" value=<?php echo $row["f_name"]; ?> id="fanFirstName" name="firstName"  readonly>
+                    <section>Last Name</section><input type="text" value=<?php echo $row["l_name"]; ?> id="fanLastName" name="lastName" readonly >
+                    <section>Age</section><input type="text" value=<?php echo $row["age"]; ?> readonly>
+                    <section>ID</section><input type="number" value=<?php echo $row["id"]; ?> id="fanId" name="fanId"  readonly> 
+                    <section>Phone</section><input type="number" value=<?php echo $row["phone"]; ?> readonly>
+                    <section>Fan Of</section><input type="text" value=<?php echo $row["fan_of"]; ?> id="fanOf" name="fanOf"  readonly>
 
                 </article>
                 <form >
                     <h3>Warning's Details</h3>
                     <article class="form-details">
-                        <section>Created By</section><span>Yael</span>
-                        <section>Time</section><input name="time" id="toDayTimeMobile" type="time"  value="10:50" readonly>
+                        <section>Created By</section><input type="text" value=<?php echo $_SESSION['name'];?> name="user" readonly>
+                        <section>Time</section><input name="time" id="toDayTimeMobile" type="time"  value=<?php echo date("H:i",strtotime('1 hour')); ?> readonly>
 
-                        <section>Date</section><input name="date" id="toDayDateMobile" type="date" value="" readonly>
+                        <section>Date</section><input name="date" id="toDayDateMobile" type="date" value=<?php echo date("Y-m-d");?> readonly>
 
 
                         <section>Topic</section>
-                        <select>
-                            <option selected hidden>Select topic</option>
-                            <option>Verbal assault towards fan</option>
-                            <option>Verbal assault towards security guard</option>
-                            <option>Physical violence towards fan</option>
-                            <option>Physical violence towards security guard</option>
-                            <option>Physical violence towards player</option>
-                            <option>Breakout to the pitch</option>
-                            <option>Throwing trash on the pitch</option>
-                            <option>Throwing a smoke greande</option>
-                            <option>Vandalism</option>
-                        </select>
+                        <select name="topic" required>
+                                        <option value="" selected hidden >Select topic</option>
+                                        <option value="Verbal assault towards fan" >Verbal assault towards fan</option>
+                                        <option value="Verbal assault towards security guard">Verbal assault towards security guard</option>
+                                        <option value="Physical violence towards fan" >Physical violence towards fan</option>
+                                        <option value="Physical violence towards security guard" >Physical violence towards security guard</option>
+                                        <option value="Physical violence towards player" >Physical violence towards player</option>
+                                        <option value="Breakout to the pitch" >Breakout to the pitch</option>
+                                        <option value="Throwing trash on the pitch" >Throwing trash on the pitch</option>
+                                        <option value="Throwing a smoke greande" >Throwing a smoke greande</option>
+                                        <option value="Vandalism" >Vandalism</option>
+                                    </select>
                         <section>Add Details</section>
-                        <textarea name="msg" rows="8" cols="25" placeholder="Text here"></textarea>
+                        <textarea name="details" rows="8" cols="25" placeholder="Text here" ></textarea>
 
                     </article>
                     <section class="form-checkboxes">
-                        <label><input type="checkbox" name="send-info" value="Send a summary to security manager"> Send
-                            a
-                            summary to security manager</label>
                         <label><input type="checkbox" name="send-info"
-                                value="Send a summary and location to near by security guard"> Send a summary and
-                            location to near by security guard</label>
-                        <button id="button" type="submit" value="Submit">Submit</button>
+                                            value="Send a summary to security manager">
+                                        Send a
+                                        summary to security manager</label>
+                                    <label><input type="checkbox" name="send-info-sg"
+                                            value="Send a summary and location to near by security guard" > Send a summary
+                                        and
+                                        location to near by security guard</label>
+                                    <button id="button" type="submit" value="Submit" onclick="$_SESSION['url']='object.php'">Submit</button>
+                                    
                     </section>
                 </form>
             </div>
