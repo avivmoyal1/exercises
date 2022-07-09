@@ -198,17 +198,16 @@ window.onload = function set_message(){
   // }
 
 function showData(data){
-  for (const key in data)
-  document.getElementById("games_img1").src = '${data.Games[key].team_one_img}';
-  document.getElementById("games_img2").src = '${data.Games[key].team_two_img}';
-  document.getElementById("games_team1").innerHTML = '${data.Games[key].team_one';
-  document.getElementById("games_team1").innerHTML = '${data.Games[key].team_two';
-  document.getElementById("games_date").innerHTML = data.Games[key].date[0] + '/' + data.Games[key].date[1] + '/' + data.Games[key].date[2] + ' - ' + data.Games[key].time[0] + ' : ' + data.Games[key].time[1];
-
+  var div_list = document.getElementById('future-games');
+  for (const key in data){
+    var art = document.createElement('article');
+    art.innerHTML = "<img src=" + data[key].team_one_img + "> <img src="+ data[key].team_two_img+ "> <section><span>" + data[key].date[0].day  + "/" + data[key].date[0].month + "/" + data[key].date[0].year + " - " + data[key].time[0].hour + ":" + data[key].time[0].minute + "</span><div><section>"+ data[key].team_one +"</section><section>"+ data[key].team_two +"</section></div><span>Stadium status:</span><section>Security level is<span class='red'> High</span></section></section>";
+    div_list.appendChild(art);
+  }
 }
 fetch("data.json")
   .then(response =>response.json())
-  .then(data => showData(data));
+  .then(data => showData(data.Games));
 
 
 const submit = document.getElementById("button");
@@ -235,3 +234,5 @@ const savePost = async() => {
     console.log(error);
   }
 };
+
+

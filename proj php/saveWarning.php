@@ -18,6 +18,7 @@
 
 <?php
         if(!empty($_GET['fanId'])){
+            $fname = $_GET['firstName'];
 
             $fanId = $_GET['fanId'];
 
@@ -59,7 +60,7 @@
                 }
 
             }
-            header('Location:' . URL . 'list.php?ss=1');
+            header('Location:' . URL . 'list.php?ss=1&name=' . $fname );
            
           
         }

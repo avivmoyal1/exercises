@@ -138,12 +138,31 @@
                     <option>GPS situation</option>
                     <option>Gate</option>
                 </select>
-                <span id="success"> <?php if(isset($success)){echo $success;} ?></span>
+                <?php
+                            if(!empty($_GET['ss'])){
+                                echo "<span id='message'>".$_GET['name']." warning saved</span>";
+                            }
+                        ?>
 
                 <ul id="myUL">
                     
                     <?php
                         while($row = mysqli_fetch_row($result)) {
+
+                            if($row[9] != 0){
+                                $query_time = "SELECT * FROM tbl_warning_201 where fan_id = " .$row[0]. " GROUP BY w_date DESC, w_time DESC LIMIT 1";
+                                $result_time = mysqli_query($connection,$query_time);
+                                if(!$result_time){
+                                    die("DB query faild.");
+                                }
+                                else if($result_time){
+                                    $row_time = mysqli_fetch_array($result_time);
+                                    $date = $row_time["w_date"];
+                                }
+                            }
+                            else{
+                                $date = "wasn't warned";
+                            }
                             
                             echo "<li>";
                             echo "<a href='object.php?id=" . $row[0] . "'><img src=" . $row[10] . "></a>";
@@ -156,7 +175,8 @@
                                 echo "<i class='dot-red'></i>";
                             echo "<a href='object.php?id=" . $row[0] . "'>" . $row[1] . " " . $row[2] . "</a>";
                             //need inner join here to set time
-                            echo "<span class='desktop'>warned - 5 min ago</span>"; 
+
+                            echo "<span class='desktop'>Last warned : ".$date."</span>"; 
                             echo "<br>";
                             //need to add status to DB
                             echo "<section>GPS activated<i class='dot-green'></i></section>";
@@ -252,10 +272,10 @@
                         <h3>New Warning</h3>
                         <h4>Fan's information</h4>
                         <img id="warningFanPhoto" src="">
-                        <form id="form_data"  action="" method="GET">
+                        <form id="form_data"  action="saveWarning.php" method="GET">
                             <article>
-                                <section>Last Name</section><input type="text" value="" id="fanLastName" name="lastName" readonly >
                                 <section>First Name</section><input type="text" value="" id="fanFirstName" name="firstName"  readonly>
+                                <section>Last Name</section><input type="text" value="" id="fanLastName" name="lastName" readonly >
                                 <section>ID</section><input type="number" value="" id="fanId" name="fanId"  readonly>
                                 <section>Fan Of</section><input type="text" value="" id="fanOf" name="fanOf"  readonly>
 
@@ -295,11 +315,7 @@
                                     
                                 </section>
                         </form>
-                        <?php
-                            if(!empty($_GET['ss'])){
-                                echo "<section> Data saved</section>";
-                            }
-                        ?>
+                       
                         
 
                     </div>

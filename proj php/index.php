@@ -1,12 +1,23 @@
 <?php
     include "config.php";
-    define("URL" , "http://localhost/proj-php/");
+    define("URL" , "http://localhost:8080/proj%20php/");
 
     session_start();
     if(empty($_SESSION['user_id']))
     {
         header('Location:' . URL . 'login.php');
         exit;
+    }
+
+
+    $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
+    if(mysqli_connect_errno()) {
+
+        die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
+
+        );
+
     }
 
 ?>
@@ -125,13 +136,25 @@
                 <a href="nextGames.php" class="desktop"><button>Next Games <i class="fa-solid fa-angles-right"></i></button></a>
                 <div class="mobile">
                     <h3>Tasks</h3>
-
-                    <?php ?>
-                    <label><input type="checkbox"> Vandalism occures in gate A2.</label>
-                    <label><input type="checkbox"> Throwing a smoke grenade in gate A2.</label>
-                    <label><input type="checkbox"> You are required to warn Yosi Levi and prevent his violence.</label>
-                    <label><input type="checkbox"> Change position to gate A3. </label>
-                    <label><input type="checkbox"> Support Yaniv Faingold at gate A1.</label>
+                    <form id="cbox" action=del_task.php metod=GET>
+                        <?php
+    
+                        
+                            $query = "SELECT * FROM tbl_tasks_201 where sent_to=" .$_SESSION['user_id']. " and game_id=4196 limit 5";
+                            $result = mysqli_query($connection,$query);     
+                            if(!$result){
+                                die("DB query faild.");
+                            }
+                            else{
+                                while($row = mysqli_fetch_array($result)){
+                                    echo "<label><input type='checkbox' name='tasks_num[]' value='".$row['t_id']."'>".$row['topic']."</label>";
+                                }
+                                echo " <button id='button' type='submit' value='Submit'>Submit</button>";
+                            }
+        
+        
+                        ?>
+                    </form>
                 </div>
 
             </article>

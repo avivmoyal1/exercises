@@ -1,6 +1,6 @@
 <?php
     include "config.php";
-    define("URL" , "http://localhost/proj-php/");
+    define("URL" , "http://localhost:8080/proj%20php/");
 
     session_start();
     if(empty($_SESSION['user_id']))
@@ -94,115 +94,7 @@
             <div id="future-games">
                 <span><a href="index.php" class="breadcrumbs"> Home page </a> >> Next games </span>
                 <h1>Future Games</h1>
-                <article>
-                    <img id="games_img1" src="">
-                    <img id="games_img2" src="">
-                    <section>
-                        <span id="games_date"></span>
-                        <div>
-                            <section id="games_team1"></section>
-                            <section id="games_team2"></section>
-                        </div>
-                        <span>Stadium status:</span>
-                        <section>Security level is<span class="red"> High</span></section>
-                    </section>
-                </article>
-
-                <!-- <article>
-                    <img id="games_img1" src="">
-                    <img id="games_img2" src="images/hapbs.png">
-                    <section>
-                        <span id="games_date">19/12/21 - 19:00</span>
-                        <div>
-                            <section id="games_team1">Maccabi Tel Aviv</section>
-                            <section id="games_team2">Hapoel Beer Sheva</section>
-                        </div>
-                        <span>Stadium status:</span>
-                        <section>Security level is<span class="red"> High</span></section>
-                    </section>
-                </article>
-
-
-
-
-                <article>
-                    <img src="images/macnet.png">
-                    <img src="images/hap.png">
-                    <section>
-                        <span>19/12/21 -  22:00</span>
-                        <div>
-                            <section>Maccabi Netanya</section>
-                            <section>Hapoel Tel Aviv</section>
-                        </div>
-                        <span>Stadium status:</span>
-                        <section>Security level is<span class="green"> Low</span></section>
-                    </section>
-                </article>
-                <article>
-                    <img src="images/haphif.png">
-                    <img src="images/mchif.png">
-                    <section>
-                        <span>20/12/21-  21:30</span>
-                        <div>
-                            <section>Hapoel Haifa </section>
-                            <section>Maccabi Haifa</section>
-                        </div>
-                        <span>Stadium status:</span>
-                        <section>Security level is<span class="orange"> Medium</span></section>
-                    </section>
-                </article>
-                <article>
-                    <img src="images/hap.png">
-                    <img src="images/btr.png">
-                    <section>
-                        <span>26/12/21 - 21:30</span>
-                        <div class="desktop">
-                            <section>Hapoel Tel Aviv</section>
-                            <section>Beitar Jerusalem</section>
-                        </div>
-                        <span>Stadium status:</span>
-                        <section>Security level is<span class="gray"> undefined</span></section>
-                    </section>
-                </article>
-                <article>
-                    <img src="images/hapbs.png">
-                    <img src="images/macpt.png">
-                    <section>
-                        <span>27/12/21 - 20:05</span>
-                        <div>
-                            <section>Hapoel Beer Sheva </section>
-                            <section>Maccabi Petah Tikva</section>
-                        </div>
-                        <span>Stadium status:</span>
-                        <section>Security level is<span class="gray"> undefined</span></section>
-                    </section>
-                </article>
-                <article>
-                    <img src="images/hapbni.png">
-                    <img src="images/mctlv.png">
-                    <section>
-                        <span>01/01/22 - 19:45</span>
-                        <div>
-                            <section>Hapoel Bnei Sakhnin</section>
-                            <section>Maccabi Tel Aviv</section>
-                        </div>
-                        <span>Stadium status:</span>
-                        <section>Security level is<span class="gray"> undefined</span></section>
-                    </section>
-                </article>
-                <article>
-                    <img src="images/btr.png">
-                    <img src="images/hap.png">
-                    <section>
-                        <span>02/01/21 - 19:00</span>
-                        <div>
-                            <section>Maccabi Tel Aviv</section>
-                            <section>Hapoel Beer Sheva</section>
-                        </div>
-                        <span>Stadium status:</span>
-                        <section>Security level is<span class="gray"> undefined</span></section>
-                    </section>
-                </article> -->
+              
             </div>
 
         </main>

@@ -206,7 +206,7 @@
             </div>
 
             <div class="profile-aside">
-                <h3>Recent Warnings<i class="fa-regular fa-square-plus"></i></h3>
+                <h3>Recent Warnings<a href="form.php"><i class="fa-regular fa-square-plus"></i></a></h3>
 
             <?php
 

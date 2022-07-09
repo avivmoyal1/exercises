@@ -164,9 +164,9 @@ select {
     padding-left: 2px;
 }
 
-input:focus {
+/* input:focus {
     border-bottom: 2px solid green;
-}
+} */
 
 .fa-magnifying-glass {
     margin-left: 10px;
@@ -1143,8 +1143,133 @@ input[type=checkbox] {
 
 /*list future games*/
 
+/*ADDAT 9/7/22*/
+#message{
+    position: absolute;
+    margin-top: 7px;
+    right: 18px;
+    width: 440px;
+    height: 30px;
+    text-align: center;
+    line-height: 1.4;
+    background-color: #20c497;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+#cbox{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+#form-login{
+    background-color: #e2e2e5;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    place-content: center;
+    height: 100%;
+    width: 100%;
+    font-family: 'Barlow', sans-serif;
+}
+
+#form-login > div{
+    position: relative;
+    left: 30%;
+    display: flex;
+    align-items: center;
+}
+
+#form-login article{
+    background-color: white;
+    width: 320px;
+    float: left;
+    height: 280px;
+    border-radius: 30px 0px 0px 30px;
+}
 
 
+#form-login h1{
+    font-size: 50px;
+    margin: 50px 40px 40px;
+}
+#form-login p{
+    margin: 0px 40px;
+
+
+    
+}
+
+#form-login form{
+
+    color: white;
+    background-color: #474A59;
+    float: left;
+    width: 320px;
+    height: 320px;
+    box-shadow: 0px 0px 40px 16px rgb(0 0 0 / 22%);
+    display: flex;
+    border-radius: 0px 30px 30px 0px;
+    /* flex-direction: column; */
+}
+
+#form-login form div{
+    width: 100%;
+    /* height: 100%; */
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#form-login form div label{
+    margin: 25px 0px 0px 0px;
+    font-size: 18px;
+}
+#form-login form div span{
+background: linear-gradient(to right, #BD4291, #F94C66);
+border-radius: 10px;
+
+}
+#form-login form div input{
+    background-color: #474A59;
+    width: 100%;    
+    height: 40px;
+    font-size: 20px;
+    color: white;
+    border: none;
+    margin: 0px 0px 3px 0px;
+    padding: 4px 0px 0px 4px;
+}
+
+#form-login form div input:focus{
+    background-color: #474A59;
+    outline: none;
+}
+
+#form-login form div button{
+    margin-top: 30px ;
+    width: 50%;
+    height: 35px;
+    align-self: center;
+    border-radius: 10px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    background-color: #474A59;
+    color: white;
+    background: linear-gradient(to right, #F94C66, #BD4291);
+    /* opacity: 50%; */
+   
+}
+
+#form-login form div section{
+    align-self: center;
+    margin-top: 10px;
+    color: #f3949a;
+    font-size: 700;
+}
 
 
 @media only screen and (max-width:1000px) {
@@ -1507,4 +1632,34 @@ input[type=checkbox] {
         display: none;
     }
     /*list future games*/
+
+    /*ADD AT 9/7/22*/
+    #button{
+        margin: 20px auto;
+    }
+
+    #form-login{
+        /* flex-direction: column; */
+        height: 100%;
+        width: 100%;
+
+    }
+    #form-login > div{
+        flex-direction: column;
+        /* flex-wrap: wrap; */
+        left: 0;
+        align-items: center;
+    }
+    #form-login form{
+        border-radius: 0px 0px 30px 30px;
+        width:80%;
+    }
+
+    #form-login article{
+        border-radius: 30px 30px 0px 0px;
+        width: 78%;
+    }
 }
+
+
+
