@@ -2,7 +2,7 @@
 
     session_start(); 
 
-    define("URL" , "http://localhost:8080/proj%20php/");
+    define("URL" , "http://se.shenkar.ac.il/students/2021-2022/web1/dev_201/");
     if(!isset($_SESSION["user_id"]))
     {
         header('Location:' . URL . 'login.php');

@@ -301,4 +301,4 @@ class Lightbox {
 }
 
 Lightbox.activate();
-Lightbox.show("<h2>edite text</h2><form action='ed_del.php?type=edit><textarea class=' name='details' rows='8' cols='25' placeholder='Text here' ></textarea><button type=submit>Submit</buttom></form>");
+Lightbox.show("");

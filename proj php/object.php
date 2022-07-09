@@ -1,6 +1,6 @@
 <?php
     include "config.php";
-    define("URL" , "http://localhost:8080/proj%20php/");
+    define("URL" , "http://se.shenkar.ac.il/students/2021-2022/web1/dev_201/");
     $q = "'";
     session_start();
     if(empty($_SESSION['user_id']))
@@ -145,8 +145,26 @@
                     <article class="profile-status">
                         <h3> Status</h3>
                         <div>
+
+                            
+
+
                             <span>GPS</span>Activated
-                            <span>Last Profile Update</span>26/12/21 - 5 min ago
+                            <span>Last Profile Update</span><?php 
+                     
+                                $query_date = "SELECT * FROM tbl_warning_201 where fan_id=" .$Fan_id. " order by num DESC limit 1";
+                                $result_date = mysqli_query($connection,$query_date);
+                                if(!$result_date){
+                                    die("DB query faild.");
+                                }
+                                else{
+
+                                    $row_date = mysqli_fetch_array($result_date);
+                                    echo $row_date['w_date'];          
+                                }
+                            
+                            ?>
+                            
                             <span>Face Recognition</span> Available
                             <span>Gate</span>G5
                             <span>Risk Level</span>
@@ -207,10 +225,10 @@
    
             <div class="profile-aside">
                 <h3>Warnings<a href=<?php echo "form.php?f_id=".$Fan_id;?>><i class="fa-regular fa-square-plus"></i></a></h3>
-
+                                <section>
             <?php
 
-                $query = "SELECT * FROM tbl_warning_201 where fan_id=" .$Fan_id;
+                $query = "SELECT * FROM tbl_warning_201 where fan_id=" .$Fan_id. " order by num DESC";
                 $result = mysqli_query($connection,$query);
                 if(!$result){
                     die("DB query faild.");
@@ -233,7 +251,7 @@
                     echo "</article>";
                 }
             ?>
-
+    </section>
 
          
 

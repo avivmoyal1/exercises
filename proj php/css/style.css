@@ -488,11 +488,14 @@ h3 {
 .profile-aside {
     margin-left: 50px;
     width: 350px;
+    height: 700px;
+}
+.profile-aside section{
     overflow-y: scroll;
-
+    height: 100%;
 }
 
-.profile-aside::-webkit-scrollbar {
+.profile-aside section::-webkit-scrollbar {
     display: none;
 }
 
