@@ -7,10 +7,9 @@
     define("URL" , "http://se.shenkar.ac.il/students/2021-2022/web1/dev_201/");
 
     session_start();
-    if(empty($_SESSION['user_id']))
+    if(empty($_SESSION["user_id"]))
     {
         header('Location:' . URL . 'login.php');
-        exit;
     }
 
     $_SESSION['prev_page'] = 'list.php';
