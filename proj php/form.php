@@ -1,8 +1,8 @@
 <?php
     include "config.php";
 
-    // define("URL" , "http://localhost:8080/proj%20php/");
-    define("URL" , "http://se.shenkar.ac.il/students/2021-2022/web1/dev_201/");
+    define("URL" , "http://localhost:8080/proj%20php/");
+    // define("URL" , "http://se.shenkar.ac.il/students/2021-2022/web1/dev_201/");
 
     session_start();
     if(empty($_SESSION["user_id"]))
@@ -121,17 +121,17 @@
         <main>
             <?php
                 if(isset($_GET['type'])){
-                    echo "<form action='ed_del.php' metod='GET'>";
+                    echo "<form action='ed_del.php' method='GET'>";
                 }
                 else{
-                    echo "<form action='saveWarning.php' metod='POST'>";
+                    echo "<form action='saveWarning.php' method='POST'>";
                 }
                 ?>
             <div id="form-info">
                 <span class="desktop"><a href="index.php" class="breadcrumbs"> Home page </a> >> <a href="list.php"
                         class="breadcrumbs"> Fans </a>>> <a href="object.php" class="breadcrumbs">Profile</a>>> WarningForm </span>
                 <h1>New Warning</h1>
-                <h3>Fan's information</h3>
+                <h3>Fan's information <?php echo $_SESSION["prev_page"];?></h3>
                 <img <?php echo "src='".$row["img"]."' alt='" . $row["f_name"] . " " . $row["l_name"] . "' title='" . $row["f_name"] . " " . $row["l_name"] . "'";?>>
                 <article class="form-fan-info">
                     <section>First Name</section><input type="text" value=<?php echo $row["f_name"]; ?> id="fanFirstName" name="firstName"  readonly>
@@ -184,6 +184,7 @@
                                 
                                 echo "<textarea name='details' rows='8' cols='25' placeholder='Text here' ></textarea>";
                             }
+                            echo "<input name='next' value='".$_SESSION['prev_page']."' sstyle='display:none'>";
                         ?>                        
                 </article>
                 <section class="form-checkboxes">
