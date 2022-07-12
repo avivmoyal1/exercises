@@ -1,15 +1,16 @@
 
 <?php
 
-    session_start(); 
+    include "config.php";
+    
+    // define("URL" , "http://localhost:8080/proj%20php/");
     define("URL" , "http://se.shenkar.ac.il/students/2021-2022/web1/dev_201/");
+
+    session_start(); 
     if(isset($_SESSION["user_id"]))
     {
         header('Location:' . URL . 'index.php');
     }
-
-    include "config.php";
-
 
     $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
     if(mysqli_connect_errno()) {
@@ -35,8 +36,6 @@
         else
             $errormsg = "Invalid ID or Password";
     }
-
-    
 ?>
 
 <!DOCTYPE html>
@@ -74,14 +73,9 @@
                 </div>
             </form>
         </div>
-
     </body>
-
 </html>
 
-
 <?php
-//close DB connection
-mysqli_close($connection);
-
+    mysqli_close($connection);
 ?>

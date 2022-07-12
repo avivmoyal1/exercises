@@ -1,15 +1,14 @@
 <?php
+    include "config.php";
+
+    // define("URL" , "http://localhost:8080/proj%20php/");
+    define("URL" , "http://se.shenkar.ac.il/students/2021-2022/web1/dev_201/");
 
     session_start(); 
-
-    define("URL" , "http://se.shenkar.ac.il/students/2021-2022/web1/dev_201/");
     if(!isset($_SESSION["user_id"]))
     {
         header('Location:' . URL . 'login.php');
     }
-
-    include "config.php";
-
 
     $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
     if(mysqli_connect_errno()) {
@@ -19,22 +18,19 @@
         );
     }
 
-
-
     $type = $_GET['type'];
     $w_num = $_GET['w_num'];
     $f_id = $_GET['fanId'];
 
     if($type == "delete")
     {
-
         $query1 = "DELETE FROM tbl_warning_201 where num = " .$w_num;
         $result1 = mysqli_query($connection,$query1);
         if(!$result1){
             die("DB query faild.");
         }
 
-        header('Location:' . URL . 'object.php?ss=1&id=' .$f_id);
+        header('Location:' . URL . 'object.php?ss=2&id=' .$f_id);
 
     }
     else if($type == "edit"){
@@ -48,11 +44,11 @@
         if(!$result2){
             die("DB query faild.");
         }
-        header('Location:' . URL . 'object.php?ss=2&id=' .$f_id);
+        header('Location:' . URL . 'object.php?ss=3&id=' .$f_id);
     }
-
     
-   
+?>
 
-    
+<?php
+    mysqli_close($connection);
 ?>

@@ -1,5 +1,5 @@
 <?php
-    include "config.php";
+    // define("URL" , "http://localhost:8080/proj%20php/");
     define("URL" , "http://se.shenkar.ac.il/students/2021-2022/web1/dev_201/");
 
     session_start();
@@ -9,7 +9,6 @@
         exit;
     }
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -34,14 +33,12 @@
     <!-- my-css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- my-js -->
-    
-
 </head>
 
 <body>
     <div class="container">
         <header>
-            <a href="index.php" id="logo"></a>
+            <a href="index.php" id="logo" ></a>
             <span id="hello"> <?php echo $_SESSION["name"] ?> </span>
             <img <?php echo "src='" .$_SESSION["img"] . "'  alt='" . $_SESSION["name"] . "' title='" . $_SESSION["name"] ."'"; ?> >
             <nav class="navbar">
@@ -94,18 +91,12 @@
             <div id="future-games">
                 <span><a href="index.php" class="breadcrumbs"> Home page </a> >> Next games </span>
                 <h1>Future Games</h1>
-              
             </div>
-
         </main>
         <footer>
             <span>&copy; All rights reserved to SafeGame</span>
         </footer>
     </div>
-    
-
-        <script src="js/scripts.js"></script>
- 
 </body>
 
 </html>

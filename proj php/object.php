@@ -1,43 +1,40 @@
 <?php
     include "config.php";
+
+    // define("URL" , "http://localhost:8080/proj%20php/");
     define("URL" , "http://se.shenkar.ac.il/students/2021-2022/web1/dev_201/");
-    $q = "'";
+
     session_start();
     if(empty($_SESSION['user_id']))
     {
         header('Location:' . URL . 'login.php');
         exit;
     }
+    
+    $_SESSION['prev_page'] = 'object.php';
+    $q = "'";
+    $p = '"';
 
     $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-
     if(mysqli_connect_errno()) {
-
         die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
-
         );
-
     }
-
 ?>
-
 
 <?php
     $Fan_id = $_GET["id"];
     $query = "SELECT * FROM tbl_fans_201 where id=" .$Fan_id;
     $result = mysqli_query($connection,$query);
     
-
     if(!$result){
         die("DB query faild.");
     }
     else{
-        // $row = mysqli_fetch_row($result);
         $row = mysqli_fetch_array($result);
     }
 
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -66,7 +63,8 @@
 
 </head>
 
-<body>
+<body onload="Lightbox.activate()">
+
     <div class="container">
         <header>
             <a href="index.php" id="logo"></a>
@@ -123,7 +121,7 @@
             <div>
                 <span><a href="index.php" class="breadcrumbs"> Home page </a> >> <a href="list.php"
                         class="breadcrumbs"> Fans </a>>> Profile </span>
-                        
+
                 <h1>Profile</h1>
                 <h3>General</h3>
                 <article class="profile-general">
@@ -145,10 +143,6 @@
                     <article class="profile-status">
                         <h3> Status</h3>
                         <div>
-
-                            
-
-
                             <span>GPS</span>Activated
                             <span>Last Profile Update</span><?php 
                      
@@ -161,33 +155,21 @@
 
                                     $row_date = mysqli_fetch_array($result_date);
                                     echo $row_date['w_date'];          
-                                }
-                            
+                                }        
                             ?>
-                            
                             <span>Face Recognition</span> Available
                             <span>Gate</span>G5
                             <span>Risk Level</span>
+
                             <?php
-                                
-                                // $query = "SELECT * FROM tbl_fans_201 where id=" .$Fan_id;
-                                // $result = mysqli_query($connection,$query);
-                                // if(!$result){
-                                //     die("DB query faild.");
-                                // }
-                                // else{
-                                //     $row = mysqli_fetch_array($result);
                                 if($row['w_number'] < 3)
                                 echo "Low";
                                 elseif($row['w_number'] >= 3 && $row[9] <= 5)
                                 echo "Medium";
                                 elseif($row['w_number'] >= 6)   
                                 echo "High";
-                                    // }
-
-                            
-                            
                             ?>
+
                         </div>
                     </article>
                     <article class="profile-history">
@@ -196,7 +178,7 @@
                             <span>Games</span>39
                             <span>Warnings</span> <?php echo $row["w_number"];  ?>
                         </section>
-                        <span>Top repeated topics of warnings:</span>
+                        <span onclick='Lightbox.show("hii")'>Top repeated topics of warnings:</span>
                         <ul>
                             <?php
                                 $query2 = "SELECT topic FROM tbl_warning_201 WHERE fan_id =" .$Fan_id. " GROUP BY topic ORDER BY count(*) DESC LIMIT 3";
@@ -209,104 +191,68 @@
                                    {
                                         echo "<li>" . $row2["topic"] . "</li>";
                                    }  
-                                }
-                                   
-                            
-                            
+                                }    
                             ?>
-                            <!-- <li>Physical violence against rival team's fan</li>
-                            <li>Vandalism</li>
-                            <li>Throwing a smoke grenade</li> -->
                         </ul>
                     </article>
                 </div>
-
             </div>
-   
             <div class="profile-aside">
                 <h3>Warnings<a href=<?php echo "form.php?f_id=".$Fan_id;?>><i class="fa-regular fa-square-plus"></i></a></h3>
-                                <section>
-            <?php
-
-                $query = "SELECT * FROM tbl_warning_201 where fan_id=" .$Fan_id. " order by num DESC";
-                $result = mysqli_query($connection,$query);
-                if(!$result){
-                    die("DB query faild.");
-                }
-
-             
                 
-                while($row = mysqli_fetch_array($result)){
+                <?php
+                        if(isset($_GET['ss']) and $_GET['ss'] == "1"){
 
-                    $del = "location.href='ed_del.php?type=delete&w_num=".$row['num']."&fanId=".$Fan_id."'";
-                    $ed =  "location.href='form.php?type=edit&num=".$row['num']."&f_id=".$Fan_id."'";
-                   
-                    echo "<article>";
-                    echo "<h4>" .$row["topic"] . "</h4>";
-                    if($_SESSION["role"] == "Security Manager"){
-                        echo "<section><i class='fa-solid fa-pen-to-square' onclick=".$ed.";></i><i class='fa-solid fa-trash-can' onclick=".$del.";></i></section>";
-                    }
-                    echo "<h5>Warned by " .$row["updated_by"]. " - " .$row["w_date"] . "</h5>";
-                    echo "<p>" .$row["details"]. "</p>";
-                    echo "</article>";
-                }
-            ?>
-    </section>
+                            echo "<section id='message'>Warning saved</section>";
+                        }
+                        else if(isset($_GET['ss']) and $_GET['ss'] == "2"){
 
-         
+                            echo "<section id='message'>Warning deleted</section>";
+                            
+                        }
+                        else if(isset($_GET['ss']) and $_GET['ss'] == "2"){
+                            
+                            echo "<section id='message'>Editing saved</section>";
+                        }
+                        ?>
 
-<!--                
-                <article>
-                    <h4>Physical violence against rival team's fan</h4>
-                    <section><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash-can"></i></section>
-                    <h5>Warned by Noah - 30/9/21</h5>
-                    <p>Fan insulted riva's fan through the gate, crossed the gate and began punching him. </p>
-                </article>
-                <article>
-                    <h4>Breakout to the pitch</h4>
-                    <section><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash-can"></i></section>
-                    <h5>Warned by Kobi - 15/01/21</h5>
-                    <p>Fan managed to cross the block and ran into the pitch.</p>
-                </article>
-                <article>
-                    <h4>Vandalism</h4>
-                    <section><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash-can"></i></section>
-                    <h5>Warned by Eliezer - 12/11/20</h5>
-                    <p>Fan burned seats down and threw them away.</p>
-                </article>
-                <article>
-                    <h4>Throwing a smoke grenade</h4>
-                    <section><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash-can"></i></section>
-                    <h5>Warned by Mor - 09/10/20</h5>
-                    <p>Fan snitched into the gate a smoke grenade and lit it at the begging of the match. </p>
-                </article>
-                <article>
-                    <h4>Throwing trash on the pitch</h4>
-                    <section><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash-can"></i></section>
-                    <h5>Warned by Mor - 02/10/20</h5>
-                    <p>Fan was warned twice without a formal warning to stop throwing his trash on the pitch, but kept
-                        throwing. </p>
-                </article> -->
+                <section>
 
+                    <?php
 
+                        $query = "SELECT w.*, f.f_name, f.l_name FROM tbl_warning_201 AS w INNER JOIN tbl_fans_201 AS f ON f.id = w.fan_id and w.fan_id =" .$Fan_id. " ORDER BY w.num DESC";
+                        $result = mysqli_query($connection,$query);
+                        if(!$result){
+                            die("DB query faild.");
+                        }
+                        while($row = mysqli_fetch_array($result)){
+
+                            $ed =  "location.href='form.php?type=edit&num=".$row['num']."&f_id=".$Fan_id."'";
+
+                            $box = "`<h2>Notice</h2><p>This action will delete " .$row['f_name']. " " .$row['l_name']. " warning number: " .$row['num']. "<br> are you sure you want to delete?</p><section ><button onclick=closebox(); >No</button><button onclick=location.href=\"ed_del.php?type=delete&w_num=".$row['num']."&fanId=".$Fan_id."\">Yes</button><section>`";
+                            echo "<article>";
+                            echo "<h4>" .$row["topic"] . "</h4>";
+                            if($_SESSION["role"] == "Security Manager"){
+                                echo "<section><i class='fa-solid fa-pen-to-square' onclick=".$ed.";></i><i class='fa-solid fa-trash-can'  onclick='Lightbox.show(".$box.")'></i></section>";
+                            }
+                            echo "<h5>Warned by " .$row["updated_by"]. " - " .$row["w_date"] . "</h5>";
+                            echo "<p>" .$row["details"]. "</p>";
+                            echo "</article>";
+                        }
+                    ?>
+
+                </section>
             </div>
         </main>
         <footer>
             <span>&copy; All rights reserved to SafeGame</span>
         </footer>
     </div>
-    <script>
 
-
-    </script>
 </body>
 
 </html>
 
 <?php
-
-//close DB connection
-
-mysqli_close($connection);
-
+    mysqli_close($connection);
 ?>

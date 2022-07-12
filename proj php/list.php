@@ -2,36 +2,31 @@
 <?php
 
     include "config.php";
-    define("URL" , "http://se.shenkar.ac.il/students/2021-2022/web1/dev_201/");
-    session_start();
 
+    // define("URL" , "http://localhost:8080/proj%20php/");
+    define("URL" , "http://se.shenkar.ac.il/students/2021-2022/web1/dev_201/");
+
+    session_start();
     if(empty($_SESSION['user_id']))
     {
         header('Location:' . URL . 'login.php');
         exit;
     }
 
+    $_SESSION['prev_page'] = 'list.php';
     $q = '"';
 
     $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-
     if(mysqli_connect_errno()) {
-
         die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
-
         );
-
     }
 ?>
-
-
-
 
 <?php
 
     $query = "SELECT * FROM tbl_fans_201";
     $result = mysqli_query($connection,$query);
-
     if(!$result){
         die("DB query faild.");
     }
@@ -130,7 +125,7 @@
                 <span id="sub-h">Currently 16,029 fans in the stadium</span>
                 
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="search" id="myInput" onkeyup="myFunction()" placeholder="Search...">
+                <input type="search" id="myInput" onkeyup="search()" placeholder="Search...">
                 <span id="sort">Sort by:</span>
                 <select>
                     <option selected> Recent warning</option>
@@ -148,7 +143,7 @@
                     
                     <?php
                         while($row = mysqli_fetch_row($result)) {
-
+            
                             if($row[9] != 0){
                                 $query_time = "SELECT * FROM tbl_warning_201 where fan_id = " .$row[0]. " GROUP BY w_date DESC, w_time DESC LIMIT 1";
                                 $result_time = mysqli_query($connection,$query_time);
@@ -174,11 +169,8 @@
                             elseif($row[9] >= 6)   
                                 echo "<i class='dot-red'></i>";
                             echo "<a href='object.php?id=" . $row[0] . "'><label>" . $row[1] . " " . $row[2] . "</label></a>";
-                            //need inner join here to set time
-
                             echo "<span class='desktop'>Last warned : ".$date."</span>"; 
                             echo "<br>";
-                            //need to add status to DB
                             echo "<section>GPS activated<i class='dot-green'></i></section>";
                             echo "<section>Fan of " . $row[3] . "</section>";
                             echo "</div>";
@@ -201,70 +193,18 @@
                             echo "</article>";
                             echo "</div>";
                             echo "<section class='dropdown'>";
-                            echo "<span class='fa-solid fa-ellipsis-vertical' onclick='dropMenu('drop1')'  ></span>";
-                            echo "<div id='drop1' class='dropdown-content' >";
+                            echo "<span class='fa-solid fa-ellipsis-vertical' onclick='dropMenu(`drop".$row[0]."`)'  ></span>";
+                            echo "<div id='drop".$row[0]."' class='dropdown-content' >";
                             echo "<span><i class='fa-solid fa-location-crosshairs fa-xl'></i> Find Location</span>";
                             echo "<span><i class='fa-solid fa-video fa-xl'></i> Find On Camera</span>";
-                            echo "<span onclick='addWarningMobile()'><i class='fa-solid fa-file-circle-plus fa-xl'></i>Add Warning</span>";
+                            echo "<span onclick='location.href=`form.php?f_id=".$row[0]."`'><i class='fa-solid fa-file-circle-plus fa-xl'></i>Add Warning</span>";
                             echo "<span><i class='fa-solid fa-plane-circle-check fa-xl'></i>Find On Drone</span>";
                             echo "</div>";
                             echo "</section>";
                             echo "</li>";    
                          }       
-                
                     ?>
-
                 </ul> 
-
-                <?php
-   
-                    if(!empty($_GET['fanId'])){
-       
-                        $fanId = $_GET['fanId'];
-
-                        $time =  $_GET['time'];
-                
-                        $date =  $_GET['date'];
-                
-                        $user =   $_GET['user'];
-                
-                        $topic = $_GET['topic'];
-                
-                        $note =   $_GET['details'];
-                
-                        $query_in = "insert into tbl_warning_201(fan_id,topic,details,updated_by,w_date,w_time) values ('$fanId', '$topic', '$note', '$user', '$date', '$time')";
-                        $query_up = "update tbl_fans_201 set w_number = w_number + 1 where id = $fanId";
-                
-                        $resul_in = mysqli_query($connection, $query_in);
-                        
-                        if(!$resul_in) {
-                        
-                        die("DB query failed.");
-                        
-                        }
-                        $result_up = mysqli_query($connection, $query_up);
-                        if(!$result_up) {
-                        
-                            die("DB query failed.");
-                        
-                        }
-                        $u_id = $_SESSION['user_id'];
-
-                        if(!empty($_GET["send-info-sg"])){
-                            $query_task = "INSERT INTO tbl_tasks_201(topic,fan_id,sent_from,sent_to,game_id) values ('$topic', '$fanId', '$u_id', '351', '4196')";
-                            $result_task = mysqli_query($connection,$query_task);
-                            if(!$result_task) {
-                        
-                                die("DB query failed.");
-                                
-                            }
-
-                        }
-                    }
-
-                
-                ?>
-
                 <article class="desktop">
                     <div id="form">
                         <h3>New Warning</h3>
@@ -276,7 +216,6 @@
                                 <section>Last Name</section><input type="text" value="" id="fanLastName" name="lastName" readonly >
                                 <section>ID</section><input type="number" value="" id="fanId" name="fanId"  readonly>
                                 <section>Fan Of</section><input type="text" value="" id="fanOf" name="fanOf"  readonly>
-
                             </article>
                                 <h4>Warning's Details</h4>
                                 <article>
@@ -300,7 +239,6 @@
                                     <textarea name="details" rows="8" cols="25" placeholder="Text here" ></textarea>
                                 </article>
                                 <section>
-                         
                                     <label><input type="checkbox" name="send-info"
                                             value="Send a summary to security manager">
                                         Send a
@@ -309,36 +247,20 @@
                                             value="Send a summary and location to near by security guard" > Send a summary
                                         and
                                         location to near by security guard</label>
-                                    <button id="button" type="submit" value="Submit" onclick="$_SESSION['ttt'] = 'list.php'">Submit</button>
-                                    
+                                    <button id="button" type="submit" value="Submit" >Submit</button>
                                 </section>
                         </form>
-                       
-                        
-
                     </div>
-                    
                 </article>
-                
             </div>
-
         </main>
         <footer>
             <span>&copy; All rights reserved to SafeGame</span>
         </footer>
     </div>
-    <script>
-
-
-    </script>
 </body>
-
 </html>
 
 <?php
-
-//close DB connection
-
-mysqli_close($connection);
-
+    mysqli_close($connection);
 ?>

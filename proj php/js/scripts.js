@@ -1,4 +1,4 @@
-function myFunction() {
+function search() {
   var input, filter, ul, li, a, i, txtValue;
   input = document.getElementById("myInput");
   filter = input.value.toUpperCase();
@@ -14,17 +14,6 @@ function myFunction() {
     }
   }
 }
-
-// $('a[data-toggle="dropdown"]').click(function () {
-//     dropDownFixPosition($(this), $('.dropdown-menu'));
-// });
-
-// function dropDownFixPosition(a, dropdown) {
-//     var dropDownTop = a.offset().top + a.outerHeight();
-//     dropdown.css('top', dropDownTop + "px");
-//     //Delete - dropdown.width() if you want menu to be bottom right of link
-//     dropdown.css('left', a.offset().left - dropdown.width() + "px");
-// }
 
 {
   let check = "";
@@ -71,13 +60,11 @@ function addWarningMobile() {
   location.href = "form.html";
 }
 
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
+
 function dropMenu(e) {
   document.getElementById(e).classList.toggle("show");
 }
 
-// Close the dropdown if the user clicks outside of it
 window.onclick = function (event) {
   if (!event.target.matches(".fa-ellipsis-vertical")) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -90,13 +77,6 @@ window.onclick = function (event) {
     }
   }
 };
-
-// $(document).ready(function () {
-//     $('#dropbtn').click('click touchstart', function myFunction() {
-//         document.getElementById("myDropdown").classList.toggle("show");
-
-//     });
-// });
 
 $(document).ready(function () {
   var display_width = $(window).width();
@@ -121,81 +101,34 @@ $(document).ready(function () {
 
 
 {
+  window.onload = function set_message(){
+
+    var day = new Date();
   
+    var hr = day.getHours();
 
-window.onload = function set_message(){
+    var mesg = document.getElementById('hello');
+    var name = mesg.textContent;
 
-  var day = new Date();
- 
-  var hr = day.getHours();
+    if( hr >= 1 || hr <= 5){
+      mesg.innerHTML = "Good night";
 
-  var mesg = document.getElementById('hello');
-  var name = mesg.textContent;
-  
-  if( hr >= 1 || hr <= 5){
-    mesg.innerHTML = "Good night";
+    }
+    else if( hr >= 6 || hr <=11){
+      mesg.innerHTML = "Good morning";
+    }
+    else if( hr >= 12 || hr <=16){
+      mesg.innerHTML = "Good afternoon";
+    }
+    else if( hr >= 17 || hr <= 00){
 
+      mesg.innerHTML = "Good evening";
+    }
+    mesg.innerHTML += name;
   }
-  else if( hr >= 6 || hr <=11){
-    mesg.innerHTML = "Good morning";
-  }
-  else if( hr >= 12 || hr <=16){
-    mesg.innerHTML = "Good afternoon";
-  }
-  else if( hr >= 17 || hr <= 00){
-    
-    mesg.innerHTML = "Good evening";
-  }
-  mesg.innerHTML += name;
-}
 
 
 }
-  // function save_data(){
-
-  //       var form_element = document.getElementsByClassName('form_data');
-
-  //       var form_data = new FormData();
-
-  //       for(var count = 0; count < form_element.length; count++){
-
-  //           form_data.append(form_element[count].name, form_element[count].value);
-  //       }
-
-  //       document.getElementById('button').disabled = true;
-
-  //       var ajax_request;
-
-  //       if(window.XMLHttpRequest){
-  //           ajax_request = new XMLHttpRequest();
-  //       }
-  //       else if(window.ActiveXObject){
-  //           ajax_request = new ActiveXObject("Microsoft.XMLJTTP");
-  //       }
-
-  //       ajax_request.open('GET', 'saveWarning.php');
-
-  //       ajax_request.send(form_data);
-        
-  //       ajax_request.onreadystatechange = function()
-  //       {
-  //         if(ajax_request.readyState == 4 && ajax_request.status == 200 )
-  //         {
-  //           document.getElementByid('button').disabled = false;
-
-  //           document.getElementById('sample_form').reset();
-
-  //           document.getElementByid('message').inneHTML = ajax_request.responseText;
-
-  //           setTimeout(function(){
-              
-  //             document.getElementById('message').innerHTML = '';
-
-  //           }, 2000)
-  //         }
-  //       }
-
-  // }
 
 function showData(data){
   var div_list = document.getElementById('future-games');
@@ -210,50 +143,6 @@ fetch("data.json")
   .then(data => showData(data.Games));
 
 
-// const submit = document.getElementById("button");
-// const form = document.querySelector('#form');
-// const messageEl = document.querySelector('#msg');
-// // const posts = document.querySelector('#posts');
-// submit.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   messageEl.innerHTML = "Loading..";
-//   savePost();
-//   return false;
-// })
-
-// const savePost = async() => {
-//   try{
-//     let reponse = await fetch('saveWarning.php', {
-//       method: 'POST',
-//       body: new FormData(form),
-//     });
-//     const result = await Response.php();
-//     console.log(result);
-//     // posts.innerHTML = result.retVal;
-//     messageEl.style.display = "none";
-//   } catch(error) {
-//     console.log(error);
-//   }
-// };
-
-
-// $("form").on("submit", function (e) {
-//   var dataString = $(this).serialize();
-   
-//   $.ajax({
-//     type: "POST",
-//     url: "saveWarning.php",
-//     data: dataString,
-//     success: function () {
-//       alert("Display message back to the user here");
-//     }
-//   });
-
-//   e.preventDefault();
-// });
-
-
-
 class Lightbox {
   static activate() {
       document.body.insertAdjacentHTML("beforeend", `
@@ -266,15 +155,20 @@ class Lightbox {
               </div>
           </div>
       `);
+  
+  
 
       const lightBox = document.querySelector("#lightbox");
       const btnClose = lightBox.querySelector(".lightbox__close");
       const content = lightBox.querySelector(".lightbox__content");
+      const nobtn = lightBox.querySelector(".no_action");
+
       const closeLightbox = () => {
           lightBox.style.display = "none";
           content.innerHTML = "";
       };
 
+      
       lightBox.addEventListener("mousedown", e => {
           if (e.target.matches("#lightbox")) {
               closeLightbox();
@@ -284,6 +178,10 @@ class Lightbox {
       btnClose.addEventListener("click", () => {
           closeLightbox();
       });
+
+      nobtn.addEventListener("click", () => {
+        closeLightbox();
+    });
   }
 
   static show(htmlOrElement) {
@@ -300,5 +198,14 @@ class Lightbox {
   }
 }
 
-Lightbox.activate();
-Lightbox.show("");
+
+function closebox(){
+  const lightBox = document.querySelector("#lightbox");
+  lightBox.style.display = "none";
+  content.innerHTML = "";
+};
+
+
+setTimeout(() => {
+  $('#message').hide();
+}, 3000);

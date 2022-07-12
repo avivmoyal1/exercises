@@ -1,20 +1,23 @@
 <?php 
 
 	include "config.php";
+    // define("URL" , "http://localhost:8080/proj%20php/");
+
     define("URL" , "http://se.shenkar.ac.il/students/2021-2022/web1/dev_201/");
+
     session_start();
-    $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-
-    if(mysqli_connect_errno()) {
-
-        die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
-
-        );
-
+    if(empty($_SESSION['user_id']))
+    {
+        header('Location:' . URL . 'login.php');
+        exit;
     }
 
+    $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+    if(mysqli_connect_errno()) {
+        die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
+        );
+    }
 ?> 
-
 
 <?php
     
@@ -39,42 +42,27 @@
             $resul_in = mysqli_query($connection, $query_in);
             
             if(!$resul_in) {
-            
             die("DB query failed.");
-            
             }
+
             $result_up = mysqli_query($connection, $query_up);
             if(!$result_up) {
-            
                 die("DB query failed.");
-            
             }
+
             $u_id = $_SESSION['user_id'];
 
             if(!empty($_POST["send-info-sg"])){
                 $query_task = "INSERT INTO tbl_tasks_201(topic,fan_id,sent_from,sent_to,game_id) values ('$topic', '$fanId', '$u_id', '351', '4196')";
                 $result_task = mysqli_query($connection,$query_task);
                 if(!$result_task) {
-            
                     die("DB query failed.");
-                    
                 }
-
             }
-            header('Location:' . URL . $_SESSION['ttt'] .'?ss=1&name=' . $fname );
-           
-          
+            header('Location:' . URL . $_SESSION['prev_page'] .'?ss=1&name=' . $fname );
         }
     ?>
 
-
-			
-
-
 <?php
-
-//close DB connection
-
-mysqli_close($connection);
-
+    mysqli_close($connection);
 ?>

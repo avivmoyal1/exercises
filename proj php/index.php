@@ -1,5 +1,7 @@
 <?php
     include "config.php";
+
+    // define("URL" , "http://localhost:8080/proj%20php/");
     define("URL" , "http://se.shenkar.ac.il/students/2021-2022/web1/dev_201/");
 
     session_start();
@@ -9,18 +11,13 @@
         exit;
     }
 
-
     $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-
     if(mysqli_connect_errno()) {
-
         die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
-
         );
-
     }
-
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -50,8 +47,6 @@
 </head>
 
 <body >
-
-    
     <div class="container">
         <header>
             <a href="index.php" id="logo"></a>
@@ -109,7 +104,7 @@
                 <div class="mobile">
                     <button type="button" src="#"><i class="fa-solid fa-qrcode"></i>Scan ticket</button>
                     <button type="button" src="#"><i class="fa-solid fa-comments"></i>Messages</button>
-                    <button type="button" src="#"><i class="fa-solid fa-file-circle-plus"></i>Add warning</button>
+                    <button type="button" src="form.php"><i class="fa-solid fa-magnifying-glass"></i>Search a fan</button>
                     <button type="button" src="#"><i class="fa-solid fa-bell"></i> Alerts</button>
                 </div>
                 <h3>Currently Playing:</h3>
@@ -125,42 +120,36 @@
                 <h4 class="desktop">Hapoel Tel Aviv fan's</h4>
                 <p class="desktop">Last game were 9842 fans, 1321 fans warned (13.42% of the fans).</p>
                 <h4 class="desktop">Beitar Jerusalem fan's</h4>
-                <p class="desktop">Last game were 8245 fans, 1458 fans warned (17.68% of the fans).<br>
-                In 8 of the 10 previous games smoke grenades were thrown to the pitch.</p>
+                <p class="desktop">Last game were 8245 fans, 1458 fans warned (17.68% of the fans).<br> In 8 of the 10 previous games smoke grenades were thrown to the pitch.</p>
                 <div>
                     <h4>Fan Risk</h4>
                     <section><i class=dot-green></i>Green Low level 10%</section>
                     <section><i class="dot-yellow"></i>Yellow Medium level 35%</section>
                     <section><i class="dot-red"></i>Red High level 55%</section>
                 </div>
-                <button><a href="nextGames.php" class="desktop">Next Games <i class="fa-solid fa-angles-right"></i></a></button>
+                <button class="desktop"><a href="nextGames.php" class="desktop">Next Games <i class="fa-solid fa-angles-right"></i></a></button>
                 <div class="mobile">
-                    <h3>Tasks</h3>
-                    <form id="cbox" action=del_task.php metod=GET>
                         <?php
-    
-                        
-                            $query = "SELECT * FROM tbl_tasks_201 where sent_to=" .$_SESSION['user_id']. " and game_id=4196 limit 5";
-                            $result = mysqli_query($connection,$query);     
-                            if(!$result){
-                                die("DB query faild.");
-                            }
-                            else{
-                                while($row = mysqli_fetch_array($result)){
-                                    echo "<label><input type='checkbox' name='tasks_num[]' value='".$row['t_id']."'>".$row['topic']."</label>";
+                            If($_SESSION['role'] == "Security guard"){
+                                echo "<h3>Tasks</h3>";
+                                echo '<form id="cbox" action=del_task.php metod=GET>';
+                                $query = "SELECT * FROM tbl_tasks_201 where sent_to=" .$_SESSION['user_id']. " and game_id=4196 limit 5";
+                                $result = mysqli_query($connection,$query);     
+                                if(!$result){
+                                    die("DB query faild.");
                                 }
-                                echo " <button id='button' type='submit' value='Submit'>Submit</button>";
-                            }
-        
-        
+                                else{
+                                    while($row = mysqli_fetch_array($result)){
+                                        echo "<label><input type='checkbox' name='tasks_num[]' value='".$row['t_id']."'>".$row['topic']."</label>";
+                                    }
+                                    echo " <button id='button' type='submit' value='Submit'>Submit</button>";
+                                }
+                        }
                         ?>
                     </form>
                 </div>
-
             </article>
-
             <article class="desktop">
-
                 <div id="homepage-mid-1">
                     <span>Messages</span>
                     <section>
@@ -200,18 +189,13 @@
                     </section>
                 </div>
                 <div id="homepage-mid-2">
-
                     <h3> Security guard</h3>
                     <section>Total guards: 50</section>
                     <section>Active guards: 35</section>
                     <section>Available guards: 27</section>
                     <section>In assignment: 8</section>
-
                 </div>
-       
             </article>
-
-
             <article class="desktop" id="homepage-art-2">
                 <span>Alerts</span>
                 <section>
@@ -247,18 +231,15 @@
                     <p>Two 'Beitar Jerusalem' fans tried to snitch smoke grenades through the gate.</p>
                 </section>
             </article>
-
         </main>
         <footer>
             <span>&copy; All rights reserved to SafeGame</span>
         </footer>
     </div>
-    <script>
-
-
-    </script>
 </body>
-
 </html>
 
+<?php
+    mysqli_close($connection);
+?>
 
