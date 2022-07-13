@@ -27,7 +27,7 @@
         if(!$result1){
             die("DB query faild.");
         }
-        $query_down = "UPDATE tbl_fans_201 set w_number = w_number - 1 where id = $fanId";
+        $query_down = "UPDATE tbl_fans_201 set w_number = w_number - 1 where id =". $fanId;
         $result2 = mysqli_query($connection,$query_down);
         if(!$result2){
             die("DB query faild.");
