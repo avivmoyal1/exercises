@@ -182,7 +182,7 @@
                                 
                                 echo "<textarea name='details' rows='8' cols='25' placeholder='Text here' ></textarea>";
                             }
-                            echo "<input name='next' value='".$_SESSION['prev_page']."' sstyle='display:none'>";
+                            echo "<input name='next' value='".$_SESSION['prev_page']."' style='display:none'>";
                         ?>                        
                 </article>
                 <section class="form-checkboxes">
