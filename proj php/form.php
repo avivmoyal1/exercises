@@ -1,5 +1,6 @@
 <?php
     include "config.php";
+    // define("URL" , "http://localhost:8080/proj%20php/");
     define("URL" , "http://se.shenkar.ac.il/students/2021-2022/web1/dev_201/");
 
     session_start();
@@ -127,25 +128,36 @@
                 ?>
             <div id="form-info">
                 <span class="desktop"><a href="index.php" class="breadcrumbs"> Home page </a> >> <a href="list.php"
-                        class="breadcrumbs"> Fans </a>>> <a href="object.php" class="breadcrumbs">Profile</a>>> Warning Form </span>
-                <h1>New Warning</h1>
+                        class="breadcrumbs"> Fans </a>>> <a href="object.php?id=<?php echo $Fan_id;?>" class="breadcrumbs">Profile</a>>> Warning Form </span>
+                
+                <?php
+                    if(isset($_GET['type']))
+                    { 
+                        echo "<h1>Edit Warning</h1>";
+                    }
+                    else{
+
+                        echo "<h1>New Warning</h1>";
+                    }
+                ?>
+                
                 <h3>Fan's information <?php $_SESSION["prev_page"];?></h3>
                 <img <?php echo "src='".$row["img"]."' alt='" . $row["f_name"] . " " . $row["l_name"] . "' title='" . $row["f_name"] . " " . $row["l_name"] . "'";?>>
                 <article class="form-fan-info">
-                    <section>First Name</section><input type="text" value=<?php echo $row["f_name"]; ?> id="fanFirstName" name="firstName"  readonly>
-                    <section>Last Name</section><input type="text" value=<?php echo $row["l_name"]; ?> id="fanLastName" name="lastName" readonly >
-                    <section>Age</section><input type="text" value=<?php echo $row["age"]; ?> readonly>
-                    <section>ID</section><input type="number" value=<?php echo $row["id"]; ?> id="fanId" name="fanId"  readonly> 
-                    <section>Phone</section><input type="text" value=<?php echo $row["phone"]; ?> readonly>
-                    <section>Fan Of</section><input type="text" value=<?php echo $row["fan_of"]; ?> id="fanOf" name="fanOf"  readonly>
+                    <section>First Name</section><input type="text" value="<?php echo $row["f_name"]; ?>" id="fanFirstName" name="firstName"  readonly>
+                    <section>Last Name</section><input type="text" value="<?php echo $row["l_name"]; ?>" id="fanLastName" name="lastName" readonly >
+                    <section>Age</section><input type="text" value="<?php echo $row["age"]; ?>" readonly>
+                    <section>ID</section><input type="number" value="<?php echo $row["id"]; ?>" id="fanId" name="fanId"  readonly> 
+                    <section>Phone</section><input type="text" value="<?php echo $row["phone"]; ?>" readonly>
+                    <section>Fan Of</section><input type="text" value="<?php echo $row["fan_of"]; ?>" id="fanOf" name="fanOf"  readonly>
                 </article>
             
                 
                 <h3>Warning's Details</h3>
                 <article class="form-details">
-                    <section>Created By</section><input type="text" value=<?php echo $_SESSION['name'];?> name="user" readonly>
-                    <section>Time</section><input name="time" id="toDayTimeMobile" type="time"  value=<?php echo date("H:i",strtotime('1 hour')); ?> readonly>
-                    <section>Date</section><input name="date" id="toDayDateMobile" type="date" value=<?php echo date("Y-m-d");?> readonly>
+                    <section>Created By</section><input type="text" value="<?php echo $_SESSION['name'];?>" name="user" readonly>
+                    <section>Time</section><input name="time" id="toDayTimeMobile" type="time"  value="<?php echo date("H:i",strtotime('1 hour')); ?>" readonly>
+                    <section>Date</section><input name="date" id="toDayDateMobile" type="date" value="<?php echo date("Y-m-d");?>" readonly>
                     <section>Topic</section>
                     <select name="topic" required>
                         <?php

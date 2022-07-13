@@ -62,7 +62,9 @@
 
 </head>
 
-<body onload="Lightbox.activate()">
+
+<body onload="Lightbox.activate();">
+<!-- <body> -->
 
     <div class="container">
         <header>
@@ -245,7 +247,7 @@
         <footer>
             <span>&copy; All rights reserved to SafeGame</span>
         </footer>
-    </div>
+    </div >
 
 </body>
 

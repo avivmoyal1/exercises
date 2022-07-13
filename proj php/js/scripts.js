@@ -125,8 +125,8 @@ $(document).ready(function () {
       mesg.innerHTML = "Good evening";
     }
     mesg.innerHTML += name;
-  }
 
+  }
 
 }
 
@@ -143,6 +143,17 @@ fetch("data.json")
   .then(data => showData(data.Games));
 
 
+const obj = document.querySelector("#obj");
+// obj.addEventListener('load' ,(e) => {
+//     e.Lightbox.activate();
+//     set_message();
+// });
+    
+
+obj.addEventListener( 'load', set_message, false );
+obj.addEventListener( 'load', Lightbox.activate, false );
+
+
 class Lightbox {
   static activate() {
       document.body.insertAdjacentHTML("beforeend", `
@@ -156,7 +167,7 @@ class Lightbox {
           </div>
       `);
   
-  
+    
 
       const lightBox = document.querySelector("#lightbox");
       const btnClose = lightBox.querySelector(".lightbox__close");
@@ -209,3 +220,8 @@ function closebox(){
 setTimeout(() => {
   $('#message').hide();
 }, 3000);
+
+// window.onload = function set_object(){
+//   Lightbox.activate();
+//   set_message();
+// };
