@@ -1316,6 +1316,9 @@ border-radius: 10px;
     text-align: center;
 }
 
+.lightbox__content button:hover {
+    font-weight: 700;
+}
 
 .lightbox__content section:first-child{
   background-color:#1F4690;

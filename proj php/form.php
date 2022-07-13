@@ -129,7 +129,7 @@
                 <span class="desktop"><a href="index.php" class="breadcrumbs"> Home page </a> >> <a href="list.php"
                         class="breadcrumbs"> Fans </a>>> <a href="object.php" class="breadcrumbs">Profile</a>>> Warning Form </span>
                 <h1>New Warning</h1>
-                <h3>Fan's information <?php echo $_SESSION["prev_page"];?></h3>
+                <h3>Fan's information <?php $_SESSION["prev_page"];?></h3>
                 <img <?php echo "src='".$row["img"]."' alt='" . $row["f_name"] . " " . $row["l_name"] . "' title='" . $row["f_name"] . " " . $row["l_name"] . "'";?>>
                 <article class="form-fan-info">
                     <section>First Name</section><input type="text" value=<?php echo $row["f_name"]; ?> id="fanFirstName" name="firstName"  readonly>
@@ -182,7 +182,7 @@
                                 
                                 echo "<textarea name='details' rows='8' cols='25' placeholder='Text here' ></textarea>";
                             }
-                            echo "<input name='next' value='".$_SESSION['prev_page']."' style='display:none'>";
+                            "<input name='next' value='".$_SESSION['prev_page']."' style='display:none'>";
                         ?>                        
                 </article>
                 <section class="form-checkboxes">
