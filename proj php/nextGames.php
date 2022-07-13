@@ -55,7 +55,7 @@
                         <li><a href="#">Guards</a></li>
                         <div>
                             <li><a href="#">Settings<i class="fa-solid fa-sliders"></i> </a></li>
-                            <li><a href="#">Logout<i class="fa-solid fa-right-from-bracket"></i></a></li>
+                            <li><a href="logout.php">Logout<i class="fa-solid fa-right-from-bracket"></i></a></li>
                         </div>
                     </ul>
 
@@ -80,7 +80,7 @@
                             <li><a href="list.php">Fans</a></li>
                             <li><a href="#">Guards</a></li>
                             <li><a href="#">Settings</a></li>
-                            <li><a href="#">Logout</a></li>
+                            <li><a href="logout.php">Logout</a></li>
                         </ul>
                     </div>
 

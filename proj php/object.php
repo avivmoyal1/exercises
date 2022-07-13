@@ -174,7 +174,7 @@
                     <article class="profile-history">
                         <h3> History</h3>
                         <section>
-                            <span>Games</span>39
+                            <span>Games</span> <?php echo $row["num_games"]; ?>
                             <span>Warnings</span> <?php echo $row["w_number"];  ?>
                         </section>
                         <span onclick='Lightbox.show("hii")'>Top repeated topics of warnings:</span>
@@ -202,16 +202,16 @@
                 <?php
                         if(isset($_GET['ss']) and $_GET['ss'] == "1"){
 
-                            echo "<section id='message'>Warning saved</section>";
+                            echo "<section id='message'>Warning has saved</section>";
                         }
                         else if(isset($_GET['ss']) and $_GET['ss'] == "2"){
 
-                            echo "<section id='message'>Warning deleted</section>";
+                            echo "<section id='message'>Warning has deleted</section>";
                             
                         }
                         else if(isset($_GET['ss']) and $_GET['ss'] == "2"){
                             
-                            echo "<section id='message'>Editing saved</section>";
+                            echo "<section id='message'>Warning's edit has saved</section>";
                         }
                         ?>
 
@@ -228,7 +228,7 @@
 
                             $ed =  "location.href='form.php?type=edit&num=".$row['num']."&f_id=".$Fan_id."'";
 
-                            $box = "`<h2>Notice</h2><p>This action will delete " .$row['f_name']. " " .$row['l_name']. " warning number: " .$row['num']. "<br> are you sure you want to delete?</p><section ><button onclick=closebox(); >No</button><button onclick=location.href=\"ed_del.php?type=delete&w_num=".$row['num']."&fanId=".$Fan_id."\">Yes</button><section>`";
+                            $box = "`<h2>Notice</h2><p>This action will delete " .$row['f_name']. " " .$row['l_name']. " warning number: " .$row['num']. "<br> Are you sure you want to delete?</p><section ><button onclick=closebox(); >No</button><button onclick=location.href=\"ed_del.php?type=delete&w_num=".$row['num']."&fanId=".$Fan_id."\">Yes</button><section>`";
                             echo "<article>";
                             echo "<h4>" .$row["topic"] . "</h4>";
                             if($_SESSION["role"] == "Security Manager"){
@@ -239,7 +239,6 @@
                             echo "</article>";
                         }
                     ?>
-
                 </section>
             </div>
         </main>

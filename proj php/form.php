@@ -1,8 +1,6 @@
 <?php
     include "config.php";
-
-    define("URL" , "http://localhost:8080/proj%20php/");
-    // define("URL" , "http://se.shenkar.ac.il/students/2021-2022/web1/dev_201/");
+    define("URL" , "http://se.shenkar.ac.il/students/2021-2022/web1/dev_201/");
 
     session_start();
     if(empty($_SESSION["user_id"]))
@@ -85,7 +83,7 @@
                         <li><a href="#">Guards</a></li>
                         <div>
                             <li><a href="#">Settings<i class="fa-solid fa-sliders"></i> </a></li>
-                            <li><a href="#">Logout<i class="fa-solid fa-right-from-bracket"></i></a></li>
+                            <li><a href="logout.php">Logout<i class="fa-solid fa-right-from-bracket"></i></a></li>
                         </div>
                     </ul>
 
@@ -110,7 +108,7 @@
                             <li><a href="list.php">Fans</a></li>
                             <li><a href="#">Guards</a></li>
                             <li><a href="#">Settings</a></li>
-                            <li><a href="#">Logout</a></li>
+                            <li><a href="logout.php">Logout</a></li>
                         </ul>
                     </div>
 
@@ -129,7 +127,7 @@
                 ?>
             <div id="form-info">
                 <span class="desktop"><a href="index.php" class="breadcrumbs"> Home page </a> >> <a href="list.php"
-                        class="breadcrumbs"> Fans </a>>> <a href="object.php" class="breadcrumbs">Profile</a>>> WarningForm </span>
+                        class="breadcrumbs"> Fans </a>>> <a href="object.php" class="breadcrumbs">Profile</a>>> Warning Form </span>
                 <h1>New Warning</h1>
                 <h3>Fan's information <?php echo $_SESSION["prev_page"];?></h3>
                 <img <?php echo "src='".$row["img"]."' alt='" . $row["f_name"] . " " . $row["l_name"] . "' title='" . $row["f_name"] . " " . $row["l_name"] . "'";?>>
