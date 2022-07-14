@@ -211,7 +211,7 @@
                         }
                         else if(isset($_GET['ss']) and $_GET['ss'] == "3"){
                             
-                            echo "<section id='message'>Warning's edit has saved</section>";
+                            echo "<section id='message'>Warning's edition has saved</section>";
                         }
                         ?>
 
