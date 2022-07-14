@@ -209,7 +209,7 @@
                             echo "<section id='message'>Warning has deleted</section>";
                             
                         }
-                        else if(isset($_GET['ss']) and $_GET['ss'] == "2"){
+                        else if(isset($_GET['ss']) and $_GET['ss'] == "3"){
                             
                             echo "<section id='message'>Warning's edit has saved</section>";
                         }

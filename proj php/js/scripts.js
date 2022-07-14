@@ -198,7 +198,9 @@ class Lightbox {
 function closebox() {
   const lightBox = document.querySelector("#lightbox");
   lightBox.style.display = "none";
+  const content = lightBox.querySelector(".lightbox__content");
   content.innerHTML = "";
+
 };
 
 
@@ -207,10 +209,6 @@ setTimeout(() => {
 }, 3000);
 
 function load_functions() {
-  console.log("enter lightbox");
   Lightbox.activate();
-  console.log("exit lightbox");
-  console.log("enter message");
   window.onload = set_message();
-  console.log("exit message");
 }
