@@ -1,5 +1,6 @@
 <?php
     include "config.php";
+    // define("URL" , "http://localhost:8080/proj%20php/");
     define("URL" , "http://se.shenkar.ac.il/students/2021-2022/web1/dev_201/");
 
     session_start(); 
@@ -27,7 +28,7 @@
         if(!$result1){
             die("DB query faild.");
         }
-        $query_down = "UPDATE tbl_fans_201 set w_number = w_number - 1 where id =". $fanId;
+        $query_down = "UPDATE tbl_fans_201 set w_number = w_number - 1 where id =". $f_id;
         $result2 = mysqli_query($connection,$query_down);
         if(!$result2){
             die("DB query faild.");

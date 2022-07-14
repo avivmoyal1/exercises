@@ -113,6 +113,7 @@ function set_message() {
   if (hr >= 1 || hr <= 5) {
     mesg.innerHTML = "Good night";
 
+<<<<<<< HEAD
   }
   else if (hr >= 6 || hr <= 11) {
     mesg.innerHTML = "Good morning";
@@ -125,6 +126,14 @@ function set_message() {
     mesg.innerHTML = "Good evening";
   }
   mesg.innerHTML += name;
+=======
+      mesg.innerHTML = "Good evening";
+    }
+    mesg.innerHTML += name;
+
+  }
+
+>>>>>>> 86483691769611ec5ee3414f2b2e5f9f50a101de
 }
 
 window.onload = set_message;
@@ -144,6 +153,17 @@ if (fg) {
     .then(data => showData(data.Games));
 }
 
+const obj = document.querySelector("#obj");
+// obj.addEventListener('load' ,(e) => {
+//     e.Lightbox.activate();
+//     set_message();
+// });
+    
+
+obj.addEventListener( 'load', set_message, false );
+obj.addEventListener( 'load', Lightbox.activate, false );
+
+
 class Lightbox {
   static activate() {
     document.body.insertAdjacentHTML("beforeend", `
@@ -156,6 +176,11 @@ class Lightbox {
               </div>
           </div>
       `);
+<<<<<<< HEAD
+=======
+  
+    
+>>>>>>> 86483691769611ec5ee3414f2b2e5f9f50a101de
 
 
 
@@ -211,6 +236,7 @@ setTimeout(() => {
   $('#message').hide();
 }, 3000);
 
+<<<<<<< HEAD
 function load_functions() {
   console.log("enter lightbox");
   Lightbox.activate();
@@ -219,3 +245,9 @@ function load_functions() {
   window.onload = set_message();
   console.log("exit message");
 }
+=======
+// window.onload = function set_object(){
+//   Lightbox.activate();
+//   set_message();
+// };
+>>>>>>> 86483691769611ec5ee3414f2b2e5f9f50a101de
