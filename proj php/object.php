@@ -97,13 +97,13 @@
                 <section class="menu_body" id="menubody">
                     <div class="menu_body__item_wrapper">
                         <ul class="menu_list">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.php">Home</a></li>
                             <li><a href="#">Map</a></li>
                             <li><a href="#">Messages</a></li>
                             <li><a href="#">Cameras</a></li>
                             <li><a href="#">Drones</a></li>
                             <li><a href="#">Alerts</a></li>
-                            <li><a href="list.html">Fans</a></li>
+                            <li><a href="list.php">Fans</a></li>
                             <li><a href="#">Guards</a></li>
                             <li><a href="#">Settings</a></li>
                             <li><a href="logout.php">Logout</a></li>
