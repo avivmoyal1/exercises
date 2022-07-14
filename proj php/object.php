@@ -62,7 +62,7 @@
 
 </head>
 
-<body onload="Lightbox.activate()">
+<body onload="load_functions()">
 
     <div class="container">
         <header>

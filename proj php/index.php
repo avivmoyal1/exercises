@@ -33,7 +33,6 @@
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <!--Font Awesome-->
         <script src="https://kit.fontawesome.com/842cff8459.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="all.css">
     <!-- my-css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- my-js -->

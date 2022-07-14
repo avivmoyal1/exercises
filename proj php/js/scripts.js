@@ -100,52 +100,53 @@ $(document).ready(function () {
 });
 
 
-{
-  window.onload = function set_message(){
 
-    var day = new Date();
-  
-    var hr = day.getHours();
+function set_message() {
 
-    var mesg = document.getElementById('hello');
-    var name = mesg.textContent;
+  var day = new Date();
 
-    if( hr >= 1 || hr <= 5){
-      mesg.innerHTML = "Good night";
+  var hr = day.getHours();
 
-    }
-    else if( hr >= 6 || hr <=11){
-      mesg.innerHTML = "Good morning";
-    }
-    else if( hr >= 12 || hr <=16){
-      mesg.innerHTML = "Good afternoon";
-    }
-    else if( hr >= 17 || hr <= 00){
+  var mesg = document.getElementById('hello');
+  var name = mesg.textContent;
 
-      mesg.innerHTML = "Good evening";
-    }
-    mesg.innerHTML += name;
+  if (hr >= 1 || hr <= 5) {
+    mesg.innerHTML = "Good night";
+
   }
+  else if (hr >= 6 || hr <= 11) {
+    mesg.innerHTML = "Good morning";
+  }
+  else if (hr >= 12 || hr <= 16) {
+    mesg.innerHTML = "Good afternoon";
+  }
+  else if (hr >= 17 || hr <= 00) {
 
-
+    mesg.innerHTML = "Good evening";
+  }
+  mesg.innerHTML += name;
 }
 
-function showData(data){
+window.onload = set_message;
+
+function showData(data) {
   var div_list = document.getElementById('future-games');
-  for (const key in data){
+  for (const key in data) {
     var art = document.createElement('article');
-    art.innerHTML = "<img src=" + data[key].team_one_img + "> <img src="+ data[key].team_two_img+ "> <section><span>" + data[key].date[0].day  + "/" + data[key].date[0].month + "/" + data[key].date[0].year + " - " + data[key].time[0].hour + ":" + data[key].time[0].minute + "</span><div><section>"+ data[key].team_one +"</section><section>"+ data[key].team_two +"</section></div><span>Stadium status:</span><section>Security level is<span class='red'> High</span></section></section>";
+    art.innerHTML = "<img src=" + data[key].team_one_img + "> <img src=" + data[key].team_two_img + "> <section><span>" + data[key].date[0].day + "/" + data[key].date[0].month + "/" + data[key].date[0].year + " - " + data[key].time[0].hour + ":" + data[key].time[0].minute + "</span><div><section>" + data[key].team_one + "</section><section>" + data[key].team_two + "</section></div><span>Stadium status:</span><section>Security level is<span class='red'> High</span></section></section>";
     div_list.appendChild(art);
   }
 }
-fetch("data.json")
-  .then(response =>response.json())
-  .then(data => showData(data.Games));
-
+let fg = document.getElementById('future-games');
+if (fg) {
+  fetch("data.json")
+    .then(response => response.json())
+    .then(data => showData(data.Games));
+}
 
 class Lightbox {
   static activate() {
-      document.body.insertAdjacentHTML("beforeend", `
+    document.body.insertAdjacentHTML("beforeend", `
           <div class="lightbox" id="lightbox" style="display: none;">
               <div class="lightbox__inner">
                   <button type="button" class="lightbox__close">
@@ -155,51 +156,51 @@ class Lightbox {
               </div>
           </div>
       `);
-  
-  
 
-      const lightBox = document.querySelector("#lightbox");
-      const btnClose = lightBox.querySelector(".lightbox__close");
-      const content = lightBox.querySelector(".lightbox__content");
-      const nobtn = lightBox.querySelector(".no_action");
 
-      const closeLightbox = () => {
-          lightBox.style.display = "none";
-          content.innerHTML = "";
-      };
 
-      
-      lightBox.addEventListener("mousedown", e => {
-          if (e.target.matches("#lightbox")) {
-              closeLightbox();
-          }
-      });
+    const lightBox = document.querySelector("#lightbox");
+    const btnClose = lightBox.querySelector(".lightbox__close");
+    const content = lightBox.querySelector(".lightbox__content");
+    // const nobtn = lightBox.querySelector(".no_action");
 
-      btnClose.addEventListener("click", () => {
-          closeLightbox();
-      });
+    const closeLightbox = () => {
+      lightBox.style.display = "none";
+      content.innerHTML = "";
+    };
 
-      nobtn.addEventListener("click", () => {
+
+    lightBox.addEventListener("mousedown", e => {
+      if (e.target.matches("#lightbox")) {
         closeLightbox();
+      }
     });
+
+    btnClose.addEventListener("click", () => {
+      closeLightbox();
+    });
+
+    //   nobtn.addEventListener("click", () => {
+    //     closeLightbox();
+    // });
   }
 
   static show(htmlOrElement) {
-      const content = document.querySelector("#lightbox .lightbox__content");
+    const content = document.querySelector("#lightbox .lightbox__content");
 
-      document.querySelector("#lightbox").style.display = null;
+    document.querySelector("#lightbox").style.display = null;
 
-      if (typeof htmlOrElement === "string") {
-          content.innerHTML = htmlOrElement;
-      } else {
-          content.innerHTML = "";
-          content.appendChild(htmlOrElement);
-      }
+    if (typeof htmlOrElement === "string") {
+      content.innerHTML = htmlOrElement;
+    } else {
+      content.innerHTML = "";
+      content.appendChild(htmlOrElement);
+    }
   }
 }
 
 
-function closebox(){
+function closebox() {
   const lightBox = document.querySelector("#lightbox");
   lightBox.style.display = "none";
   content.innerHTML = "";
@@ -209,3 +210,12 @@ function closebox(){
 setTimeout(() => {
   $('#message').hide();
 }, 3000);
+
+function load_functions() {
+  console.log("enter lightbox");
+  Lightbox.activate();
+  console.log("exit lightbox");
+  console.log("enter message");
+  window.onload = set_message();
+  console.log("exit message");
+}
