@@ -38,8 +38,8 @@
     <!-- my-js -->
     <script src="js/scripts.js"></script>
     <!-- favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="manifest" href="images/site.webmanifest">
 
 </head>
 
@@ -151,7 +151,7 @@
                     <span>Messages</span>
                     <section>
                         <img src="images/work1.jpg" alt="user" title="user">
-                        <span>Olivia <span> 10:31 PM</span></span>
+                        <span>Olivia <span> 10:31PM</span></span>
                         <p>Leaving my spot to the restroom, is that ok?</p>
                     </section>
                     <section>
@@ -196,31 +196,31 @@
             <article class="desktop" id="homepage-art-2">
                 <span>Alerts</span>
                 <section>
-                    <span><i class="fa-solid fa-triangle-exclamation"></i>Warning message <span>10:59</span></span>
+                    <span><i class="fa-solid fa-triangle-exclamation"></i>Warning message <span>10:59PM</span></span>
                     <p> A big group of high risk fans gathered next to bench!</p>
                 </section>
                 <section>
-                    <span><i class="fa-solid fa-triangle-exclamation"></i>Warning message <span>10:43</span></span>
+                    <span><i class="fa-solid fa-triangle-exclamation"></i>Warning message <span>10:43PM</span></span>
                     <p> A fan from gate A1 tried to break into the pitch, event prevented, watch closely.</p>
                 </section>
                 <section>
-                    <span><i class="fa-solid fa-circle-info"></i></i>Info message <span>10:31</span></span>
+                    <span><i class="fa-solid fa-circle-info"></i></i>Info message <span>10:31PM</span></span>
                     <p> Pay attention, gate A5 recived 96 warnings in the last 10 minutes.</p>
                 </section>
                 <section>
-                    <span><i class="fa-solid fa-circle-info"></i></i>Info message <span>10:28</span></span>
+                    <span><i class="fa-solid fa-circle-info"></i></i>Info message <span>10:28PM</span></span>
                     <p> Two vandalism events occured in two different gates.</p>
                 </section>
                 <section>
-                    <span><i class="fa-solid fa-triangle-exclamation"></i>Warning message <span>10:11</span></span>
+                    <span><i class="fa-solid fa-triangle-exclamation"></i>Warning message <span>10:11PM</span></span>
                     <p> Fans in gate D3 are throwing trash on the field, hitting the goalkeeper.</p>
                 </section>
                 <section>
-                    <span><i class="fa-solid fa-triangle-exclamation"></i>Warning message <span>10:08</span></span>
+                    <span><i class="fa-solid fa-triangle-exclamation"></i>Warning message <span>10:08PM</span></span>
                     <p> Violence event has started in gate C2.</p>
                 </section>
                 <section>
-                    <span><i class="fa-solid fa-circle-info"></i>Info message <span>10:05</span></span>
+                    <span><i class="fa-solid fa-circle-info"></i>Info message <span>10:05PM</span></span>
                     <p>Gate B4's hidden security guard may need quick backup, look up. </p>
                 </section>
                 <section>

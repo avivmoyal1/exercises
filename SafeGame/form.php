@@ -61,8 +61,8 @@
     <!-- my-js -->
     <script src="js/scripts.js"></script>
     <!-- favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="manifest" href="images/site.webmanifest">
 
 </head>
 
