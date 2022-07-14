@@ -18,7 +18,6 @@ function search() {
 {
   let check = "";
   function addWarning(name, lname, id, fan, photo) {
-    console.log(check);
     var switchWarning = document.getElementById("form");
     if (check == id || switchWarning.style.display != "block") {
       if (switchWarning.style.display == "block") {
@@ -46,19 +45,6 @@ function search() {
     check = id;
   }
 }
-
-function addWarningMobile() {
-  var timestamp = Date.now() + 10800000;
-  var dateNtime = new Date(timestamp);
-
-  var date = dateNtime.toISOString().substring(0, 10);
-  var time = dateNtime.toISOString().substring(11, 16);
-  document.get;
-  document.getElementById("toDayTimeMobile").value = time;
-  document.getElementById("toDayDateMobile").value = date;
-  location.href = "form.html";
-}
-
 
 function dropMenu(e) {
   document.getElementById(e).classList.toggle("show");
@@ -101,17 +87,13 @@ $(document).ready(function () {
 
 
 function set_message() {
-
   var day = new Date();
-
   var hr = day.getHours();
-
   var mesg = document.getElementById('hello');
   var name = mesg.textContent;
 
   if (hr >= 1 && hr <= 5) {
     mesg.innerHTML = "Good night";
-
   }
   else if (hr >= 6 && hr <= 11) {
     mesg.innerHTML = "Good morning";
@@ -125,8 +107,8 @@ function set_message() {
   }
   mesg.innerHTML += name;
 }
-
 window.onload = set_message;
+
 
 function showData(data) {
   var div_list = document.getElementById('future-games');
@@ -193,7 +175,6 @@ class Lightbox {
   }
 }
 
-
 function closebox() {
   const lightBox = document.querySelector("#lightbox");
   lightBox.style.display = "none";
@@ -201,7 +182,6 @@ function closebox() {
   content.innerHTML = "";
 
 };
-
 
 setTimeout(() => {
   $('#message').hide();
