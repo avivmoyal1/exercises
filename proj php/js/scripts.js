@@ -110,17 +110,17 @@ function set_message() {
   var mesg = document.getElementById('hello');
   var name = mesg.textContent;
 
-  if (hr >= 1 || hr <= 5) {
+  if (hr >= 1 && hr <= 5) {
     mesg.innerHTML = "Good night";
 
   }
-  else if (hr >= 6 || hr <= 11) {
+  else if (hr >= 6 && hr <= 11) {
     mesg.innerHTML = "Good morning";
   }
-  else if (hr >= 12 || hr <= 16) {
+  else if (hr >= 12 && hr <= 16) {
     mesg.innerHTML = "Good afternoon";
   }
-  else if (hr >= 17 || hr <= 00) {
+  else if (hr >= 17 && hr <= 00) {
 
     mesg.innerHTML = "Good evening";
   }
@@ -144,17 +144,6 @@ if (fg) {
     .then(data => showData(data.Games));
 }
 
-const obj = document.querySelector("#obj");
-// obj.addEventListener('load' ,(e) => {
-//     e.Lightbox.activate();
-//     set_message();
-// });
-    
-
-obj.addEventListener( 'load', set_message, false );
-obj.addEventListener( 'load', Lightbox.activate, false );
-
-
 class Lightbox {
   static activate() {
     document.body.insertAdjacentHTML("beforeend", `
@@ -173,8 +162,6 @@ class Lightbox {
     const lightBox = document.querySelector("#lightbox");
     const btnClose = lightBox.querySelector(".lightbox__close");
     const content = lightBox.querySelector(".lightbox__content");
-    // const nobtn = lightBox.querySelector(".no_action");
-
     const closeLightbox = () => {
       lightBox.style.display = "none";
       content.innerHTML = "";
@@ -191,9 +178,6 @@ class Lightbox {
       closeLightbox();
     });
 
-    //   nobtn.addEventListener("click", () => {
-    //     closeLightbox();
-    // });
   }
 
   static show(htmlOrElement) {
