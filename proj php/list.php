@@ -1,6 +1,5 @@
 <?php
     include "config.php";
-    // define("URL" , "http://localhost:8080/proj%20php/");
     define("URL" , "http://se.shenkar.ac.il/students/2021-2022/web1/dev_201/");
 
     session_start();
@@ -47,7 +46,6 @@
 
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/842cff8459.js" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />     -->
     <!-- my-css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- my-js -->

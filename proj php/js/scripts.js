@@ -54,7 +54,6 @@ function addWarningMobile() {
   var date = dateNtime.toISOString().substring(0, 10);
   var time = dateNtime.toISOString().substring(11, 16);
   document.get;
-  // location.href = "form.html";
   document.getElementById("toDayTimeMobile").value = time;
   document.getElementById("toDayDateMobile").value = date;
   location.href = "form.html";
