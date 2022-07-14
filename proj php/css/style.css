@@ -70,6 +70,7 @@ ul {
     left: 47px;
 }
 
+
 .navbar {
     position: absolute;
     display: flex;
@@ -1140,6 +1141,7 @@ section#message {
     font-family: 'Barlow', sans-serif;
 }
 
+
 #form-login > div{
     position: relative;
     left: 30%;
@@ -1156,15 +1158,13 @@ section#message {
 }
 
 
-#form-login h1{
-    font-size: 50px;
-    margin: 50px 40px 40px;
+#form-login img{
+    margin: 50px 35px
 }
+
 #form-login p{
-    margin: 0px 40px;
-
-
-    
+    text-align: center;
+    font-size: 18px;
 }
 
 #form-login form{
@@ -1191,7 +1191,7 @@ section#message {
     font-size: 18px;
 }
 #form-login form div span{
-background: linear-gradient(to right, #BD4291, #F94C66);
+background: linear-gradient(to right, #015dc5, #000000);
 border-radius: 10px;
 
 }
@@ -1222,7 +1222,7 @@ border-radius: 10px;
     cursor: pointer;
     background-color: #474A59;
     color: white;
-    background: linear-gradient(to right, #F94C66, #BD4291);   
+    background: linear-gradient(to right, #015dc5, #000000);
 }
 
 #form-login form div section{
@@ -1325,7 +1325,7 @@ border-radius: 10px;
   color:white;
 }
 
-@media only screen and (max-width:1000px) {
+@media only screen and (max-width:550px) {
     .container {
         width: 100%;
         height: 100%;

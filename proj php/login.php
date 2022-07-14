@@ -1,6 +1,7 @@
 <?php
     include "config.php";
-    define("URL" , "http://se.shenkar.ac.il/students/2021-2022/web1/dev_201/");
+    define("URL" , "http://localhost:8080/proj%20php/");
+    // define("URL" , "http://se.shenkar.ac.il/students/2021-2022/web1/dev_201/");
 
     session_start(); 
     if(isset($_SESSION["user_id"]))
@@ -50,19 +51,23 @@
             rel="stylesheet">
         <!-- responsive -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- favicon -->
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="manifest" href="/site.webmanifest">
     </head>
 
     <body id="form-login">
         <div>
             <article>
-                <h1>Login</h1>
-                <p>SafeGame - We create safer games.</p>
+                <!-- <h1 ></h1> -->
+                <img src="images/logo.png" alt="logo">
+                <p>We create safer games.</p>
             </article>
             <form action="#" method="POST">
                 <div>
                     <label>ID</label>
                     <span><input type="text" name="id"></span>
-                    <label>password</label>
+                    <label>Password</label>
                     <span><input type="password" name="pass"></span>
                     <button type="submit">Submit</button>
                     <section><?php if(isset($errormsg)){echo $errormsg;} ?></section>

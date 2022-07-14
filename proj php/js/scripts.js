@@ -91,7 +91,6 @@ function set_message() {
   var hr = day.getHours();
   var mesg = document.getElementById('hello');
   var name = mesg.textContent;
-
   if (hr >= 1 && hr <= 5) {
     mesg.innerHTML = "Good night";
   }
@@ -101,7 +100,7 @@ function set_message() {
   else if (hr >= 12 && hr <= 16) {
     mesg.innerHTML = "Good afternoon";
   }
-  else if (hr >= 17 && hr <= 00) {
+  else if (hr >= 17 && hr <= 23 || hr == 0) {
 
     mesg.innerHTML = "Good evening";
   }
