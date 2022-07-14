@@ -99,7 +99,7 @@
                 <div class="mobile">
                     <button type="button" src="#"><i class="fa-solid fa-qrcode"></i>Scan ticket</button>
                     <button type="button" src="#"><i class="fa-solid fa-comments"></i>Messages</button>
-                    <button type="button" src="form.php"><i class="fa-solid fa-magnifying-glass"></i>Search a fan</button>
+                    <button type="button" src="list.php"><i class="fa-solid fa-magnifying-glass"></i>Search a fan</button>
                     <button type="button" src="#"><i class="fa-solid fa-bell"></i> Alerts</button>
                 </div>
                 <h3>Currently Playing:</h3>
