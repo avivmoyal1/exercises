@@ -54,6 +54,8 @@
                         <li><a href="#">Alerts</a></li>
                         <li><a href="list.php">Fans</a></li>
                         <li><a href="#">Guards</a></li>
+
+
                         <div>
                             <li><a href="#">Settings<i class="fa-solid fa-sliders"></i> </a></li>
                             <li><a href="logout.php">Logout<i class="fa-solid fa-right-from-bracket"></i></a></li>
@@ -67,7 +69,8 @@
                     <div class="line"></div>
                     <div class="line"></div>
                     <div class="line"></div>
-                </div>
+                </div> 
+
 
                 <section class="menu_body" id="menubody">
                     <div class="menu_body__item_wrapper">
